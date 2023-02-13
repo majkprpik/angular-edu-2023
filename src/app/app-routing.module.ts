@@ -19,12 +19,21 @@ const routes: Routes = [
       import('./modules/tihomir/tihomir.module').then((m) => m.TihomirModule),
   },
   {
+    path: 'filip',
+    loadChildren: () =>
+      import('./modules/filip/filip.module').then((m) => m.FilipModule),
+  },{
     path: 'mislav-cacic',
     loadChildren: () =>
       import('./modules/mislav-cacic/mislav-cacic.module').then(
         (m) => m.MislavCacicModule
       ),
   },
+  {
+    path: 'karla',
+    loadChildren: () =>
+      import('./modules/karla/karla.module').then((m) => m.KarlaModule),
+  }
 ];
 
 @NgModule({
