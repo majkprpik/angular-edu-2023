@@ -9,6 +9,13 @@ const routes: Routes = [
     //import('src/app/modules/dino/dino.module').then((n)=>n.DinoModule)
   },
   {
+    path: 'my-module15',
+    loadChildren: () =>
+      import('./modules/my-module15/my-module15.module').then(
+        (m) => m.MyModule15Module
+      ),
+  },
+  {
     path: 'Dino',
     loadChildren: () =>
       import('./modules/dino/dino.module').then((m) => m.DinoModule),
