@@ -1,3 +1,4 @@
+import { TihomirComponent } from './modules/tihomir/tihomir.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -8,12 +9,10 @@ const routes: Routes = [
       import('./modules/test/test.module').then((m) => m.TestModule),
   },
   {
-    path: 'my-module15',
+    path: 'tihomir',
     loadChildren: () =>
-      import('./modules/my-module15/my-module15.module').then(
-        (m) => m.MyModule15Module
-      ),
-  },
+      import('./modules/tihomir/tihomir.module').then((m) => m.TihomirModule),
+  }
 ];
 
 @NgModule({
