@@ -1,3 +1,4 @@
+import { FilipRoutingModule } from './filip-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FilipComponent } from './filip.component';
@@ -9,7 +10,8 @@ import { FilipComponent } from './filip.component';
     FilipComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FilipRoutingModule
   ]
 })
 export class FilipModule { }
