@@ -6,7 +6,6 @@ const routes: Routes = [
     path: 'test',
     loadChildren: () =>
       import('./modules/test/test.module').then((m) => m.TestModule),
-    //import('src/app/modules/dino/dino.module').then((n)=>n.DinoModule)
   },
   {
     path: 'my-module15',
@@ -20,11 +19,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/dino/dino.module').then((m) => m.DinoModule),
   },
-  // {
-  //   path: 'tihomir',
-  //   loadChildren: () =>
-  //     import('./modules/tihomir/tihomir.module').then((m) => m.TihomirModule),
-  // },
   {
     path: 'filip',
     loadChildren: () =>
@@ -41,6 +35,11 @@ const routes: Routes = [
     path: 'karla',
     loadChildren: () =>
       import('./modules/karla/karla.module').then((m) => m.KarlaModule),
+  },
+  {
+    path: 'ivan',
+    loadChildren: () =>
+      import('./modules/ivan/ivan.module').then((m) => m.IvanModule),
   },
 ];
 
