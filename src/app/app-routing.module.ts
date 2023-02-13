@@ -18,6 +18,12 @@ const routes: Routes = [
     path: 'tihomir',
     loadChildren: () =>
       import('./modules/tihomir/tihomir.module').then((m) => m.TihomirModule),
+  }
+    path: 'mislav-cacic',
+    loadChildren: () =>
+      import('./modules/mislav-cacic/mislav-cacic.module').then(
+        (m) => m.MislavCacicModule
+      ),
   },
 ];
 
