@@ -1,3 +1,4 @@
+import { FilipModule } from './modules/filip/filip.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -47,6 +48,11 @@ const routes: Routes = [
         (m) => m.MislavCacicModule
       ),
   },
+  {
+    path: 'filip',
+    loadChildren: () =>
+      import('./modules/filip/filip.module').then((m) => m.FilipModule),
+  }
 ];
 
 @NgModule({
