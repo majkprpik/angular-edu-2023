@@ -1,16 +1,16 @@
-import { TihomirComponent } from './tihomir.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { IvanComponent } from './ivan.component';
 
 const routes: Routes = [
   {
-    path : '',
-    component : TihomirComponent
-  }
+    path: '',
+    component: IvanComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class TihomirRoutingModule { }
+export class IvanRoutingModule {}
