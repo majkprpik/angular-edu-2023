@@ -7,6 +7,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/test/test.module').then((m) => m.TestModule),
   },
+  {
+    path: 'mislav-cacic',
+    loadChildren: () =>
+      import('./modules/mislav-cacic/mislav-cacic.module').then(
+        (m) => m.MislavCacicModule
+      ),
+  },
 ];
 
 @NgModule({
