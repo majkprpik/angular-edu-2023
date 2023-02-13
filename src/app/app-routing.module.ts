@@ -6,12 +6,12 @@ const routes: Routes = [
     path: 'test',
     loadChildren: () =>
       import('./modules/test/test.module').then((m) => m.TestModule),
-      //import('src/app/modules/dino/dino.module').then((n)=>n.DinoModule)
+    //import('src/app/modules/dino/dino.module').then((n)=>n.DinoModule)
   },
   {
-    path:'Dino',
-    loadChildren:()=>
-    import('./modules/dino/dino.module').then((m)=>m.DinoModule)
+    path: 'Dino',
+    loadChildren: () =>
+      import('./modules/dino/dino.module').then((m) => m.DinoModule),
   },
   // {
   //   path: 'tihomir',
@@ -22,7 +22,8 @@ const routes: Routes = [
     path: 'filip',
     loadChildren: () =>
       import('./modules/filip/filip.module').then((m) => m.FilipModule),
-  },{
+  },
+  {
     path: 'mislav-cacic',
     loadChildren: () =>
       import('./modules/mislav-cacic/mislav-cacic.module').then(
@@ -33,7 +34,7 @@ const routes: Routes = [
     path: 'karla',
     loadChildren: () =>
       import('./modules/karla/karla.module').then((m) => m.KarlaModule),
-  }
+  },
 ];
 
 @NgModule({
