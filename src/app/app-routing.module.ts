@@ -1,4 +1,3 @@
-import { TihomirComponent } from './modules/tihomir/tihomir.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
