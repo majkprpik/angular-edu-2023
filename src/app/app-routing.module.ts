@@ -16,8 +16,13 @@ const routes: Routes = [
   {
     path: 'tihomir',
     loadChildren: () =>
-      import('./modules/tihomir/tihomir.module').then((m) => m.TihomirModule),
+      import('./modules/dino/dino.module').then((m) => m.DinoModule),
   },
+  // {
+  //   path: 'tihomir',
+  //   loadChildren: () =>
+  //     import('./modules/tihomir/tihomir.module').then((m) => m.TihomirModule),
+  // },
   {
     path: 'filip',
     loadChildren: () =>
