@@ -1,5 +1,3 @@
-import { KarlaModule } from './modules/karla/karla.module';
-import { TestModule } from './modules/test/test.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -21,6 +19,10 @@ const routes: Routes = [
       import('./modules/tihomir/tihomir.module').then((m) => m.TihomirModule),
   },
   {
+    path: 'filip',
+    loadChildren: () =>
+      import('./modules/filip/filip.module').then((m) => m.FilipModule),
+  },{
     path: 'mislav-cacic',
     loadChildren: () =>
       import('./modules/mislav-cacic/mislav-cacic.module').then(
