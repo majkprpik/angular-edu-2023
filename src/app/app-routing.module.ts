@@ -1,4 +1,4 @@
-import { FilipModule } from './modules/filip/filip.module';
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
