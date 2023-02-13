@@ -9,11 +9,6 @@ const routes: Routes = [
       import('./modules/test/test.module').then((m) => m.TestModule),
   },
   {
-    path: 'tihomir',
-    loadChildren: () =>
-      import('./modules/tihomir/tihomir.module').then((m) => m.TihomirModule),
-  },
-  {
     path: 'stjepan',
     loadChildren:() =>
     import('./modules/stjepan/stjepan.module').then((m) => m.StjepanModule),
