@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 
+=======
+import { KarlaModule } from './modules/karla/karla.module';
+import { TestModule } from './modules/test/test.module';
+>>>>>>> ede9735 (added karla routing)
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -52,6 +57,9 @@ const routes: Routes = [
     path: 'filip',
     loadChildren: () =>
       import('./modules/filip/filip.module').then((m) => m.FilipModule),
+    path: 'karla',
+    loadChildren: () =>
+      import('./modules/karla/karla.module').then((m) => m.KarlaModule),
   }
 ];
 
