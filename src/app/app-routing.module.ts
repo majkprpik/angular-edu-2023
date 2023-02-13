@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 
-=======
 import { KarlaModule } from './modules/karla/karla.module';
 import { TestModule } from './modules/test/test.module';
->>>>>>> ede9735 (added karla routing)
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
