@@ -6,23 +6,25 @@ const routes: Routes = [
     path: 'test',
     loadChildren: () =>
       import('./modules/test/test.module').then((m) => m.TestModule),
-      //import('src/app/modules/dino/dino.module').then((n)=>n.DinoModule)
   },
   {
-    path:'Dino',
-    loadChildren:()=>
-    import('./modules/dino/dino.module').then((m)=>m.DinoModule)
-  },
-  {
-    path: 'tihomir',
+    path: 'my-module15',
     loadChildren: () =>
-      import('./modules/tihomir/tihomir.module').then((m) => m.TihomirModule),
+      import('./modules/my-module15/my-module15.module').then(
+        (m) => m.MyModule15Module
+      ),
+  },
+  {
+    path: 'Dino',
+    loadChildren: () =>
+      import('./modules/dino/dino.module').then((m) => m.DinoModule),
   },
   {
     path: 'filip',
     loadChildren: () =>
       import('./modules/filip/filip.module').then((m) => m.FilipModule),
-  },{
+  },
+  {
     path: 'mislav-cacic',
     loadChildren: () =>
       import('./modules/mislav-cacic/mislav-cacic.module').then(
@@ -33,7 +35,12 @@ const routes: Routes = [
     path: 'karla',
     loadChildren: () =>
       import('./modules/karla/karla.module').then((m) => m.KarlaModule),
-  }
+  },
+  {
+    path: 'ivan',
+    loadChildren: () =>
+      import('./modules/ivan/ivan.module').then((m) => m.IvanModule),
+  },
 ];
 
 @NgModule({
