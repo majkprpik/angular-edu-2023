@@ -8,6 +8,11 @@ const routes: Routes = [
       import('./modules/test/test.module').then((m) => m.TestModule),
   },
   {
+    path: 'tihomir',
+    loadChildren: () =>
+      import('./modules/tihomir/tihomir.module').then((m) => m.TihomirModule),
+  },
+  {
     path: 'my-module15',
     loadChildren: () =>
       import('./modules/my-module15/my-module15.module').then(
