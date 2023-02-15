@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     DinoComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     CommonModule,
