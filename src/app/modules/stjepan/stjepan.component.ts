@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./stjepan.component.scss']
 })
 export class StjepanComponent {
+  username = "";
+  password = "";
 
+  ispisImena(ime: string) {
+    console.log("Username: " + ime);
+  }
+
+  ispisSifre(sifra: string) {
+    console.log("Password: " + sifra);
+  }
 }

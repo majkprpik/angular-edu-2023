@@ -1,1 +1,20 @@
-<p>stjepan works!</p>
+<div id="form-wrap">
+  <h1>Login Here</h1>
+  <div id="login-form">
+    <p>
+      <input type="text" [(ngModel)]="username" placeholder="Enter username" />
+    </p>
+    <p>
+      <input
+        type="password"
+        [(ngModel)]="password"
+        placeholder="Enter password"
+      />
+    </p>
+    <p>
+      <button (click)="ispisImena(username)" (click)="ispisSifre(password)">
+        Submit
+      </button>
+    </p>
+  </div>
+</div>
