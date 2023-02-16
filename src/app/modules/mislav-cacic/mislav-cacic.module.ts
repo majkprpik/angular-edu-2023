@@ -8,5 +8,4 @@ import { MislavCacicComponent } from './mislav-cacic.component';
   declarations: [MislavCacicComponent],
   imports: [CommonModule, MislavCacicRoutingModule, FormsModule],
 })
-
 export class MislavCacicModule {}
