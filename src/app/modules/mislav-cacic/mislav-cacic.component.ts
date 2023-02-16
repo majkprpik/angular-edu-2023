@@ -5,4 +5,13 @@ import { Component } from '@angular/core';
   templateUrl: './mislav-cacic.component.html',
   styleUrls: ['./mislav-cacic.component.scss'],
 })
-export class MislavCacicComponent {}
+export class MislavCacicComponent {
+  person = {
+    username: '',
+    password: '',
+  };
+
+  login() {
+    console.log(this.person);
+  }
+}
