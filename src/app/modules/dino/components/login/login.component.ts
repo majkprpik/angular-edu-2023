@@ -1,7 +1,7 @@
 import { Component,Input,Output,EventEmitter } from '@angular/core';
 
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faUnlock } from '@fortawesome/free-solid-svg-icons'
+//import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+//import { faUnlock } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-login',
@@ -9,8 +9,8 @@ import { faUnlock } from '@fortawesome/free-solid-svg-icons'
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  faEnvelope= faEnvelope;
-  faUnlock = faUnlock
+  //faEnvelope= faEnvelope;
+  //faUnlock = faUnlock
 
   emailValue="";
   passwordValue="";
