@@ -18,4 +18,5 @@ import { LoginComponent } from './components/login/login.component';
     FormsModule
   ]
 })
-export class DinoModule { }
+export class DinoModule { 
+}
