@@ -52,6 +52,11 @@ const routes: Routes = [
   path: 'Ljulj',
     loadChildren: () =>
       import('./modules/ljulj/ljulj.module').then((m) => m.LjuljModule),
+  },
+  {
+  path: 'stjepan',
+    loadChildren: () =>
+      import('./modules/stjepan/stjepan.module').then((m) => m.StjepanModule),
   }
 
   
