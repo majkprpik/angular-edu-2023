@@ -1,5 +1,3 @@
-import { KarlaModule } from './modules/karla/karla.module';
-import { TestModule } from './modules/test/test.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -8,6 +6,11 @@ const routes: Routes = [
     path: 'test',
     loadChildren: () =>
       import('./modules/test/test.module').then((m) => m.TestModule),
+  },
+  {
+    path: 'martin',
+    loadChildren: () =>
+      import('./modules/martin/martin.module').then((m) => m.MartinModule),
   },
   {
     path: 'tihomir',
@@ -49,17 +52,15 @@ const routes: Routes = [
       import('./modules/ivan/ivan.module').then((m) => m.IvanModule),
   },
   {
-  path: 'Ljulj',
+    path: 'Ljulj',
     loadChildren: () =>
       import('./modules/ljulj/ljulj.module').then((m) => m.LjuljModule),
   },
   {
-  path: 'stjepan',
+    path: 'stjepan',
     loadChildren: () =>
       import('./modules/stjepan/stjepan.module').then((m) => m.StjepanModule),
-  }
-
-  
+  },
 ];
 
 @NgModule({
