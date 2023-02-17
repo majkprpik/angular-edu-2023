@@ -1,1 +1,12 @@
-<p>tihomir works!</p>
+<div class="form" [ngStyle]="{ 'margin-top': '20px', 'margin-left': '520px' }">
+    Username:
+    <input  type="text" placeholder="Username" [(ngModel)]="osoba.username"/>
+    <br />
+    <br />
+    Password:
+    <input  type="password" placeholder="Passsword" [(ngModel)]="osoba.password"/>
+</div>
+
+<button class="loginButton" [ngStyle]="{ 'margin-top': '20px', 'margin-left': '580px'}" (click)="login()">
+    LOGIN
+</button>

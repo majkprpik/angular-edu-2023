@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class TihomirComponent {
 
+  osoba = {
+    username : "",
+    password : ""
+  };
+
+  login(){
+    console.log(this.osoba);
+  }
 }
