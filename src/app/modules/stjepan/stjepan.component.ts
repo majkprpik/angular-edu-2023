@@ -6,14 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./stjepan.component.scss']
 })
 export class StjepanComponent {
-  username = "";
-  password = "";
+  username: string = "";
+  password: string = "";
 
-  ispisImena(ime: string) {
-    console.log("Username: " + ime);
-  }
+  onSubmit() {
+    const podaciOKorisniku = {
+      username: this.username,
+      password: this.password
+    }
 
-  ispisSifre(sifra: string) {
-    console.log("Password: " + sifra);
+  this.username = "";
+  this.password = "";
+
+  console.log(podaciOKorisniku);
   }
 }
