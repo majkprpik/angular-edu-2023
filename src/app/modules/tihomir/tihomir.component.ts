@@ -1,3 +1,4 @@
+import { AuthService } from './services/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,12 +8,15 @@ import { Component } from '@angular/core';
 })
 export class TihomirComponent {
 
+  constructor(private authService : AuthService){
+  }
+
   osoba = {
     username : "",
     password : ""
   };
 
   login(){
-    console.log(this.osoba);
+    this.authService.login(this.osoba);
   }
 }

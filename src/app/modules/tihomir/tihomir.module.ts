@@ -5,6 +5,7 @@ import { TihomirRoutingModule } from './tihomir-routing.module';
 import { TihomirComponent } from './tihomir.component';
 import { FormsModule } from '@angular/forms';
 
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     TihomirRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ]
 })
 export class TihomirModule { }
