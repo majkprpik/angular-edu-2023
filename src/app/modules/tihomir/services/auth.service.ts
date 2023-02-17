@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
 
 export class AuthService {
 
-  authUrl = "https://edu-back.azurewebsites.net/account/login-basic";
+  authUrl = "https://edu-back.azurewebsites.net/account/login-jwt";
+
 
   constructor(private http : HttpClient) { }
 
