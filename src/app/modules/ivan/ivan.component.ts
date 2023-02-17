@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-
 @Component({
   selector: 'app-ivan',
   templateUrl: './ivan.component.html',
@@ -8,18 +7,16 @@ import { Component } from '@angular/core';
 })
 export class IvanComponent {
   username: string;
-  password:string;
-
+  password: string;
 
   onSubmit() {
     const userData = {
       username: this.username,
-      password: this.password
-    }
+      password: this.password,
+    };
 
-    this.username='',
-    this.password=''
+    (this.username = ''), (this.password = '');
 
-    console.log(userData)
+    console.log(userData);
   }
 }
