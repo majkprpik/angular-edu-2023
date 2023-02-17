@@ -1,3 +1,4 @@
+import { AuthService } from './../services/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -9,14 +10,16 @@ export class IvanComponent {
   username: string;
   password: string;
 
+  constructor(public AuthService: AuthService) {}
+
   onSubmit() {
     const userData = {
       username: this.username,
       password: this.password,
     };
-
     (this.username = ''), (this.password = '');
 
-    console.log(userData);
+    this.AuthService.CreateUser(userData);
+    this.AuthService.CreateTokenUser(userData);
   }
 }
