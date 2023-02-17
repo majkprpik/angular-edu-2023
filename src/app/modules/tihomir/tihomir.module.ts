@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     TihomirRoutingModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers :[
     AuthService
