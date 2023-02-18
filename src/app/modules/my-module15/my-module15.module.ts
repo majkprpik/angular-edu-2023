@@ -1,3 +1,4 @@
+import { AuthService } from './services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 
@@ -6,9 +7,13 @@ import { NgModule } from '@angular/core';
 import { MyModule15Component } from './my-module15.component';
 
 import { MyModule15RoutingModule } from './my-module15-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [MyModule15Component, LoginComponent],
-  imports: [CommonModule, MyModule15RoutingModule, FormsModule],
+  imports: [CommonModule, MyModule15RoutingModule, FormsModule, HttpClientModule],
+  providers: [AuthService]
 })
-export class MyModule15Module {}
+export class MyModule15Module {
+
+}
