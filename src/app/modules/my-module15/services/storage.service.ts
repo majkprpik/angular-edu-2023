@@ -7,16 +7,22 @@ export class StorageService {
 
   constructor() { }
 
-  set(key: string, value: any): void{
-    localStorage.setItem(key, JSON.stringify(value));
+  set(key: string, value: any): void {
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+    } catch (error) {
+      console.error(`Error saving ${key} to localStorage`, error);
+    }
   }
   
   get(key: string): any {
-    const value = localStorage.getItem(key);
-    if (value) {
-      return JSON.parse(value);
+    try {
+      const value = localStorage.getItem(key);
+      return value ? JSON.parse(value) : null;
+    } catch (error) {
+      console.error(`Error getting ${key} from localStorage`, error);
+      return null;
     }
-    return null;
   }
 }
 

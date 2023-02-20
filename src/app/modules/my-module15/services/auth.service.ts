@@ -13,6 +13,12 @@ export class AuthService {
     return this.StorageService.get('Teo_access_token');
   }
 
+  getRefreshToken(): string {
+    return this.StorageService.get('Teo_refresh_token');
+  }
+
+ 
+
   authLogin(user) {
     return this.http.post(
       'https://edu-back.azurewebsites.net/account/login-jwt',

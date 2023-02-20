@@ -23,8 +23,8 @@ export class LoginComponent {
     });
     this.http.post('https://edu-back.azurewebsites.net/account/login-jwt', this.osoba).subscribe((response: any) => {
   
-      this.storageService.set('Teo_access_token', response.access_token);
-      this.storageService.set('Teo_refresh_token', response.refresh_token);
+      this.storageService.set('Teo_access_token', response.accessToken);
+      this.storageService.set('Teo_refresh_token', response.refreshToken);
     });
   }
   
