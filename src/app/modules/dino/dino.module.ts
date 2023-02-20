@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { DinoRoutingModule } from './dino-routing.module';
 import { DinoComponent } from './dino.component';
 import { LoginComponent } from './components/login/login.component';
-
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import { LoginComponent } from './components/login/login.component';
   imports: [
     CommonModule,
     DinoRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ]
 })
 export class DinoModule { 
