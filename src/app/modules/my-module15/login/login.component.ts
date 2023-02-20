@@ -16,15 +16,12 @@ export class LoginComponent {
   };
 
   constructor(private auth: AuthService, private storageService: StorageService, private http: HttpClient) {}
-  loginData = {
-    username: this.osoba.username,
-    password: this.osoba.password
-  }
+  
   login() {
     this.auth.authLogin(this.osoba).subscribe((res) => {
       console.log(res);
     });
-    this.http.post('https://edu-back.azurewebsites.net/account/login-jwt', this.loginData).subscribe((response: any) => {
+    this.http.post('https://edu-back.azurewebsites.net/account/login-jwt', this.osoba).subscribe((response: any) => {
   
       this.storageService.set('Teo_access_token', response.access_token);
       this.storageService.set('Teo_refresh_token', response.refresh_token);
