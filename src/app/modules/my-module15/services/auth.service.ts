@@ -1,3 +1,4 @@
+import { StorageService } from './storage.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -6,7 +7,11 @@ export class AuthService {
   username: string = 'username';
   password: string = 'password';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private StorageService: StorageService) {}
+
+  getAccessToken(): string{
+    return this.StorageService.get('Teo_access_token');
+  }
 
   authLogin(user) {
     return this.http.post(
