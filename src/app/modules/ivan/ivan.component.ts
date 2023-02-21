@@ -1,5 +1,6 @@
 import { AuthService } from './../services/auth.service';
 import { Component } from '@angular/core';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-ivan',
@@ -10,7 +11,7 @@ export class IvanComponent {
   username: string;
   password: string;
 
-  constructor(public AuthService: AuthService) {}
+  constructor(public AuthService: AuthService, public storageService:StorageService) {}
 
   onSubmit() {
     const userData = {
@@ -20,6 +21,8 @@ export class IvanComponent {
     (this.username = ''), (this.password = '');
 
     this.AuthService.CreateUser(userData);
-    this.AuthService.CreateTokenUser(userData);
+    this.AuthService.CreateTokenUser(userData)
+
+    ;
   }
 }
