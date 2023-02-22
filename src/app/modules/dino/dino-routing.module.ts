@@ -7,7 +7,7 @@ import { DinoComponent } from './dino.component';
 const routes: Routes = [
   {
     path:'',
-    component:GridhomeComponent,
+    component:LoginComponent,
   },
 ];
 
