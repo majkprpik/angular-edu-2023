@@ -1,9 +1,9 @@
-<div  class="pozadina">
+
 <form >
   <div class="wrapper">
-    <label for="username">User Name:</label>
+    <label for="username"><b> User Name:</b></label>
     <input id="username" [(ngModel)]="username" type="text" name="username" />
-    <label for="password">Password:</label>
+    <label for="password"><b> Password: </b></label>
     <input
       [(ngModel)]="password"
       type="password"
@@ -18,4 +18,4 @@
   objekat.username && objekat.password ? objekat.username + " " + objekat.password : ""
 }}</span>
 
-</div>
+
