@@ -1,7 +1,8 @@
-<form (ngSubmit)="spremi()">
+<div  class="pozadina">
+<form >
   <div class="wrapper">
-    <label for="name">Name:</label>
-    <input id="name" [(ngModel)]="name" type="text" name="name" />
+    <label for="username">User Name:</label>
+    <input id="username" [(ngModel)]="username" type="text" name="username" />
     <label for="password">Password:</label>
     <input
       [(ngModel)]="password"
@@ -9,10 +10,12 @@
       id="password"
       name="password"
     />
-    <button type="submit">Create</button>
+    <button (click)="onSubmit()" type="submit">Create</button>
   </div>
 </form>
 
 <span>{{
-  objekat.name && objekat.password ? objekat.name + " " + objekat.password : ""
+  objekat.username && objekat.password ? objekat.username + " " + objekat.password : ""
 }}</span>
+
+</div>

@@ -1,7 +1,7 @@
 .wrapper{
     margin-bottom: 15px;
     border: 1px solid blue;
-    height:200px;
+    height:500px;
     width: auto;
     display: flex;
     justify-content: center;
@@ -28,4 +28,10 @@
     background-color: red;
     color: #000000;
     cursor: pointer;
+}
+
+.pozadina{
+    background-image: url(../../../../../assets/filip-tod/background.jpg);
+    
+    height: 500px;
 }
