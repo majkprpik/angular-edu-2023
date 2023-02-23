@@ -1,0 +1,84 @@
+<link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+<div class="background" [ngStyle]="{'display': 'flex', 'flex-direction': 'row-reverse','font-family': 'Inter', 'font-weight': 'bold', 'text-align': 'center'}">
+
+    <div class="top" [ngStyle]="{'background-color': 'yellow', 'width': '1689px', 'height': '100px', 'float': 'none'}">
+
+        <div class="logo" [ngStyle]="{'margin-top': '10px'}">
+            <img src="{{Logo}}" alt="logo">
+        </div>
+
+    </div>
+    
+    
+    <div class="leftSide" [ngStyle]="{'background-color': 'black', 'width': '150px', 'height': '800px', 'float': 'left'}">
+
+        <div class="brands" [ngStyle]="{'background-color': 'yellow', 'width': '150px', 'height': '74px', 'margin-top': '100px'}">
+            <div class="brandsText" [ngStyle]="{'font-size': '28px', 'padding': '19px'}"> 
+                BRANDS
+            </div>
+
+        </div>
+
+        <div class="brandsInBrands" [ngStyle]="{'background-color': '#98970c', 'height': '200px', 'width': '150px', 'font-size': '16px', 'line-height': '11.5px'}">
+            <div class="appleBrand" [ngStyle]="{'padding-top': '35px'}">
+                APPLE
+            </div>
+            <div class="appleBrand" [ngStyle]="{'padding-top': '28.5px'}">
+                SAMSUNG
+            </div>
+            <div class="appleBrand" [ngStyle]="{'padding-top': '28.5px'}">
+                HUAWEI
+            </div>
+            <div class="appleBrand" [ngStyle]="{'padding-top': '28.5px'}">
+                XIAOMI
+            </div>
+        </div>
+
+        <div class="info" [ngStyle]="{'margin-top': '250px', 'margin-left': '25px', 'height': '162px'}">
+            <div class="listView" [ngStyle]="{'margin-bottom': '21px', 'background-color': 'yellow', 'width': '100px', 'height': '20px', 'padding-top': '5px'}" (click)="switchView()">
+                LIST VIEW
+            </div>
+
+            <div class="about" [ngStyle]="{'margin-bottom': '21px', 'background-color': 'yellow', 'width': '100px', 'height': '20px', 'padding-top': '5px'}">
+                ABOUT
+            </div>
+
+            <div class="contact" [ngStyle]="{'margin-bottom': '21px', 'background-color': 'yellow', 'width': '100px', 'height': '20px', 'padding-top': '5px'}">
+                CONTACT
+            </div>
+        </div>
+    </div>
+
+    <div class="middle" [ngStyle]="{'height': '400px', 'width': '1100px', 'margin-top': '250px', 'position': 'absolute', 'margin-right': '100px', 'display': 'flex', 'justify-content': 'space-between', 'float': 'left'}">
+        <div>
+            <img src="{{iphoneJPG}}" alt="iphone">
+            <div class="iphoneButton" [ngStyle]="{'background-color': 'yellow', 'width': '170px', 'height': '40px', 'margin-top': '50px', 'padding-top': '20px', 'margin-left': '30px'}">
+                APPLE
+            </div>
+        </div>
+
+        <div>
+            <img src="{{samsungJPG}}" alt="samsung">
+            <div class="iphoneButton" [ngStyle]="{'background-color': 'yellow', 'width': '170px', 'height': '40px', 'margin-top': '50px', 'padding-top': '20px', 'margin-left': '30px'}">
+                SAMSUNG
+            </div>
+        </div>
+
+        <div>
+            <img src="{{huaweiJPG}}" alt="huawei">
+            <div class="iphoneButton" [ngStyle]="{'background-color': 'yellow', 'width': '170px', 'height': '40px', 'margin-top': '50px', 'padding-top': '20px', 'margin-left': '30px'}">
+                HUAWEI
+            </div>
+        </div>
+
+        <div>
+            <img src="{{xiaomiJPG}}" alt="xiaomi">
+            <div class="iphoneButton" [ngStyle]="{'background-color': 'yellow', 'width': '170px', 'height': '40px', 'margin-top': '50px', 'padding-top': '20px', 'margin-left': '30px'}">
+                XIAOMI
+            </div>
+        </div>
+    </div>
+
+
+</div>
+

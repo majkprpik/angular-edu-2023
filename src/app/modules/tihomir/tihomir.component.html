@@ -1,4 +1,4 @@
-<div class="form" [ngStyle]="{ 'margin-top': '20px', 'margin-left': '520px' }">
+<!-- <div class="form" [ngStyle]="{ 'margin-top': '20px', 'margin-left': '520px' }">
     Username:
     <input  type="text" placeholder="Username" [(ngModel)]="osoba.username"/>
     <br />
@@ -9,4 +9,8 @@
 
 <button class="loginButton" [ngStyle]="{ 'margin-top': '20px', 'margin-left': '580px'}" (click)="login()">
     LOGIN
-</button>
+</button> -->
+
+<app-background *ngIf="viewSwitch"></app-background>
+
+<app-list-view *ngIf="!viewSwitch"></app-list-view>

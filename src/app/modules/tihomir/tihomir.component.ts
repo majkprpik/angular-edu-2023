@@ -8,15 +8,22 @@ import { Component } from '@angular/core';
 })
 export class TihomirComponent {
 
+  viewSwitch : boolean = true;
+
   constructor(private authService : AuthService){
   }
 
-  osoba = {
-    username : "",
-    password : ""
-  };
-
-  login(){
-    this.authService.login(this.osoba);
+  switchView(){
+    this.viewSwitch = !this.viewSwitch;
+    console.log(this.viewSwitch);
   }
+
+  // osoba = {
+  //   username : "",
+  //   password : ""
+  // };
+
+  // login(){
+  //   this.authService.login(this.osoba);
+  // }
 }

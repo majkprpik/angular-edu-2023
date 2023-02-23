@@ -7,11 +7,15 @@ import { TihomirComponent } from './tihomir.component';
 import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
+import { BackgroundComponent } from './components/gridView/background.component';
+import { ListViewComponent } from './components/list-view/list-view.component';
 
 
 @NgModule({
   declarations: [
-    TihomirComponent
+    TihomirComponent,
+    BackgroundComponent,
+    ListViewComponent
   ],
   imports: [
     CommonModule,
