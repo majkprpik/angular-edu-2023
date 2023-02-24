@@ -1,4 +1,3 @@
-import { AuthData } from './../stjepan/auth-data.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { StorageService } from './storage.service';
@@ -30,3 +29,4 @@ export class AutenService {
     })
   }
 }
+

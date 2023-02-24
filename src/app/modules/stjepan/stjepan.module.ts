@@ -5,12 +5,14 @@ import { CommonModule } from '@angular/common';
 
 import { StjepanRoutingModule } from './stjepan-routing.module';
 import { StjepanComponent } from './stjepan.component';
-import { AutenService } from '../services/auten-service.service';
+import { AutenService } from './services/auth.service';
+import { LoginComponent } from './login/login/login.component';
 
 
 @NgModule({
   declarations: [
-    StjepanComponent
+    StjepanComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
