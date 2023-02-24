@@ -1,13 +1,17 @@
-import { KarlaComponent } from './karla.component';
-import { KarlaModule } from './karla.module';
+import { GridComponent } from './components/grid/grid.component';
+import { LoginComponent } from './components/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    component: KarlaComponent,
+    component: LoginComponent,
   },
+  // {
+  //   path: '',
+  //   component: GridComponent,
+  // },
 ];
 
 @NgModule({
