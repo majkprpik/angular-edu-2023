@@ -1,40 +1,37 @@
-import { StorageService } from './../services/storage.service';
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { StorageService } from '../services/storage.service';
 
-@Injectable({
-  providedIn: 'root',
-})
+
+
+@Injectable()
 export class AuthService {
-  authurl = 'https://edu-back.azurewebsites.net/account/login-jwt';
-  constructor(private http: HttpClient, private local: StorageService) {}
-  
-  testUser={
-    username: 'test',
-    password: 'test123'
+  constructor(private http: HttpClient, private storageService:StorageService) {}
+
+  getAccessToken():string {
+    return this.storageService.getFromLocal('accessToken')
   }
 
-  sendTestInfo(user: any) {
-    return this.http.post(this.authurl, user);
-    1
+  getRefreshToken():string {
+    return this.storageService.getFromLocal('refreshToken')
   }
-  loginUser()
-{
-  return this.http.post(this.authurl, this.testUser).subscribe((response) => 
-  {
-  const accesToken = response['accesToken'];
-  const refreshToken = response['refreshToken'];
-  this.local.saveLocal(accesToken, refreshToken);
-  console.log(response);
-  
 
+  CreateUser(userData: any) {
+    this.http.post(
+      'https://edu-back.azurewebsites.net/account/login-basic',
+      userData
+    );
+  }
 
+  CreateTokenUser(userData: any) {
+    this.http
+      .post('https://edu-back.azurewebsites.net/account/login-jwt', userData)
+      .subscribe((response: any) => {
+       const accessToken = response.accessToken
+       const refreshToken = response.refreshToken
+       this.storageService.saveToLocal('accessToken', accessToken);
+       this.storageService.saveToLocal('refreshToken',refreshToken)
+      });
+  }
 
-  
-
-
- });
 }
-
-}
-

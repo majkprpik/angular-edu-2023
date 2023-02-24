@@ -1,6 +1,5 @@
-
-import { Component } from '@angular/core';
 import { AuthService } from './../../service/auth.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -8,16 +7,21 @@ import { AuthService } from './../../service/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  user={username: '', password: '' }
-  ispisosoba() {
-    console.log(this.user);
+  user: {
+    username:string,
+    password:string
   }
-  constructor(private auth: AuthService) {} 
   loginUser() {
-    this.auth
-      .sendTestInfo(this.user)
-      .subscribe((person) => console.log(person));
-
-      
+    this.authService.CreateTokenUser(this.user)
   }
+  constructor(private authService: AuthService) {
+    this.user={
+      username:'',
+      password:''
+    }
+  }
+  email: string = '';
+  password: string = '';
+
+  onSubmit() {}
 }
