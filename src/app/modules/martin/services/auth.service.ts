@@ -1,22 +1,27 @@
+import { StorageService } from './storage.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AuthService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private storageService: StorageService
+  ) {}
 
   url = 'https://edu-back.azurewebsites.net/account/login-basic';
   urlToken = 'https://edu-back.azurewebsites.net/account/login-jwt';
 
-  login(user: any) {
-    return this.http.post(this.url, user).subscribe((res) => {
-      console.log(res);
-    });
+  sendTestInfo(user: any) {
+    return this.http.post(this.url, user);
   }
 
-  loginToken(user: any) {
-    return this.http.post(this.urlToken, user).subscribe((res) => {
-      console.log(res);
+  sendTestTokenInfo(user: any) {
+    return this.http.post(this.urlToken, user).subscribe((response: any) => {
+      const accessToken = response['accessToken'];
+      const refreshToken = response['refreshToken'];
+      this.storageService.saveToLocal('accessToken', accessToken);
+      this.storageService.saveToLocal('refreshToken', refreshToken);
     });
   }
 }
