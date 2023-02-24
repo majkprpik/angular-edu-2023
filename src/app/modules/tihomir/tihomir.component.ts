@@ -1,3 +1,4 @@
+import { LocalStorageService } from './services/local-storage.service';
 import { AuthService } from './services/auth.service';
 import { Component } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class TihomirComponent {
 
-  constructor(private authService : AuthService){
+  constructor(private authService : AuthService, private localStorage : LocalStorageService){
   }
 
   osoba = {

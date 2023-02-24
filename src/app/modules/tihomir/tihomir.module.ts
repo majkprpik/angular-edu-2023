@@ -1,3 +1,4 @@
+import { LocalStorageService } from './services/local-storage.service';
 import { AuthService } from './services/auth.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers :[
-    AuthService
+    AuthService,
+    LocalStorageService
   ]
 })
 export class TihomirModule { }
