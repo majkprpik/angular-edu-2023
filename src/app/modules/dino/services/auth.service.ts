@@ -1,3 +1,4 @@
+import { StorageService } from './storage.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -9,11 +10,17 @@ export class AuthService {
   // }
   url = 'https://edu-back.azurewebsites.net/account/login-basic';
   urlToken = 'https://edu-back.azurewebsites.net/account/login-jwt';
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private storageService:StorageService) {}
   sendTestInfo(user: any) {
     return this.http.post(this.url, user);
   }
   sendTestTokenInfo(user:any){
-    return this.http.post(this.urlToken,user);
+    return this.http.post(this.urlToken,user).subscribe((response:any)=>{
+      const accessToken = response['accessToken'];
+      const refreshToken = response['refreshToken'];
+      this.storageService.saveToLocal('accesToken',accessToken);
+      this.storageService.saveToLocal('refreshToken',refreshToken);
+    }
+    )
   }
 }

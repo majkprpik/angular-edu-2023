@@ -24,7 +24,7 @@ export class LoginComponent {
     this.authService.sendTestInfo(this.User).subscribe(user=>console.log(user));
   }
   loginTokenUser(){
-    this.authService.sendTestTokenInfo(this.User).subscribe(user=>console.log(user));
+    this.authService.sendTestTokenInfo(this.User)
   }
 
   usernameValue="";
