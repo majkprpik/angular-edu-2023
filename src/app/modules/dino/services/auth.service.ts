@@ -18,8 +18,8 @@ export class AuthService {
     return this.http.post(this.urlToken,user).subscribe((response:any)=>{
       const accessToken = response['accessToken'];
       const refreshToken = response['refreshToken'];
-      this.storageService.saveToLocal('accesToken',accessToken);
-      this.storageService.saveToLocal('refreshToken',refreshToken);
+      this.storageService.saveToLocal('accesTokenDino',accessToken);
+      this.storageService.saveToLocal('refreshTokenDino',refreshToken);
     }
     )
   }
