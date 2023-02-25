@@ -7,21 +7,38 @@ import { StjepanRoutingModule } from './stjepan-routing.module';
 import { StjepanComponent } from './stjepan.component';
 import { AutenService } from './services/auth.service';
 import { LoginComponent } from './login/login/login.component';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { UserService } from './services/user.service';
+import { JwtModule } from '@auth0/angular-jwt';
+import { AuthGuard } from './guard/auth.guard';
 
+export function tokenGetter() {
+  return localStorage.getItem('accesToken_stjepan');
+}
 
 @NgModule({
   declarations: [
     StjepanComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,
     StjepanRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ['localhost:5003'],
+        disallowedRoutes: []
+      }
+    })
   ],
   providers: [
-    AutenService
+    AutenService,
+    UserService,
+    AuthGuard
   ]
 })
 export class StjepanModule { }

@@ -22,9 +22,7 @@ export class LoginComponent {
     this.username = "";
     this.password = "";
 
-    this.autenService.CreateUser(podaciOKorisniku);
-    this.autenService.CreateTokenUser(podaciOKorisniku);
-
-    console.log(podaciOKorisniku);
+    this.autenService.AuthoriseUser(podaciOKorisniku);
+    this.autenService.AuthoriseTokenUser(podaciOKorisniku);
   }
 }
