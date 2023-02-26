@@ -1,0 +1,92 @@
+<link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+<div class="background" [ngStyle]="{'display': 'flex', 'flex-direction': 'row-reverse','font-family': 'Inter', 'font-weight': 'bold', 'text-align': 'center'}">
+
+    <div class="top" [ngStyle]="{'background-color': 'yellow', 'width': '1689px', 'height': '100px', 'float': 'none'}">
+
+        <div class="logo" [ngStyle]="{'margin-top': '10px'}">
+            <img src="{{Logo}}" alt="logo">
+        </div>
+
+    </div>
+    
+    
+    <div class="leftSide" [ngStyle]="{'background-color': 'black', 'width': '150px', 'height': '800px', 'float': 'left'}">
+
+        <div class="brands" [ngStyle]="{'background-color': 'yellow', 'width': '150px', 'height': '74px', 'margin-top': '100px'}">
+            <div class="brandsText" [ngStyle]="{'font-size': '28px', 'padding': '19px'}"> 
+                BRANDS
+            </div>
+
+        </div>
+
+        <div class="brandsInBrands" [ngStyle]="{'background-color': '#98970c', 'height': '200px', 'width': '150px', 'font-size': '16px', 'line-height': '11.5px'}">
+            <div class="appleBrand" [ngStyle]="{'padding-top': '35px'}">
+                APPLE
+            </div>
+            <div class="appleBrand" [ngStyle]="{'padding-top': '28.5px'}">
+                SAMSUNG
+            </div>
+            <div class="appleBrand" [ngStyle]="{'padding-top': '28.5px'}">
+                HUAWEI
+            </div>
+            <div class="appleBrand" [ngStyle]="{'padding-top': '28.5px'}">
+                XIAOMI
+            </div>
+        </div>
+
+        <div class="info" [ngStyle]="{'margin-top': '250px', 'margin-left': '25px', 'height': '162px'}">
+            <div class="listView" [ngStyle]="{'margin-bottom': '21px', 'background-color': 'yellow', 'width': '100px', 'height': '20px', 'padding-top': '5px'}" (click)="switchView()">
+                GRID VIEW
+            </div>
+
+            <div class="about" [ngStyle]="{'margin-bottom': '21px', 'background-color': 'yellow', 'width': '100px', 'height': '20px', 'padding-top': '5px'}">
+                ABOUT
+            </div>
+
+            <div class="contact" [ngStyle]="{'margin-bottom': '21px', 'background-color': 'yellow', 'width': '100px', 'height': '20px', 'padding-top': '5px'}">
+                CONTACT
+            </div>
+        </div>
+    </div>
+
+    <div class="middle" [ngStyle]="{'height': '400px', 'width': '1100px', 'margin-top': '300px', 'position': 'absolute', 'margin-right': '100px', 'float': 'left'}">
+
+        <div class="appleLine" [ngStyle]="{'background-color': 'black', 'height': '50px', 'width': '1000px', 'margin-bottom': '50px', 'display': 'flex', 'justify-content': 'space-between'}">
+            <div class="appleLogo">
+                <img src="{{appleLogo}}" alt="logo" height="50px" width="60px" >
+            </div>
+            <div class="appleText" [ngStyle]="{'color': 'white', 'margin-right': '400px', 'margin-top': '15px'}">
+                Apple iPhone 14 pro
+            </div>
+        </div>
+
+        <div class="samsungLine" [ngStyle]="{'background-color': 'black', 'height': '50px', 'width': '1000px', 'margin-bottom': '50px', 'display': 'flex', 'justify-content': 'space-between'}">
+            <div class="samsungLogo">
+                <img src="{{samsungLogo}}" alt="logo" height="50px" width="60px" >
+            </div>
+            <div class="appleText" [ngStyle]="{'color': 'white', 'margin-right': '400px', 'margin-top': '15px'}">
+                Samsung Galaxy S22
+            </div>
+        </div>
+
+        <div class="huaweiLine" [ngStyle]="{'background-color': 'black', 'height': '50px', 'width': '1000px', 'margin-bottom': '50px', 'display': 'flex', 'justify-content': 'space-between'}">
+            <div class="huaweiLogo">
+                <img src="{{huaweiLogo}}" alt="logo" height="50px" width="60px" >
+            </div>
+            <div class="appleText" [ngStyle]="{'color': 'white', 'margin-right': '450px', 'margin-top': '15px'}">
+                Honor 70
+            </div>
+        </div>
+
+        <div class="xiaomiLine" [ngStyle]="{'background-color': 'black', 'height': '50px', 'width': '1000px', 'margin-bottom': '50px', 'display': 'flex', 'justify-content': 'space-between'}">
+            <div class="xiaomiLogo">
+                <img src="{{xiaomiLogo}}" alt="logo" height="50px" width="60px" >
+            </div>
+            <div class="appleText" [ngStyle]="{'color': 'white', 'margin-right': '450px', 'margin-top': '15px'}">
+                Xiaomi 12S
+            </div>
+        </div>
+    </div>
+
+
+</div>
