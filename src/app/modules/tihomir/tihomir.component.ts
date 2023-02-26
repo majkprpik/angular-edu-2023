@@ -12,12 +12,5 @@ export class TihomirComponent {
   constructor(private authService : AuthService, private localStorage : LocalStorageService){
   }
 
-  osoba = {
-    username : "",
-    password : ""
-  };
-
-  login(){
-    this.authService.login(this.osoba);
-  }
+  
 }
