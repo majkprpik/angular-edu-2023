@@ -2,15 +2,25 @@ import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
   CanActivate,
+  Router,
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
+import { StorageService } from '../services/storage.service';
+import { UserService } from '../services/user.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-  constructor(private AuthService: AuthService) {}
+  constructor(
+    private AuthService: AuthService,
+    private router: Router,
+    private storageService: StorageService,
+    private JwtHelper: JwtHelperService,
+    private UserService: UserService
+  ) {}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -19,6 +29,16 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    return this.AuthService.isLoggedIn();
+    let access = this.storageService.getFromLocal('accessToken_ivan');
+    let tokenPayload = this.JwtHelper.decodeToken(access);
+    console.log(tokenPayload);
+    if (!this.JwtHelper.isTokenExpired(access)) {
+      this.UserService.user.username = tokenPayload.userName;
+    }
+    if (this.AuthService.isLoggedIn()) {
+      return true;
+    }
+    this.router.navigate(['ivan']);
+    return false;
   }
 }

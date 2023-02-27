@@ -10,12 +10,14 @@ import { LoginComponent } from './components/login/login.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { UserService } from './services/user.service';
 import { AuthGuard } from './guards/auth.guard';
+import { HeaderComponent } from './components/header/header.component';
+import { ProductComponent } from './components/product/product.component';
 
 export function tokenGetter() {
   return localStorage.getItem('accessToken_ivan');
 }
 @NgModule({
-  declarations: [IvanComponent, DashboardComponent, LoginComponent],
+  declarations: [IvanComponent, DashboardComponent, LoginComponent, HeaderComponent, ProductComponent],
   imports: [
     CommonModule,
     IvanRoutingModule,
