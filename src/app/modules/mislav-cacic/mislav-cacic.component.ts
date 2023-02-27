@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { AuthService } from './services/auth.service';
-import { LocalStorageService } from './services/local-storage.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { AuthService } from '././services/auth.service';
+import { UserService } from '././services/user.service';
 
 @Component({
   selector: 'app-mislav-cacic',
@@ -10,6 +11,17 @@ import { LocalStorageService } from './services/local-storage.service';
 export class MislavCacicComponent {
   constructor(
     private authService: AuthService,
-    private localStorage: LocalStorageService
-  ) {}
+    private jwtService: JwtHelperService,
+    private userService: UserService
+  ) {
+    let access = localStorage.getItem('tokensMislav') ?? '';
+
+    if (!this.jwtService.isTokenExpired(JSON.parse(access).accessToken)) {
+      let tokenPayload = this.jwtService.decodeToken(
+        JSON.parse(access).accessToken
+      );
+
+      this.userService.user.username = tokenPayload['userName'];
+    }
+  }
 }

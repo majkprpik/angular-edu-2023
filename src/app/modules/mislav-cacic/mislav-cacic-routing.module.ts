@@ -14,10 +14,16 @@ const routes: Routes = [
         path: '',
         component: LoginComponent,
       },
+
       {
         path: 'dashboard',
         component: DashboardComponent,
         canActivate: [AuthGuard],
+      },
+
+      {
+        path: '**',
+        component: LoginComponent,
       },
     ],
   },

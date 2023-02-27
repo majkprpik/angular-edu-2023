@@ -11,14 +11,14 @@ import { MislavCacicComponent } from './mislav-cacic.component';
 import { AuthService } from './services/auth.service';
 import { LocalStorageService } from './services/local-storage.service';
 import { UserService } from './services/user.service';
-
+import { HeaderComponent } from './components/header/header.component';
 
 export function tokenGetter() {
   return localStorage.getItem('accessToken');
 }
 
 @NgModule({
-  declarations: [MislavCacicComponent, DashboardComponent, LoginComponent],
+  declarations: [MislavCacicComponent, DashboardComponent, LoginComponent, HeaderComponent],
   imports: [
     CommonModule,
     MislavCacicRoutingModule,

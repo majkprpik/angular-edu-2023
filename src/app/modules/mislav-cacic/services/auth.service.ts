@@ -24,8 +24,10 @@ export class AuthService {
       ) {
         localStorage.setItem('tokensMislav', JSON.stringify(response));
         console.log(response);
+        
         let tokenPayload = this.jwtService.decodeToken(response['accessToken']);
         console.log(tokenPayload);
+        
         this.userService.user.username = tokenPayload['userName'];
         this.router.navigate(['mislav-cacic', 'dashboard']);
       }
