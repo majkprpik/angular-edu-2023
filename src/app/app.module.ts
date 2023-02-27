@@ -10,7 +10,7 @@ import { AuthService } from './modules/ljulj/service/auth.service';
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [AuthService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

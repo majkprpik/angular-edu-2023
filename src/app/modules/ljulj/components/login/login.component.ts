@@ -11,8 +11,10 @@ export class LoginComponent {
     username:string,
     password:string
   }
+  router: any;
   loginUser() {
     this.authService.CreateTokenUser(this.user)
+    
   }
   constructor(private authService: AuthService) {
     this.user={
