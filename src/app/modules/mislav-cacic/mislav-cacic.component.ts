@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth.service';
+import { LocalStorageService } from './services/local-storage.service';
 
 @Component({
   selector: 'app-mislav-cacic',
@@ -6,12 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./mislav-cacic.component.scss'],
 })
 export class MislavCacicComponent {
-  person = {
-    username: '',
-    password: '',
-  };
-
-  login() {
-    console.log(this.person);
-  }
+  constructor(
+    private authService: AuthService,
+    private localStorage: LocalStorageService
+  ) {}
 }
