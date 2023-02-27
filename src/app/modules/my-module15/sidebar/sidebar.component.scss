@@ -1,0 +1,36 @@
+  .sidebar-btn{
+    text-align:center;
+    display: block;
+    width:100%;
+    padding:15px;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    background-color:#EEE0CB;
+    cursor:pointer;
+  }
+
+  .sidebar-btn:hover{
+    background-color:#bbb;
+  }
+  
+
+  #title{
+    font-family:'Times New Roman', Times, serif;
+    text-align:center;
+    font-size:270%;
+  }
+
+
+  .sidebar-logo{
+    background-color:grey;
+    height:175px;
+    width:200px;
+    margin-top:calc(100vh - 600px);
+  }
+
+  .sidebar-logo img{
+    width: 100%;
+    height: 100%;
+  
+  }
