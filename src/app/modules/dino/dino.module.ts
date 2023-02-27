@@ -14,6 +14,8 @@ import { GridhomeComponent } from './components/gridhome/gridhome.component';
 import { ListhomeComponent } from './components/listhome/listhome.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { ProductComponent } from './components/product/product.component';
 
 export function tokenGetter() {
   return localStorage.getItem('accessTokenDino');
@@ -26,6 +28,8 @@ export function tokenGetter() {
     GridhomeComponent,
     ListhomeComponent,
     DashboardComponent,
+    NavigationComponent,
+    ProductComponent,
   ],
   imports: [
     CommonModule,

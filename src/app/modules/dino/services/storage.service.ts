@@ -11,4 +11,7 @@ export class StorageService {
     localStorage.setItem(key,JSON.stringify(value));
     console.log(value);
   }
+  CheckForKey(key:string){
+    return localStorage.getItem(key)
+  }
 }

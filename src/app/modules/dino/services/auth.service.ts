@@ -28,7 +28,7 @@ export class AuthService {
       ) {
         const accessToken = response['accessToken'];
         const refreshToken = response['refreshToken'];
-        this.storageService.saveToLocal('accesTokenDino', accessToken);
+        this.storageService.saveToLocal('accessTokenDino', accessToken);
         this.storageService.saveToLocal('refreshTokenDino', refreshToken);
         let tokenPayLoad = this.jwtHelper.decodeToken(accessToken);
         this.userService.user.username = tokenPayLoad.userName;
