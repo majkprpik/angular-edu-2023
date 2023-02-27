@@ -10,4 +10,8 @@ export class StorageService {
     localStorage.setItem(key, JSON.stringify(value));
     console.log(value);
   }
+
+  readFromLocal(key: string) {
+    return localStorage.getItem(key);
+  }
 }

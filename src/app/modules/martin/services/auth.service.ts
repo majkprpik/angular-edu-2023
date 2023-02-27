@@ -34,7 +34,7 @@ export class AuthService {
         this.storageService.saveToLocal('accessToken_Martin', accessToken);
         this.storageService.saveToLocal('refreshToken_Martin', refreshToken);
         let tokenPayLoad = this.jwtHelper.decodeToken(accessToken);
-        this.userService.user.username = tokenPayLoad.username;
+        this.userService.user.username = tokenPayLoad.userName;
         this.router.navigate(['martin', 'dashboard']);
       }
     });

@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
+import { GridComponent } from './components/grid/grid.component';
+import { ListComponent } from './components/list/list.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 const routes: Routes = [
   {
@@ -18,6 +21,24 @@ const routes: Routes = [
         path: 'dashboard',
         component: DashboardComponent,
         canActivate: [AuthGuard],
+        children: [
+          {
+            path: '',
+            component: DashboardComponent,
+          },
+          {
+            path: 'grid',
+            component: GridComponent,
+          },
+          {
+            path: 'list',
+            component: ListComponent,
+          },
+        ],
+      },
+      {
+        path: '**',
+        component: LoginComponent,
       },
     ],
   },

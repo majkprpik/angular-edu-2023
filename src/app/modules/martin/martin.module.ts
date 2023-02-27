@@ -11,13 +11,25 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { UserService } from './services/user.service';
 import { AuthGuard } from './guards/auth.guard';
+import { GridComponent } from './components/grid/grid.component';
+import { ListComponent } from './components/list/list.component';
+import { ProductComponent } from './components/product/product.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 export function tokenGetter() {
   return localStorage.getItem('accessToken_Martin');
 }
 
 @NgModule({
-  declarations: [MartinComponent, LoginComponent, DashboardComponent],
+  declarations: [
+    MartinComponent,
+    LoginComponent,
+    DashboardComponent,
+    GridComponent,
+    ListComponent,
+    ProductComponent,
+    SidebarComponent,
+  ],
   imports: [
     CommonModule,
     MartinRoutingModule,
