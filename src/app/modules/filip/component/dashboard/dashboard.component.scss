@@ -1,0 +1,120 @@
+/* Set box-sizing to border-box for all elements */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Style the hero section */
+  .hero {
+    background-color: #063e8b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    padding: 2rem;
+    color: #fff;
+  }
+  
+  .hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .featured-products button {
+    background-color: #8CC7A1;
+    color: #000000;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+  }
+  
+  /* Style the featured products section */
+  .featured-products {
+    background-color: #97EAD2;
+    padding: 2rem;
+  }
+  
+  .featured-products h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  /* Style the about us section */
+  .about-us {
+    background-color: #8CC7A1;
+    padding: 2rem;
+  }
+  
+  .about-us h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .about-us p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+  
+  /* Style the subscribe section */
+  .subscribe {
+    background-color: #007bff;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .subscribe h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .subscribe form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .subscribe input[type="email"] {
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+    width: 20rem;
+  }
+  
+  .subscribe button {
+    background-color: #fff;
+    color: #007bff;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+  }
+
+  .featured-products h2{
+    background-color: #8CC7A1;
+    margin: 20px;
+  }
+  

@@ -1,3 +1,4 @@
+import { AuthService } from './../../service/auth.service';
 import { Component } from '@angular/core';
 import { LoginServiceService } from '../../service/login-service.service';
 
@@ -15,15 +16,13 @@ objekat:any = {
 }
 
 
-constructor(private loginServiceService: LoginServiceService ){
+constructor(private loginServiceService: LoginServiceService, private auth: AuthService ){
 
 }
 
 onSubmit(){
-  this.loginServiceService.loginJwt(this.objekat).subscribe(response => {
-    console.log('user created:', response);
-    console.log(this.objekat);
-  });
+  this.auth.loginToken(this.objekat)
+  
 }
 
 // JWT token
