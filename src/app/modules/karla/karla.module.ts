@@ -13,6 +13,8 @@ import { GridComponent } from './components/grid/grid.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { StorageService } from './services/storage.service';
+import { ProductComponent } from './components/product/product.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 export function tokenGetter(){
   return localStorage.getItem('accessToken');
@@ -24,6 +26,8 @@ export function tokenGetter(){
     LoginComponent,
     GridComponent,
     DashboardComponent,
+    ProductComponent,
+    NavigationComponent,
   ],
   providers: [AuthService, UserService, StorageService, AuthGuard],
   imports: [

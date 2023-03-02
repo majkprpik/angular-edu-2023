@@ -39,17 +39,18 @@ export class AuthService {
       if(response.accessToken != null && response.refreshToken != null
         && !this.jwtHelperService.isTokenExpired(response.accessToken)){
       console.log(response);
+      
       const accessToken = response.accessToken;
       const refreshToken = response.refreshToken;
       this.storageService.saveToLocal('accessToken_karla', accessToken);
       this.storageService.saveToLocal('refreshToken_karla', refreshToken);
+      
       let tokenPayload = this.jwtHelperService.decodeToken(accessToken)
       console.log(tokenPayload);
       this.userService.user.username = tokenPayload.username;
       console.log(this.userService.user.username = tokenPayload.username);
-      
+  
       this.router.navigate(['karla', 'dashboard']);
-
       }     
     });
   }
