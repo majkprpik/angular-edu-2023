@@ -1,0 +1,17 @@
+.column {
+  width: 50%;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  margin-left: 100px;
+}
+
+.div {
+  position: absolute;
+}

@@ -15,6 +15,7 @@ body {
   transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
+  color: #000000;
 }
 .background .shape {
   height: 200px;
@@ -25,12 +26,12 @@ body {
 form {
   height: 520px;
   width: 400px;
-  background-color: rgba(255, 255, 255, 0.13);
+  background-color: #d5f0ff;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  border-radius: 10px;
+  border-radius: 20px;
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
@@ -60,7 +61,7 @@ input {
   display: block;
   height: 50px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.07);
+  background-color: #ffffff;
   border-radius: 3px;
   padding: 0 10px;
   margin-top: 8px;
@@ -104,17 +105,24 @@ button {
   margin-right: 4px;
 }
 #username {
-  background-color: rgb(244, 224, 199);
+  background-color: #ffffff;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: #000000;
 }
 #password {
-  background-color: rgb(244, 224, 199);
+  background-color: #ffffff;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: #000000;
 }
 ::placeholder {
   color: black;
 }
 button {
-  background-color: rgb(244, 224, 199);
+  background-color: #005686;
+  color: #ffffff !important;
 }
 button:hover {
-  background-color: rgb(247, 198, 135);
+  background-color: #003b5c;
 }
