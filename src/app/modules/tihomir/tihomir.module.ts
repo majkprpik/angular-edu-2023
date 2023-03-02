@@ -13,6 +13,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { JwtModule } from '@auth0/angular-jwt';
+import { GridViewComponent } from './components/grid-view/grid-view.component';
+import { ListViewComponent } from './components/list-view/list-view.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 export function tokenGetter(){
@@ -23,7 +27,11 @@ export function tokenGetter(){
   declarations: [
     TihomirComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    GridViewComponent,
+    ListViewComponent,
+    SidebarComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,

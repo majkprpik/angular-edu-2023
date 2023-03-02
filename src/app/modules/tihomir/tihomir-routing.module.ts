@@ -1,3 +1,5 @@
+import { ListViewComponent } from './components/list-view/list-view.component';
+import { GridViewComponent } from './components/grid-view/grid-view.component';
 import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -11,15 +13,29 @@ const routes: Routes = [
     component: TihomirComponent,
     children: [
       {
-        path: '',
-        component: LoginComponent,
-      },
-      {
         path: 'dashboard',
         component: DashboardComponent,
-        canActivate : [AuthGuard]
+        canActivate : [AuthGuard],
+        children:[
+          {
+            path: 'grid-view',
+            component : GridViewComponent
+          },
+          {
+            path: 'list-view',
+            component: ListViewComponent
+          }
+        ]
       },
     ],
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: '**',
+    component : LoginComponent
   },
 ];
 

@@ -1,1 +1,6 @@
-<p>dashboard works!</p>
+<div class="background" [ngStyle]="{'display': 'flex', 'flex-direction': 'row-reverse','font-family': 'Inter', 'font-weight': 'bold', 'text-align': 'center'}">
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+    <app-sidebar></app-sidebar>
+</div>
+
