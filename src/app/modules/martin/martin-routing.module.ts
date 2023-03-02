@@ -24,7 +24,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            component: DashboardComponent,
+            component: ListComponent,
           },
           {
             path: 'grid',
