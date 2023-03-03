@@ -17,8 +17,13 @@ export class AuthService {
     if(!this.jwtService.isTokenExpired(JSON.parse(access).accessToken)){
       let tokenPayload = this.jwtService.decodeToken(JSON.parse(access).accessToken);
       this.userService.user.username = tokenPayload["userName"];
+      this.userService.$user.next({username: tokenPayload["userName"]});
+
+      // this.userService.$user.subscribe((user : any)=>{
+      //   this.userService.user.username = user;
+      // })
     }
-   }
+  }
 
   login(user : any)
   {
@@ -26,15 +31,15 @@ export class AuthService {
     {
       if(response["accessToken"] != null && response["refreshToken"] != null && !this.jwtService.isTokenExpired(response["accessToken"])){
         localStorage.setItem("tokensTihomir", JSON.stringify(response));
-        console.log(response);
         let tokenPayload = this.jwtService.decodeToken(response["accessToken"]);
-        console.log(tokenPayload);
-        this.userService.user.username = tokenPayload["userName"];
+        //this.userService.user.username = tokenPayload["userName"];
+        this.userService.$user.next({username: tokenPayload["userName"]});
         this.router.navigate(['tihomir', 'dashboard']);
     }});
   }
 
   isLoggeIn(){
-    return this.userService.user.username != "";
+    // return this.userService.user.username != "";
+    return this.userService.$user.value.username != '';
   }
 }

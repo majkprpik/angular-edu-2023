@@ -17,6 +17,7 @@ import { GridViewComponent } from './components/grid-view/grid-view.component';
 import { ListViewComponent } from './components/list-view/list-view.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ProductComponent } from './components/product/product.component';
 
 
 export function tokenGetter(){
@@ -31,7 +32,8 @@ export function tokenGetter(){
     GridViewComponent,
     ListViewComponent,
     SidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProductComponent
   ],
   imports: [
     CommonModule,

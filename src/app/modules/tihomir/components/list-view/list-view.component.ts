@@ -23,6 +23,6 @@ export class ListViewComponent {
 
   iphoneJPG = "assets/tihomir/iphone14pro.jpg";
   samsungJPG = "assets/tihomir/GalaxyS22.jpg";
-  xiaomiJPG = "assets/tihomir/Xiaomi12S.jpg"
+  xiaomiJPG = "assets/tihomir/Xiaomi12S.jpg";
   huaweiJPG = "assets/tihomir/Honor70.jpg";
 }

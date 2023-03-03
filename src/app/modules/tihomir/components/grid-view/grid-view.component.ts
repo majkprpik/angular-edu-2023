@@ -1,3 +1,5 @@
+import { Product } from './../../models/product';
+import { ProductServiceService } from './../../services/product-service.service';
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { TihomirComponent } from '../../tihomir.component';
@@ -8,17 +10,14 @@ import { TihomirComponent } from '../../tihomir.component';
   styleUrls: ['./grid-view.component.scss']
 })
 export class GridViewComponent {
-  
-  //fontInter = "https://fonts.googleapis.com/css?family=Inter";
+
   Logo = "assets/tihomir/Logo.png";
+  products : Product[] = [];
 
-  constructor(private tihomirComponent : TihomirComponent, private router : Router){
+  constructor(private productService : ProductServiceService){
 
+    this.productService.$phones.subscribe((phones) => {
+      this.products = phones;
+    });
   }
-
-
-  iphoneJPG = "assets/tihomir/iphone14pro.jpg";
-  samsungJPG = "assets/tihomir/GalaxyS22.jpg";
-  xiaomiJPG = "assets/tihomir/Xiaomi12S.jpg"
-  huaweiJPG = "assets/tihomir/Honor70.jpg";
 }
