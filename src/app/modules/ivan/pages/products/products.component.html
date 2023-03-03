@@ -1,0 +1,30 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div class='main-wrapper'>
+    <div class="btn-wrap">
+        <div class="btn">
+            <button type="button" (click)="onDisplayModeChange(1)"
+                [ngClass]="{'btn-primary active' : displayMode === 1}">list</button>
+            <button type="button" (click)="onDisplayModeChange(2)"
+                [ngClass]="{'btn-primary active' : displayMode === 2}">grid</button>
+        </div>
+    </div>
+    <div class="item-list" *ngIf="displayMode === 1">
+        <div class="item"  *ngFor="let flower of flowers">
+                <a routerLink="/ivan/product/{{flower.id}}">
+                    <img src="{{flower.imageUrl}}" alt="" class="item-img">
+                    <div class="item-detail">
+                        <p class="item-name">
+                            {{flower.name}}
+                        </p>
+                        <div class="item-price">
+                            <span>{{flower.price|currency}}</span>
+                        </div>
+                    </div>
+                </a>
+                <button>Add to cart</button>
+    </div>
+    </div>
+    <div class="row" *ngIf="displayMode === 2">
+        <app-gridview></app-gridview>
+    </div>

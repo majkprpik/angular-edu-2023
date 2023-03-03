@@ -4,6 +4,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { IvanComponent } from './ivan.component';
+import { CartPageComponent } from './pages/cart-page/cart-page.component';
+import { GridviewComponent } from './pages/gridview/gridview.component';
+import { ProductComponent } from './pages/product/product.component';
+import { ProductsComponent } from './pages/products/products.component';
 
 const routes: Routes = [
   {
@@ -19,8 +23,23 @@ const routes: Routes = [
         path: 'dashboard',
         component: DashboardComponent,
         canActivate: [AuthGuard],
-
-        children: [],
+      },
+      {
+        path: 'products',
+        component: ProductsComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path:'product/:id',
+        component:ProductComponent
+      },
+      {
+        path:'tag/:tag',
+        component:ProductsComponent
+      },
+      {
+        path:'cartPage',
+        component:CartPageComponent
       },
       {
         path: '**',
