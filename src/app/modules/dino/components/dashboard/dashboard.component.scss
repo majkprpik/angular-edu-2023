@@ -2,9 +2,16 @@
     box-sizing: border-box;
 }
 .content{
-    width: 100%;
-    //display: flex;
+    //width: 100%;
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
 }
 .products{
     float:left;
+}
+.viewSelector{
+    img{
+        width: 100px;
+    }
 }
