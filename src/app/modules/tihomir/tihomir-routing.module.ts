@@ -24,6 +24,10 @@ const routes: Routes = [
           {
             path: 'list-view',
             component: ListViewComponent
+          },
+          {
+            path: '',
+            component: ListViewComponent
           }
         ]
       },

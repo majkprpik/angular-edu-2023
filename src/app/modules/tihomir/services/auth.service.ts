@@ -13,13 +13,10 @@ export class AuthService {
 
   constructor(private http : HttpClient, private userService : UserService, private jwtService : JwtHelperService, private router : Router) {
     let access = localStorage.getItem("tokensTihomir")??"";
-    //console.log(access);
 
     if(!this.jwtService.isTokenExpired(JSON.parse(access).accessToken)){
       let tokenPayload = this.jwtService.decodeToken(JSON.parse(access).accessToken);
-      console.log("Hehe: " + JSON.parse(access).accessToken);
       this.userService.user.username = tokenPayload["userName"];
-      console.log("Username: " + tokenPayload["userName"]);
     }
    }
 
