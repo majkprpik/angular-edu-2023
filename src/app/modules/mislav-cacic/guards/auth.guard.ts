@@ -28,21 +28,12 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    let access = localStorage.getItem('tokensMislav') ?? '';
-    //console.log(access);
-
-    if (!this.jwtService.isTokenExpired(JSON.parse(access).accessToken)) {
-      let tokenPayload = this.jwtService.decodeToken(
-        JSON.parse(access).accessToken
-      );
-      console.log('Hehe: ' + JSON.parse(access).accessToken);
-      this.userService.user.username = tokenPayload['userName'];
-      console.log('Username: ' + tokenPayload['userName']);
-    }
+      
     if (this.authService.isLoggeIn()) {
       return true;
+    } else {
+      this.router.navigate(['mislav-cacic/login']);
+      return false;
     }
-
-    return this.router.navigate(['mislav-cacic/login']);
   }
 }

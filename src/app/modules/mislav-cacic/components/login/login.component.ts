@@ -1,24 +1,20 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { AuthService } from '../../services/auth.service';
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-
-  constructor(private authService : AuthService){
-    
-  }
+  constructor(private authService: AuthService) {}
 
   person = {
-    username : "",
-    password : ""
+    username: '',
+    password: '',
   };
 
-  login(){
+  login() {
     this.authService.login(this.person);
   }
 }

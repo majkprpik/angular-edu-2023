@@ -10,10 +10,10 @@ const routes: Routes = [
     path: '',
     component: MislavCacicComponent,
     children: [
-      {
-        path: '',
-        component: LoginComponent,
-      },
+      // {
+      //   path: '',
+      //   component: LoginComponent,
+      // },
 
       {
         path: 'dashboard',

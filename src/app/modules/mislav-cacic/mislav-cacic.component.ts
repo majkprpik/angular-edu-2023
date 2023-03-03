@@ -16,7 +16,11 @@ export class MislavCacicComponent {
   ) {
     let access = localStorage.getItem('tokensMislav') ?? '';
 
-    if (!this.jwtService.isTokenExpired(JSON.parse(access).accessToken)) {
+    if (
+      access != null &&
+      access != '' &&
+      !this.jwtService.isTokenExpired(JSON.parse(access).accessToken)
+    ) {
       let tokenPayload = this.jwtService.decodeToken(
         JSON.parse(access).accessToken
       );
