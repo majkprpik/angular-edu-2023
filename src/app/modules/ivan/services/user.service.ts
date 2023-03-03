@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { User } from '../models/User';
 
 @Injectable()
 export class UserService {
-  user = {
-    username: '',
-  };
+  constructor() {
+    this.user = { username: '' };
+  }
 
-  constructor() {}
+  user: User = { username: '' };
+
+  $user: BehaviorSubject<User> = new BehaviorSubject<User>(this.user);
 }

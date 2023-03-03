@@ -13,7 +13,15 @@ export class AuthService {
     private storageService: StorageService,
     private jwtHelper: JwtHelperService,
     private userService: UserService
-  ) {}
+  ) {
+    let access = this.storageService.getFromLocal('accessToken_ivan');
+    let tokenPayload = this.jwtHelper.decodeToken(access);
+    console.log(tokenPayload);
+    if (!this.jwtHelper.isTokenExpired(access)) {
+      this.userService.$user.next({ username: tokenPayload['userName'] });
+      this.userService.user.username = tokenPayload.userName;
+    }
+  }
 
   getAccessToken(): string {
     return this.storageService.getFromLocal('accessToken');
@@ -45,12 +53,13 @@ export class AuthService {
           this.storageService.saveToLocal('refreshToken_ivan', refreshToken);
           let tokenPayload = this.jwtHelper.decodeToken(accessToken);
           this.userService.user.username = tokenPayload.username;
+          this.userService.$user.next({ username: tokenPayload.userName });
           this.router.navigate(['ivan', 'dashboard']);
         }
       });
   }
 
   isLoggedIn() {
-    return this.userService.user.username != '';
+    return this.userService.$user.value.username != '';
   }
 }

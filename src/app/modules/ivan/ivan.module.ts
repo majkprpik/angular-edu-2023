@@ -18,12 +18,23 @@ import { ProductComponent } from './pages/product/product.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { StorageService } from './services/storage.service';
 import { FlowerService } from './services/flower.service';
+import { CartService } from './services/cart.service';
 
 export function tokenGetter() {
   return localStorage.getItem('accessToken_ivan');
 }
 @NgModule({
-  declarations: [IvanComponent, DashboardComponent, LoginComponent, HeaderComponent, ProductsComponent, GridviewComponent, SidebarComponent, ProductComponent, CartPageComponent],
+  declarations: [
+    IvanComponent,
+    DashboardComponent,
+    LoginComponent,
+    HeaderComponent,
+    ProductsComponent,
+    GridviewComponent,
+    SidebarComponent,
+    ProductComponent,
+    CartPageComponent,
+  ],
   imports: [
     CommonModule,
     IvanRoutingModule,
@@ -37,6 +48,13 @@ export function tokenGetter() {
       },
     }),
   ],
-  providers: [AuthService, UserService, AuthGuard, StorageService, FlowerService],
+  providers: [
+    AuthService,
+    UserService,
+    AuthGuard,
+    StorageService,
+    FlowerService,
+    CartService,
+  ],
 })
 export class IvanModule {}
