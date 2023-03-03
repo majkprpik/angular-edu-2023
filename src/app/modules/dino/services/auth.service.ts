@@ -51,4 +51,5 @@ export class AuthService {
   isLoggedIn() {
     return this.userService.$user.value.username != '';
   }
+  
 }
