@@ -1,19 +1,17 @@
 <div class="productBox">
   <div class="imgContainer">
-    <img src="assets/dino/gt2pro.png" alt="" />
+    <!-- <img src="assets/dino/gt2pro.png" alt="" /> -->
+    <img [src]="product.imageUrl" alt="" />
   </div>
   <div class="info">
     <div class="productDescription">
       <p>
-        Huawei made this watch special and long lasting.Beautiful and durable
-        titanium casing with real sapphire glass gives it a lot of attention.
-        Huawei made this watch special and long lasting.Beautiful and durable
-        titanium casing with real sapphire glass gives it a lot of attention.
+       {{product.description}}
       </p>
     </div>
     <div class="productPrice">
-      <p>GT2 Pro</p>
-      <p style="float: right">300 €</p>
+      <p>{{product.name}}</p>
+      <p style="float: right">{{product.price}} €</p>
     </div>
   </div>
 </div>

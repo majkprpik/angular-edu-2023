@@ -16,6 +16,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { ProductComponent } from './components/product/product.component';
+import { ProductService } from './services/product.service';
+import { CartService } from './services/cart.service';
 
 export function tokenGetter() {
   return localStorage.getItem('accessTokenDino');
@@ -45,6 +47,6 @@ export function tokenGetter() {
       },
     }),
   ],
-  providers: [AuthService, UserService,AuthGuard],
+  providers: [AuthService, UserService,AuthGuard,ProductService,CartService],
 })
 export class DinoModule {}
