@@ -20,6 +20,9 @@ p{
         margin-right: 16px;
     }
 }
+.productBox:first-child{
+    margin-top: 0px;
+}
 .info{
     flex: 70%;
     display: flex;
@@ -28,18 +31,18 @@ p{
 }
 .productDescription{
     //font-size: 4em;
-    font-size: 48px;
+    font-size: 16px;
     font-weight:400;
 }
 
 .productPrice{
     color: white;
     //font-size: 50px;
-    font-size: 30px;
+    font-size: 20px;
     width: 100%;
     height: auto;
     background-color: #0DAB76;
-    padding: 24px;
+    padding: 4px;
     p{
         margin: 0;
     }

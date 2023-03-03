@@ -15,7 +15,14 @@ export class AuthService {
     private userService: UserService,
     private jwtHelper: JwtHelperService,
     private router: Router
-  ) {}
+  ) {
+    let accessToken = JSON.parse(localStorage.getItem('accessTokenDino'));
+    if (!this.jwtHelper.isTokenExpired(accessToken)) {
+      let tokenPayLoad = this.jwtHelper.decodeToken(accessToken);
+      this.userService.$user.next({ username: tokenPayLoad.userName });
+      this.userService.user.username = tokenPayLoad.userName;
+    }
+  }
   sendTestInfo(user: any) {
     return this.http.post(this.url, user);
   }
@@ -31,6 +38,7 @@ export class AuthService {
         this.storageService.saveToLocal('accessTokenDino', accessToken);
         this.storageService.saveToLocal('refreshTokenDino', refreshToken);
         let tokenPayLoad = this.jwtHelper.decodeToken(accessToken);
+        this.userService.$user.next({ username: tokenPayLoad.userName });
         this.userService.user.username = tokenPayLoad.userName;
         console.log(tokenPayLoad);
         console.log(this.userService.user.username);
@@ -41,6 +49,6 @@ export class AuthService {
   }
 
   isLoggedIn() {
-    return this.userService.user.username != '';
+    return this.userService.$user.value.username != '';
   }
 }

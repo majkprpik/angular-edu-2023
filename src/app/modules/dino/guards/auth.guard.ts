@@ -24,13 +24,14 @@ export class AuthGuard implements CanActivate {
     | boolean
     | UrlTree {
       
-    let accessToken = JSON.parse(localStorage.getItem('accessTokenDino'));
-    if (!this.jwtHelper.isTokenExpired(accessToken)) {
-      let tokenPayLoad = this.jwtHelper.decodeToken(accessToken);
-      this.userService.user.username = tokenPayLoad.userName;
-    }else{
-      console.log('User is logged in!');
-    }
+    // let accessToken = JSON.parse(localStorage.getItem('accessTokenDino'));
+    // if (!this.jwtHelper.isTokenExpired(accessToken)) {
+    //   let tokenPayLoad = this.jwtHelper.decodeToken(accessToken);
+    //   this.userService.user.username = tokenPayLoad.userName;
+    // }else{
+      //console.log('User is logged in!');
+    //}
+    
       if(this.authService.isLoggedIn()){
         return true;
       }
