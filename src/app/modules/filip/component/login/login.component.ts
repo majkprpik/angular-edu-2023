@@ -1,3 +1,5 @@
+import { User } from './../../models/user';
+import { UserService } from './../../service/user.service';
 import { AuthService } from './../../service/auth.service';
 import { Component } from '@angular/core';
 import { LoginServiceService } from '../../service/login-service.service';
@@ -20,10 +22,13 @@ constructor(private loginServiceService: LoginServiceService, private auth: Auth
 
 }
 
+
+
 onSubmit(){
   this.auth.loginToken(this.objekat)
   
 }
+
 
 // JWT token
 

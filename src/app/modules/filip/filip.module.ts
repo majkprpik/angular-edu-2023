@@ -1,3 +1,4 @@
+import { ProductService } from './service/product.service';
 import { AuthGuard } from './guards/auth.guard';
 import { UserService } from './service/user.service';
 import { AuthService } from './service/auth.service';
@@ -11,6 +12,13 @@ import { LoginServiceService } from './service/login-service.service';
 import { LoginComponent } from './component/login/login.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { JwtModule } from '@auth0/angular-jwt';
+import {ButtonModule} from 'primeng/button';
+import { ToolbarComponent } from './component/toolbar/toolbar.component';
+import {ToolbarModule} from 'primeng/toolbar';
+import {SplitButtonModule} from 'primeng/splitbutton';
+import {AccordionModule} from 'primeng/accordion';
+import { KartComponent } from './component/kart/kart.component';
+import { ProductComponent } from './component/product/product.component';
 
 export function tokenGetter() {
   return localStorage.getItem('acessToken')
@@ -20,15 +28,22 @@ export function tokenGetter() {
   declarations: [
     FilipComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    ToolbarComponent,
+    KartComponent,
+    ProductComponent
   ],
-  providers: [LoginServiceService, AuthService, UserService, AuthGuard],
+  providers: [LoginServiceService, AuthService, UserService, AuthGuard, ProductService],
 
   imports: [
     CommonModule,
     FilipRoutingModule,
     FormsModule,
     HttpClientModule,
+    ButtonModule,
+    ToolbarModule,
+    SplitButtonModule,
+    AccordionModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,

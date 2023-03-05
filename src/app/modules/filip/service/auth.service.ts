@@ -10,7 +10,17 @@ import { Router } from '@angular/router';
 )
 export class AuthService {
 
-  constructor(private http:HttpClient, private loginService:LoginServiceService, private userService:UserService, private jwtHelper: JwtHelperService, private auth: AuthService, private roter: Router) { }
+  constructor(private http:HttpClient, private loginService:LoginServiceService, private userService:UserService, private jwtHelper: JwtHelperService,  private roter: Router) {
+    
+  let access= this.getAccessToken()
+  if(access!= null && !this.jwtHelper.isTokenExpired(access)){
+    let payload = this.jwtHelper.decodeToken(access);
+    this.userService.$user.next({username:payload.userName})
+
+    
+  }
+
+   }
 
   urlToken = 'https://edu-back.azurewebsites.net/account/login-jwt';
 
@@ -34,6 +44,7 @@ export class AuthService {
       this.loginService.saveToLocal('refreshToken_Filip', refreshToken);
       let tokenPayload= this.jwtHelper.decodeToken(accessToken);
       this.userService.user.username= tokenPayload.username
+      this.userService.$user.next({username: tokenPayload.userName})
       this.roter.navigate(['filip', 'dashboard']);
 
 
@@ -42,6 +53,7 @@ export class AuthService {
   }
 
   isLoggedin(){
-  return this.userService.user.username != '';
+  // return this.userService.user.username != '';
+  return this.userService.$user.value.username!='';
   }
 }
