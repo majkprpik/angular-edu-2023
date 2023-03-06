@@ -1,41 +1,29 @@
+import { BehaviorSubject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { FlowerService } from './../../services/flower.service';
 import { Component } from '@angular/core';
 import { Flower } from '../../shared/Flower';
-import { ActivatedRoute } from '@angular/router';
-import { CartService } from '../../services/cart.service';
+import { Tag } from '../../shared/Tag';
+import { Product } from '../../shared/Product';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+  styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent {
-
   displayMode = 1;
-  flowers:Flower[] = [];
-  
+  products: Product[] = [];
+  flowers: Flower[] = [];
+  tags: Tag[];
 
-  constructor(private flowerService:FlowerService, private route:ActivatedRoute, private cartService:CartService){
+  constructor(private flowerService: FlowerService) {
     this.flowerService.$flowers.subscribe((flowers) => {
-      this.flowers = flowers
-    })
-    this.route.params.subscribe(params => {
-      if(params["tag"])
-      this.flowers = this.flowerService.getAllFlowersTag(params["tag"])
+      this.flowers = flowers;
     });
   }
 
-  onDisplayModeChange(mode:number): void {
-    this.displayMode = mode
+  onDisplayModeChange(mode: number): void {
+    this.displayMode = mode;
   }
-
-
-  
-
-
-
-
-
- 
-
 }

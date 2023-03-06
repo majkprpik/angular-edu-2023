@@ -19,6 +19,8 @@ import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { StorageService } from './services/storage.service';
 import { FlowerService } from './services/flower.service';
 import { CartService } from './services/cart.service';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 export function tokenGetter() {
   return localStorage.getItem('accessToken_ivan');
@@ -40,6 +42,8 @@ export function tokenGetter() {
     IvanRoutingModule,
     FormsModule,
     HttpClientModule,
+    MatSlideToggleModule,
+    MatSidenavModule,
     JwtModule.forRoot({
       config: {
         tokenGetter,

@@ -1,14 +1,14 @@
 <div class="container">
-    <a routerLink="/ivan/product/{{flower.id}}">
-    <img [src]="flower.imageUrl" [alt]="flower.name" class="item-image">
+    <a routerLink="/ivan/product/{{product.id}}">
+    <img [src]="product.image" [alt]="flower.name" class="item-image">
 <div class="item-detail">
     <div class="header">
         <span class="item-name">
-            {{flower.name}}
+            {{product.title}}
         </span>
     </div>
     <div class="item-price">
-        {{flower.price|currency}}
+        {{product.price|currency}}
     </div>
 </div>
 </a>

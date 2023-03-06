@@ -5,12 +5,10 @@ import { Tag } from '../../shared/Tag';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
+  styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent {
- tags: Tag[];
+  tags: Tag[];
 
- constructor(private FlowerService:FlowerService){
-  this.tags = this.FlowerService.getTags()
- }
+  constructor(private FlowerService: FlowerService) {}
 }
