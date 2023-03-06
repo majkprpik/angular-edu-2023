@@ -35,6 +35,15 @@ img{
     color: darkgray;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 70px;
+   
+}
+
 .item-list{
     margin: 36px 0;
     display: grid;

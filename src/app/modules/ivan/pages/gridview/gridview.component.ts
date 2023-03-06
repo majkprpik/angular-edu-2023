@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FlowerService } from '../../services/flower.service';
 import { Flower } from '../../shared/Flower';
@@ -9,12 +9,15 @@ import { Flower } from '../../shared/Flower';
   styleUrls: ['./gridview.component.scss'],
 })
 export class GridviewComponent {
+  @Input() flower: Flower
   flowers: any[] = [];
 
   constructor(
     private flowerService: FlowerService,
     private route: ActivatedRoute
   ) {
-    this.flowers = this.flowerService.getAllFlowers();
+    this.flowerService.$flowers.subscribe((flowers) => {
+      this.flowers = flowers
+    })
   }
 }

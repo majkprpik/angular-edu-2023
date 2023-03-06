@@ -1,5 +1,5 @@
 import { FlowerService } from './../../services/flower.service';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Flower } from '../../shared/Flower';
 
@@ -10,10 +10,15 @@ import { Flower } from '../../shared/Flower';
 })
 export class ProductComponent {
 
-  flower!:Flower;
+  @Input() flower: Flower
+  flowers:Flower[] = [];
+  
+  constructor(private route:ActivatedRoute, private FlowerService:FlowerService){
+    this.FlowerService.$flowers.subscribe((flowers) => {
+      this.flowers = flowers
+    })
 
-  constructor(private activatedRoute:ActivatedRoute, private FlowerService:FlowerService){
-    activatedRoute.params.subscribe((params) => {
+    this.route.params.subscribe((params) => {
       if(params["id"])
       this.flower = FlowerService.getFlowersId(params["id"])
     })

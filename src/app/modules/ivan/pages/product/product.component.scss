@@ -1,0 +1,32 @@
+a:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.item{
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 4px 0 rgba(15,4,4, 0.05);
+}
+
+.item-img{
+    position: relative;
+    overflow: hidden;
+}
+.item-img img{
+    width: 70%;
+    margin: 16px auto;
+}
+
+.item-detail{
+    padding: 16px;
+    color: black;
+    text-align: center;
+}
+
+.item-name{
+    font-weight: 500;
+    font-size: 18px;
+    display: block;
+}
+

@@ -8,8 +8,8 @@ export class FlowerService {
   constructor() {}
 
   getFlowersId(id: number): Flower {
-    return this.getAllFlowers().find((flower) => flower.id == id);
-  }
+    return this.getAllFlowers().find((flower) => flower.id == id)
+}
 
   getTags(): Tag[] {
     return [
@@ -26,8 +26,13 @@ export class FlowerService {
       : this.getAllFlowers().filter((flower) => flower.tags?.includes(tag));
   }
 
-  getAllFlowers(): Flower[] {
-    return [
+
+  getAllFlowers():Flower[] {
+   return this.flowers
+  }
+ 
+
+    flowers:Flower[] = [
       {
         id: 1,
         name: 'Common Mallow',
@@ -92,5 +97,6 @@ export class FlowerService {
         imageUrl: '/assets/Ivan/zuti 3.jpg',
       },
     ];
+
+    $flowers: BehaviorSubject<Flower[]> = new BehaviorSubject<Flower[]>(this.flowers);
   }
-}

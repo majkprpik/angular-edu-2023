@@ -1,6 +1,17 @@
-<div class="grid-container">
-    <div class="grid-item" *ngFor="let flower of flowers">
-        <a routerLink="/ivan/product/{{flower.id}}"></a>
-        <img src="{{flower.imageUrl}}">
+<div class="grid-item">
+    <a routerLink="/ivan/product/{{flower.id}}">
+    <img [src]="flower.imageUrl" [alt]="flower.name" class="item-image">
+    <div class="header">
+        <span class="item-name">
+            {{flower.name}}
+        </span>
     </div>
+    <div class="item-price">
+        {{flower.price|currency}}
+    </div>
+</a>
+<button>Add to cart</button>
 </div>
+
+
+

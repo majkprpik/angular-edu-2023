@@ -10,21 +10,9 @@
         </div>
     </div>
     <div class="item-list" *ngIf="displayMode === 1">
-        <div class="item"  *ngFor="let flower of flowers">
-                <a routerLink="/ivan/product/{{flower.id}}">
-                    <img src="{{flower.imageUrl}}" alt="" class="item-img">
-                    <div class="item-detail">
-                        <p class="item-name">
-                            {{flower.name}}
-                        </p>
-                        <div class="item-price">
-                            <span>{{flower.price|currency}}</span>
-                        </div>
-                    </div>
-                </a>
-                <button>Add to cart</button>
+        <app-product *ngFor="let flower of flowers" [flower]="flower">
+        </app-product>
     </div>
-    </div>
-    <div class="row" *ngIf="displayMode === 2">
-        <app-gridview></app-gridview>
+    <div class="grid-container" *ngIf="displayMode === 2">
+        <app-gridview *ngFor="let flower of flowers" [flower]="flower"></app-gridview>
     </div>

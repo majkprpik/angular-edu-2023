@@ -16,7 +16,9 @@ export class ProductsComponent {
   
 
   constructor(private flowerService:FlowerService, private route:ActivatedRoute, private cartService:CartService){
-    this.flowers = this.flowerService.getAllFlowers()
+    this.flowerService.$flowers.subscribe((flowers) => {
+      this.flowers = flowers
+    })
     this.route.params.subscribe(params => {
       if(params["tag"])
       this.flowers = this.flowerService.getAllFlowersTag(params["tag"])
