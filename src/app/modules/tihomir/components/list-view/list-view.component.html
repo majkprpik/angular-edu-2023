@@ -2,7 +2,18 @@
 
 <div class="middle" [ngStyle]="{'height': '400px', 'width': '1100px', 'margin-top': '300px', 'position': 'absolute', 'margin-right': '100px', 'float': 'left'}">
 
-    <div class="appleLine" [ngStyle]="{'background-color': 'black', 'height': '50px', 'width': '1000px', 'margin-bottom': '50px', 'margin-left': '200px', 'display': 'flex', 'justify-content': 'space-between'}">
+    <app-products-list-view *ngFor="let product of products" [product]="product"></app-products-list-view>
+    
+    <!-- <div class="line" *ngFor="let product of products" [ngStyle]="{'background-color': 'black', 'height': '50px', 'width': '1000px', 'margin-bottom': '50px', 'margin-left': '200px', 'display': 'flex', 'justify-content': 'space-between'}">
+        <div class="appleLogo">
+            <img [src]="product.logo" alt="logo" height="50px" width="60px" >
+        </div>
+        <div class="appleText" [ngStyle]="{'color': 'white', 'margin-right': '400px', 'margin-top': '15px'}">
+            {{product.description}}
+        </div>
+    </div> -->
+
+    <!-- <div class="appleLine" [ngStyle]="{'background-color': 'black', 'height': '50px', 'width': '1000px', 'margin-bottom': '50px', 'margin-left': '200px', 'display': 'flex', 'justify-content': 'space-between'}">
         <div class="appleLogo">
             <img src="{{appleLogo}}" alt="logo" height="50px" width="60px" >
         </div>
@@ -36,5 +47,5 @@
         <div class="appleText" [ngStyle]="{'color': 'white', 'margin-right': '450px', 'margin-top': '15px'}">
             Xiaomi 12S
         </div>
-    </div>
+    </div> -->
 </div>

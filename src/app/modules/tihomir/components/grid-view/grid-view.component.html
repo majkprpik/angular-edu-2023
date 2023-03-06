@@ -3,6 +3,7 @@
 <div class="middle" [ngStyle]="{'height': '400px', 'width': '1100px', 'margin-top': '250px', 'margin-left': '100px', 'position': 'absolute', 'display': 'flex', 'justify-content': 'center', 'float': 'left'}">
     
     <app-product *ngFor="let product of products" [product]="product"></app-product>
+    
     <!-- <div [ngStyle]="{'margin-right': '50px'}" *ngFor="let product of products">
         <img [src]= "product.imageURL" alt="iphone">
         <div class="iphoneButton" [ngStyle]="{'background-color': 'yellow', 'width': '170px', 'height': '40px', 'padding-top': '20px', 'margin-left': '30px'}">

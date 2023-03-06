@@ -12,28 +12,32 @@ export class ProductServiceService {
       id : 1,
       name : "iPhone",
       imageURL : "assets/tihomir/iphone14pro.jpg",
-      description : "NewPhone",
+      logo : "assets/tihomir/appleLogo.png",
+      description : "iPhone 14 Pro",
       price : 1000
     },
     {
       id : 2,
       name : "Samsung",
       imageURL : "assets/tihomir/GalaxyS22.jpg",
-      description : "GoodPhone",
+      logo : "assets/tihomir/samsungLogo.png",
+      description : "Samsung Galaxy S22",
       price : 1000
     }, 
     {
       id : 3,
       name : "Huawei",
       imageURL : "assets/tihomir/Honor70.jpg",
-      description : "NicePhone",
+      logo : "assets/tihomir/huaweiLogo.png",
+      description : "Honor 70",
       price : 1000
     },
     {
       id : 4,
       name : "Xiaomi",
       imageURL : "assets/tihomir/Xiaomi12S.jpg",
-      description : "Phone",
+      logo : "assets/tihomir/xiaomiLogo.png",
+      description : "Xiaomi 12S",
       price : 1000
     }
   ];

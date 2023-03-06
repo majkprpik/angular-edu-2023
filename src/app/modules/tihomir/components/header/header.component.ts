@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-  //fontInter = "https://fonts.googleapis.com/css?family=Inter";
   Logo = "assets/tihomir/Logo.png";
-
+  
 }

@@ -1,6 +1,6 @@
-import { TihomirComponent } from './../../tihomir.component';
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ProductServiceService } from './../../services/product-service.service';
+import { Product } from './../../models/product';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-list-view',
@@ -9,20 +9,13 @@ import { Router } from '@angular/router';
 })
 export class ListViewComponent {
 
-  fontInter = "https://fonts.googleapis.com/css?family=Inter";
   Logo = "assets/tihomir/Logo.png";
-  appleLogo = "assets/tihomir/appleLogo.png";
-  samsungLogo = "assets/tihomir/samsungLogo.png";
-  huaweiLogo = "assets/tihomir/huaweiLogo.png";
-  xiaomiLogo = "assets/tihomir/xiaomiLogo.png";
+  products : Product[] = [];
 
-  constructor(private tihomirComponent : TihomirComponent, private router : Router){
-
+  constructor(private productService : ProductServiceService){
+    this.productService.$phones.subscribe((phones) => {
+      this.products = phones;
+    })
   }
 
-
-  iphoneJPG = "assets/tihomir/iphone14pro.jpg";
-  samsungJPG = "assets/tihomir/GalaxyS22.jpg";
-  xiaomiJPG = "assets/tihomir/Xiaomi12S.jpg";
-  huaweiJPG = "assets/tihomir/Honor70.jpg";
 }

@@ -1,3 +1,5 @@
+import { ProductsListViewComponent } from './components/products-list-view/products-list-view.component';
+
 import { AuthGuard } from './guards/auth.guard';
 import { UserService } from './services/user.service';
 import { LocalStorageService } from './services/local-storage.service';
@@ -20,6 +22,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ProductComponent } from './components/product/product.component';
 
 
+
 export function tokenGetter(){
   return localStorage.getItem('accessToken')
 }
@@ -33,7 +36,8 @@ export function tokenGetter(){
     ListViewComponent,
     SidebarComponent,
     HeaderComponent,
-    ProductComponent
+    ProductComponent,
+    ProductsListViewComponent
   ],
   imports: [
     CommonModule,
