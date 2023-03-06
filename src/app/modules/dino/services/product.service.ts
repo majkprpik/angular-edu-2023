@@ -1,14 +1,15 @@
+import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Product } from '../models/Product';
 
 @Injectable()
 export class ProductService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   products: Product[] = [
     {
-      id: 1,
+      id: 1111,
       name: 'Gt2Pro',
       description:
         'Huawei made this watch special and long lasting.Beautiful and durable titanium casing with real sapphire glass gives it a lot of attention.',
@@ -16,7 +17,7 @@ export class ProductService {
       imageUrl: 'assets/dino/gt2pro.png',
     },
     {
-      id: 2,
+      id: 2222,
       name: 'Galaxy watch 5 ',
       description:
         'Samsung made this watch special and long lasting.Beautiful and great for everyday.',
@@ -25,5 +26,24 @@ export class ProductService {
     },
   ];
 
-  $products:BehaviorSubject<Product[]>= new BehaviorSubject<Product[]>(this.products);
+  $products: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>(
+    this.products
+  );
+
+  allProductsUrl = 'https://dummyjson.com/products?limit=0';
+
+  getProducts() {
+    this.http.get(this.allProductsUrl).subscribe((data: any) => {
+      this.products = data.products.map((product) => {
+        return {
+          id: product.id,
+          name: product.title,
+          price: Number(product.price),
+          description: product.description,
+          imageUrl: product.thumbnail,
+        };
+      });
+      this.$products.next(this.products);
+    });
+  }
 }

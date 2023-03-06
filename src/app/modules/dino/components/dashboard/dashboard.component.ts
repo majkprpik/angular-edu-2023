@@ -11,8 +11,9 @@ export class DashboardComponent {
   products: Product[] = [];
 
   constructor(private productService: ProductService) {
-    this.productService.$products.subscribe((product) => {
+    productService.$products.subscribe((product) => {
       this.products = product;
     });
+    productService.getProducts();
   }
 }

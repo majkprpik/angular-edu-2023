@@ -1,3 +1,4 @@
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { AuthGuard } from './guards/auth.guard';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
@@ -18,7 +19,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { ProductComponent } from './components/product/product.component';
 import { ProductService } from './services/product.service';
 import { CartService } from './services/cart.service';
-
+import {MatChipsModule} from '@angular/material/chips';
 export function tokenGetter() {
   return localStorage.getItem('accessTokenDino');
 }
@@ -38,6 +39,9 @@ export function tokenGetter() {
     DinoRoutingModule,
     FontAwesomeModule,
     FormsModule,
+    MatSlideToggleModule,
+    MatChipsModule,
+
     HttpClientModule,
     JwtModule.forRoot({
       config: {
