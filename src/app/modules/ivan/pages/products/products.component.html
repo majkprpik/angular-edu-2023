@@ -10,9 +10,10 @@
         </div>
     </div>
     <div class="item-list" *ngIf="displayMode === 1">
-        <app-product *ngFor="let flower of flowers" [flower]="flower">
+        <app-product *ngFor="let product of products" [product]="product">
         </app-product>
     </div>
     <div class="grid-container" *ngIf="displayMode === 2">
-        <app-gridview *ngFor="let flower of flowers" [flower]="flower"></app-gridview>
+        <app-gridview *ngFor="let product of products" [product]="product"></app-gridview>
     </div>
+    
