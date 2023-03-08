@@ -1,3 +1,5 @@
+import { ProductResolver } from './resolvers/product.resolver';
+import { ProductServiceService } from './services/product-service.service';
 import { ProductsListViewComponent } from './components/products-list-view/products-list-view.component';
 
 import { AuthGuard } from './guards/auth.guard';
@@ -21,6 +23,11 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProductComponent } from './components/product/product.component';
 
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatButtonModule} from '@angular/material/button';
+import { TestPipe } from './pipes/test.pipe';
+import { SortPipe } from './pipes/sort.pipe';
+
 
 
 export function tokenGetter(){
@@ -37,7 +44,9 @@ export function tokenGetter(){
     SidebarComponent,
     HeaderComponent,
     ProductComponent,
-    ProductsListViewComponent
+    ProductsListViewComponent,
+    TestPipe,
+    SortPipe
   ],
   imports: [
     CommonModule,
@@ -51,12 +60,16 @@ export function tokenGetter(){
         disallowedRoutes : [],
       },
     }),
+    MatSlideToggleModule,
+    MatButtonModule
   ],
   providers :[
     AuthService,
     LocalStorageService,
     UserService,
-    AuthGuard
+    AuthGuard,
+    ProductServiceService,
+    ProductResolver,
   ]
 })
 export class TihomirModule { }

@@ -1,3 +1,4 @@
+import { ProductResolver } from './resolvers/product.resolver';
 import { ListViewComponent } from './components/list-view/list-view.component';
 import { GridViewComponent } from './components/grid-view/grid-view.component';
 import { AuthGuard } from './guards/auth.guard';
@@ -16,6 +17,9 @@ const routes: Routes = [
         path: 'dashboard',
         component: DashboardComponent,
         canActivate : [AuthGuard],
+        resolve:{
+          products: ProductResolver
+        },
         children:[
           {
             path: 'grid-view',

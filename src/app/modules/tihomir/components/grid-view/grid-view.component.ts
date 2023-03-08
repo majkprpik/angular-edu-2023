@@ -1,8 +1,8 @@
+import { BehaviorSubject } from 'rxjs';
 import { Product } from './../../models/product';
 import { ProductServiceService } from './../../services/product-service.service';
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
-import { TihomirComponent } from '../../tihomir.component';
 
 @Component({
   selector: 'app-grid-view',
@@ -13,11 +13,19 @@ export class GridViewComponent {
 
   Logo = "assets/tihomir/Logo.png";
   products : Product[] = [];
+  $products : BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>(
+    this.products
+  );
 
-  constructor(private productService : ProductServiceService){
+  productData : any = [];
+
+  constructor(private productService : ProductServiceService, private router : Router){
+
+    this.productData =  this.productService.getProductData();
 
     this.productService.$phones.subscribe((phones) => {
       this.products = phones;
     });
   }
+  
 }
