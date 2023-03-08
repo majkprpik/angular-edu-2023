@@ -46,7 +46,7 @@ export class ProductService {
       this.$products.next(this.products);
     });
   }
-  getProductsNoSubscribe(){
+  getProductsNoSubscribe() {
     return this.http.get(this.allProductsUrl);
   }
 }

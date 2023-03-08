@@ -21,6 +21,7 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductService } from './services/product.service';
 import { CartService } from './services/cart.service';
 import {MatChipsModule} from '@angular/material/chips';
+import { TestPipe } from './pipes/test.pipe';
 export function tokenGetter() {
   return localStorage.getItem('accessTokenDino');
 }
@@ -34,6 +35,7 @@ export function tokenGetter() {
     DashboardComponent,
     NavigationComponent,
     ProductComponent,
+    TestPipe,
   ],
   imports: [
     CommonModule,

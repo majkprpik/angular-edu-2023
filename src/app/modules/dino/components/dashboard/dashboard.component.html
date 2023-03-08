@@ -1,11 +1,15 @@
 <app-listhome></app-listhome>
 <app-navigation></app-navigation>
+
 <div class="content">
-  <div class="products" >
-    <app-product *ngFor="let product of products" [product]="product"></app-product>
+  <div class="products">
+    <app-product
+      *ngFor="let product of products | test:'desc' "
+      [product]="product"
+    ></app-product>
   </div>
   <div class="viewSelector">
-    <img src="assets/dino/listView.png" alt="">
-    <img src="assets/dino/gridView.png" alt="">
+    <img src="assets/dino/listView.png" alt="" />
+    <img src="assets/dino/gridView.png" alt="" />
   </div>
 </div>
