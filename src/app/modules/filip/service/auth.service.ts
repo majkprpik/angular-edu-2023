@@ -1,3 +1,5 @@
+import { TestRoutingModule } from './../../test/test-routing.module';
+import { Observable } from 'rxjs';
 import { UserService } from './user.service';
 import { LoginServiceService } from './login-service.service';
 import { HttpClient } from '@angular/common/http';
@@ -16,6 +18,7 @@ export class AuthService {
   if(access!= null && !this.jwtHelper.isTokenExpired(access)){
     let payload = this.jwtHelper.decodeToken(access);
     this.userService.$user.next({username:payload.userName})
+    this.roter.navigate(['dashboard'])
 
     
   }
@@ -25,11 +28,11 @@ export class AuthService {
   urlToken = 'https://edu-back.azurewebsites.net/account/login-jwt';
 
   getAccessToken(){
-    return this.loginService.getFromLocal('accessToken');
+    return this.loginService.getFromLocal('accessToken_Filip');
   }
 
   getRefreshToken(){
-    return this.loginService.getFromLocal('refreshToken');
+    return this.loginService.getFromLocal('refreshToken_Filip');
   }
 
   loginToken(user: any) {
@@ -56,4 +59,15 @@ export class AuthService {
   // return this.userService.user.username != '';
   return this.userService.$user.value.username!='';
   }
+
+
+
+  // LoginApi(){
+  //   this.http.get(this.apiUrl).subscribe(data => {
+  //     console.log(data);
+  //   });
+
+  
+
+
 }

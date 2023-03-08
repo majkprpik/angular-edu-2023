@@ -1,4 +1,6 @@
+import { ProductService } from './../../service/product.service';
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -8,6 +10,11 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
-constructor(){}
+constructor(private productservice: ProductService, private activatedRoute: ActivatedRoute){
+  this.productservice.getJoke()
+  this.activatedRoute.data.subscribe((data)=>{
+    console.log(data);
+  })
+}
 
 }

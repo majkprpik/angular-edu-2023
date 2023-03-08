@@ -1,3 +1,4 @@
+import { ProductsResolver } from './resolvers/products.resolver';
 import { CardComponent } from './component/card/card.component';
 import { ProductService } from './service/product.service';
 import { AuthGuard } from './guards/auth.guard';
@@ -24,6 +25,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { TestPipe } from './pipe/test.pipe';
+import { PricePipe } from './pipe/price.pipe';
 
 export function tokenGetter() {
   return localStorage.getItem('acessToken');
@@ -38,6 +41,8 @@ export function tokenGetter() {
     KartComponent,
     ProductComponent,
     CardComponent,
+    TestPipe,
+    PricePipe,
   ],
   providers: [
     LoginServiceService,
@@ -45,6 +50,7 @@ export function tokenGetter() {
     UserService,
     AuthGuard,
     ProductService,
+    ProductsResolver,
   ],
 
   imports: [
