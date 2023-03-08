@@ -20,7 +20,8 @@ import { StorageService } from './services/storage.service';
 import { FlowerService } from './services/flower.service';
 import { CartService } from './services/cart.service';
 import { ProductService } from './services/product.service';
-
+import { ProductResolver } from './resolvers/product.resolver';
+import { TestPipe } from './pipes/test.pipe';
 
 export function tokenGetter() {
   return localStorage.getItem('accessToken_ivan');
@@ -36,6 +37,7 @@ export function tokenGetter() {
     SidebarComponent,
     ProductComponent,
     CartPageComponent,
+    TestPipe,
   ],
   imports: [
     CommonModule,
@@ -57,7 +59,8 @@ export function tokenGetter() {
     StorageService,
     FlowerService,
     CartService,
-    ProductService
+    ProductService,
+    ProductResolver,
   ],
 })
 export class IvanModule {}

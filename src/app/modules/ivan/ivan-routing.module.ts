@@ -7,6 +7,7 @@ import { IvanComponent } from './ivan.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { ProductComponent } from './pages/product/product.component';
 import { ProductsComponent } from './pages/products/products.component';
+import { ProductResolver } from './resolvers/product.resolver';
 
 const routes: Routes = [
   {
@@ -27,18 +28,17 @@ const routes: Routes = [
         path: 'products',
         component: ProductsComponent,
         canActivate: [AuthGuard],
+        resolve: {
+          products: ProductResolver,
+        },
       },
       {
-        path:'product/:id',
-        component:ProductComponent
+        path: 'product/:id',
+        component: ProductComponent,
       },
       {
-        path:'tag/:tag',
-        component:ProductsComponent
-      },
-      {
-        path:'cartPage',
-        component:CartPageComponent
+        path: 'cartPage',
+        component: CartPageComponent,
       },
       {
         path: '**',

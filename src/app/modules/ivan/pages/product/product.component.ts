@@ -11,26 +11,27 @@ import { Flower } from '../../shared/Flower';
   styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent {
-  @Input() product: Product
-  @Input() flower: Flower
-  flowers:Flower[] = [];
-  products: Product[] = []
-  
-  constructor(private route:ActivatedRoute, private FlowerService:FlowerService, private productService:ProductService){
+  @Input() product: Product;
+  @Input() flower: Flower;
+  flowers: Flower[] = [];
+  products: Product[] = [];
+
+  constructor(
+    private route: ActivatedRoute,
+    private FlowerService: FlowerService,
+    private productService: ProductService
+  ) {
     this.FlowerService.$flowers.subscribe((flowers) => {
-      this.flowers = flowers
-    
-    })
+      this.flowers = flowers;
+    });
 
     this.productService.$products.subscribe((products) => {
-      this.products = products
-  
-    })
+      this.products = products;
+    });
 
     this.route.params.subscribe((params) => {
-      if(params["id"])
-      this.product = productService.getProductId(params["id"])
-    })
+      if (params['id'])
+        this.product = productService.getProductId(params['id']);
+    });
   }
 }
-
