@@ -1,3 +1,4 @@
+import { ProductResolver } from './resolvers/product.resolver';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { AuthGuard } from './guards/auth.guard';
 import { UserService } from './services/user.service';
@@ -51,6 +52,6 @@ export function tokenGetter() {
       },
     }),
   ],
-  providers: [AuthService, UserService,AuthGuard,ProductService,CartService],
+  providers: [AuthService, UserService,AuthGuard,ProductService,CartService,ProductResolver],
 })
 export class DinoModule {}

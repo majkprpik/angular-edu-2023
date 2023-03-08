@@ -1,3 +1,4 @@
+import { ProductResolver } from './resolvers/product.resolver';
 import { AuthGuard } from './guards/auth.guard';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GridhomeComponent } from './components/gridhome/gridhome.component';
@@ -20,6 +21,9 @@ const routes: Routes = [
         path: 'Dashboard',
         component: DashboardComponent,
         canActivate: [AuthGuard],
+        resolve: {
+          product:ProductResolver
+        },
       },
       {
         path: '**',
