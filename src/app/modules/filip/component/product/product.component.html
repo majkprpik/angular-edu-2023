@@ -1,11 +1,14 @@
+<form action="">
 <section class="featured-products">
-  <ul>
-    <li *ngFor="let product of sviProducti | price:1000">
-      <img src="{{product.imgURL}}" alt="{{product.name}}" />
+  <ul class="slike">
+    <li *ngFor="let product of sviProducti |  sortByPrice : sortAscending">
+      <img  src="{{product.imgURL}}" alt="{{product.name}}" />
       <h3>{{product.name}}</h3>
-      <p>{{product.price }}</p>
+      <p>{{product.price }} €</p>
+      <button >Buy</button>
     </li>
   </ul>
   
+  
   </section>
-
+</form>

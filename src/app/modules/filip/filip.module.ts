@@ -28,6 +28,10 @@ import { MatCardModule } from '@angular/material/card';
 import { TestPipe } from './pipe/test.pipe';
 import { PricePipe } from './pipe/price.pipe';
 
+import { SortByPricePipe } from './pipe/sort-by-price.pipe';
+import { SortingComponent } from './component/sorting/sorting.component';
+
+
 export function tokenGetter() {
   return localStorage.getItem('acessToken');
 }
@@ -43,6 +47,9 @@ export function tokenGetter() {
     CardComponent,
     TestPipe,
     PricePipe,
+    SortByPricePipe,
+    SortingComponent
+  
   ],
   providers: [
     LoginServiceService,

@@ -16,5 +16,13 @@ constructor(private productService: ProductService){
   })
 }
 
+products: Product[] = [];
+
+sortAscending = true;
+
+sortOrderChanged(ascending: boolean) {
+  this.sortAscending = ascending;
+}
+
 // Product u "model-products" nije importan
 }
