@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class DashboardComponent {
 
   products: Product[] = [];
+  
   sortAscending=false;
 
   sliderValue=0;  

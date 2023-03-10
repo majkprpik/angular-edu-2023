@@ -17,7 +17,7 @@ export class ProductService {
   $maximumPrice: BehaviorSubject<number>= new BehaviorSubject<number>(this.maximumPrice);
 
   ChangeSortOrder(){
-    this.sortAscending=!this.sortAscending;
+    this.sortAscending = !this.sortAscending;
     this.$sortAscending.next(this.sortAscending);
   }
 
