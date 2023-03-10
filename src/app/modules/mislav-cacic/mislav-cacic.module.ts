@@ -4,8 +4,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
-import { DashboardComponent } from '././components/dashboard/dashboard/dashboard.component';
+import { CatalogComponent } from './components/catalog/catalog.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GridViewComponent } from './components/grid-view/grid-view.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ListViewComponent } from './components/list-view/list-view.component';
@@ -14,10 +17,10 @@ import { ProductComponent } from './components/product/product.component';
 import { AuthGuard } from './guards/auth.guard';
 import { MislavCacicRoutingModule } from './mislav-cacic-routing.module';
 import { MislavCacicComponent } from './mislav-cacic.component';
+import { ApiService } from './services/api.service';
 import { AuthService } from './services/auth.service';
 import { LocalStorageService } from './services/local-storage.service';
 import { UserService } from './services/user.service';
-import { ApiService } from './services/api.service';
 
 export function tokenGetter() {
   return localStorage.getItem('accessToken');
@@ -32,8 +35,11 @@ export function tokenGetter() {
     ProductComponent,
     ListViewComponent,
     GridViewComponent,
+    CatalogComponent,
+    ContactComponent,
   ],
   imports: [
+    RouterModule,
     MatIconModule,
     MatButtonModule,
     CommonModule,
@@ -48,6 +54,12 @@ export function tokenGetter() {
       },
     }),
   ],
-  providers: [AuthService, LocalStorageService, UserService, AuthGuard, ApiService],
+  providers: [
+    AuthService,
+    LocalStorageService,
+    UserService,
+    AuthGuard,
+    ApiService,
+  ],
 })
 export class MislavCacicModule {}

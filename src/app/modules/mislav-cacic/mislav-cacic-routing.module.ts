@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from '././components/dashboard/dashboard/dashboard.component';
+import { CatalogComponent } from './components/catalog/catalog.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { MislavCacicComponent } from './mislav-cacic.component';
@@ -24,6 +26,24 @@ const routes: Routes = [
       {
         path: '**',
         component: LoginComponent,
+      },
+
+      // {
+      //   path: 'about',
+      //   component: AboutComponent,
+      //   canActivate: [AuthGuard],
+      // },
+
+      {
+        path: 'catalog',
+        component: CatalogComponent,
+        canActivate: [AuthGuard],
+      },
+
+      {
+        path: 'contact',
+        component: ContactComponent,
+        canActivate: [AuthGuard],
       },
     ],
   },
