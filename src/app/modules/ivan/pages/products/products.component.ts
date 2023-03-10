@@ -12,12 +12,16 @@ import { Product } from '../../shared/Product';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent {
+  sliderValue: Slider = {
+    min: 0,
+    max: 2000,
+  };
+
   displayMode = 1;
-  selectField = 'desc'
+  selectField = 'desc';
   flowers: Flower[] = [];
   products: Product[] = [];
-  selectedProducts: Product[]=[]
-  
+  selectedProducts: Product[] = [];
 
   constructor(
     private flowerService: FlowerService,
@@ -27,8 +31,10 @@ export class ProductsComponent {
     this.flowerService.$flowers.subscribe((flowers) => {
       this.flowers = flowers;
     });
+    this.productService.$products.subscribe((products) => {
+      this.products = products;
+    });
     route.data.subscribe((responseData) => {
-      console.log(responseData);
       this.products = responseData['products'].products.map((p) => {
         return {
           id: p.id,
@@ -43,16 +49,34 @@ export class ProductsComponent {
   $products: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>(
     this.products
   );
+
   onDisplayModeChange(mode: number): void {
     this.displayMode = mode;
   }
 
-  onDescend(){
-    this.selectField = 'desc'
+  onDescend() {
+    this.selectField = 'desc';
   }
 
-  onAscend(){
-    this.selectField = 'asc'
+  onAscend() {
+    this.selectField = 'asc';
   }
- 
+
+  changeMin(ev) {
+    this.sliderValue = {
+      min: ev,
+      max: this.sliderValue.max,
+    };
+  }
+  changeMax(ev) {
+    this.sliderValue = {
+      min: this.sliderValue.min,
+      max: ev,
+    };
+  }
+}
+
+export interface Slider {
+  min: number;
+  max: number;
 }

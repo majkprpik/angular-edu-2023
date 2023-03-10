@@ -22,7 +22,8 @@ import { CartService } from './services/cart.service';
 import { ProductService } from './services/product.service';
 import { ProductResolver } from './resolvers/product.resolver';
 import { TestPipe } from './pipes/test.pipe';
-import {MatSliderModule} from '@angular/material/slider';
+import { MatSliderModule } from '@angular/material/slider';
+import { RangePipe } from './pipes/range.pipe';
 
 export function tokenGetter() {
   return localStorage.getItem('accessToken_ivan');
@@ -39,7 +40,7 @@ export function tokenGetter() {
     ProductComponent,
     CartPageComponent,
     TestPipe,
-
+    RangePipe,
   ],
   imports: [
     CommonModule,

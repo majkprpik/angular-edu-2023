@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -9,7 +10,7 @@ export class ProductService {
 
   private apiUrl = 'https://dummyjson.com/products?limit=10';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   getProductId(id: number): Product {
     return this.getAllProducts().find((product) => product.id == id);
@@ -20,7 +21,7 @@ export class ProductService {
   );
 
   storeProducts() {
-    this.http.get(this.apiUrl).subscribe((responseData: any) => {
+    this.route.data.subscribe((responseData: any) => {
       this.products = responseData.products.map((p) => {
         return {
           id: p.id,
