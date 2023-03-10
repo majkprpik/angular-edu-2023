@@ -10,12 +10,5 @@ import { ProductService } from '../../services/product.service';
 export class ProductComponent {
 
   @Input() product:Product;
-
-  // products:any[];
-
-  // constructor(private productService:ProductService) {
-  //   this.products=productService.products;
-  //   console.log(this.products);
-  // }
   
 }

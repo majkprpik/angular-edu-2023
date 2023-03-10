@@ -19,10 +19,10 @@ export class TestPipe implements PipeTransform {
   //   return product.filter((product)=>product.price<=limit)
   // }
 
-  transform(product: Product[], criteria: string):Product[] {
-    if(criteria=='asc'){  
+  transform(product: Product[], criteria: boolean):Product[] {
+    if(criteria==false){  
     return product.sort((p1, p2) => (p1.price < p2.price) ? 1 : (p1.price > p2.price) ? -1 : 0);
-    }else if(criteria=='desc'){
+    }else if(criteria==true){
       return product.sort((p1, p2) => (p1.price > p2.price) ? 1 : (p1.price < p2.price) ? -1 : 0);
     }
     else return null;

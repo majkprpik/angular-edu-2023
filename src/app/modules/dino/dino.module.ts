@@ -22,6 +22,10 @@ import { ProductService } from './services/product.service';
 import { CartService } from './services/cart.service';
 import {MatChipsModule} from '@angular/material/chips';
 import { TestPipe } from './pipes/test.pipe';
+import {MatSliderModule} from '@angular/material/slider';
+import { MinimumPipe } from './pipes/minimum.pipe';
+import { MaximumPipe } from './pipes/maximum.pipe';
+
 export function tokenGetter() {
   return localStorage.getItem('accessTokenDino');
 }
@@ -36,6 +40,8 @@ export function tokenGetter() {
     NavigationComponent,
     ProductComponent,
     TestPipe,
+    MinimumPipe,
+    MaximumPipe,
   ],
   imports: [
     CommonModule,
@@ -44,7 +50,7 @@ export function tokenGetter() {
     FormsModule,
     MatSlideToggleModule,
     MatChipsModule,
-
+    MatSliderModule,
     HttpClientModule,
     JwtModule.forRoot({
       config: {

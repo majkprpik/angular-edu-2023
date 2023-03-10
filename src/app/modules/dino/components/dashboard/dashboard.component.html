@@ -1,10 +1,23 @@
 <app-listhome></app-listhome>
 <app-navigation></app-navigation>
 
+<mat-slide-toggle (click)="ChangeOrder()"
+  >Slide for descending order!</mat-slide-toggle
+><br />
+<mat-slider
+  [step]="sliderStep"
+  [max]="sliderMax"
+  [min]="sliderMin"
+  discrete
+>
+  <input matSliderStartThumb [(ngModel)]="sliderValueMin" />
+  <input matSliderEndThumb [(ngModel)]="sliderValueMax"/>
+</mat-slider>
+
 <div class="content">
   <div class="products">
     <app-product
-      *ngFor="let product of products | test:'desc' "
+      *ngFor="let product of products | test : sortAscending | minimum:sliderValueMin |maximum:sliderValueMax"
       [product]="product"
     ></app-product>
   </div>
