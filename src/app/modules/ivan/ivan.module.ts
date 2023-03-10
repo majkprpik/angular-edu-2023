@@ -22,6 +22,7 @@ import { CartService } from './services/cart.service';
 import { ProductService } from './services/product.service';
 import { ProductResolver } from './resolvers/product.resolver';
 import { TestPipe } from './pipes/test.pipe';
+import {MatSliderModule} from '@angular/material/slider';
 
 export function tokenGetter() {
   return localStorage.getItem('accessToken_ivan');
@@ -38,6 +39,7 @@ export function tokenGetter() {
     ProductComponent,
     CartPageComponent,
     TestPipe,
+
   ],
   imports: [
     CommonModule,
@@ -51,6 +53,7 @@ export function tokenGetter() {
         disallowedRoutes: [],
       },
     }),
+    MatSliderModule,
   ],
   providers: [
     AuthService,

@@ -1,15 +1,23 @@
 <app-header></app-header>
 <app-sidebar></app-sidebar>
+<mat-slider min="200" max="1800" step="200">
+    <input value="300" matSliderStartThumb>
+    <input value="400" matSliderEndThumb>
+  </mat-slider>
     <div class="btn-wrap">
         <div class="btn">
             <button type="button" (click)="onDisplayModeChange(1)"
                 [ngClass]="{'btn-primary active' : displayMode === 1}">list</button>
             <button type="button" (click)="onDisplayModeChange(2)"
                 [ngClass]="{'btn-primary active' : displayMode === 2}">grid</button>
+                <select [(ngModel)]="selectField">
+                    <option value="desc" (change)="onDescend()">desc</option>
+                    <option value="asc" (change)="onAscend()">asc</option>
+                </select>
         </div>
     </div>
     <div class="item-list" *ngIf="displayMode === 1">
-        <app-product *ngFor="let product of products | test:false" [product]="product">
+        <app-product *ngFor="let product of products|test:[selectField]" [product]="product">
         </app-product>
     </div>
     <div class="grid-container" *ngIf="displayMode === 2">

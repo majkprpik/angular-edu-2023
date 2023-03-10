@@ -13,8 +13,11 @@ import { Product } from '../../shared/Product';
 })
 export class ProductsComponent {
   displayMode = 1;
+  selectField = 'desc'
   flowers: Flower[] = [];
   products: Product[] = [];
+  selectedProducts: Product[]=[]
+  
 
   constructor(
     private flowerService: FlowerService,
@@ -43,4 +46,13 @@ export class ProductsComponent {
   onDisplayModeChange(mode: number): void {
     this.displayMode = mode;
   }
+
+  onDescend(){
+    this.selectField = 'desc'
+  }
+
+  onAscend(){
+    this.selectField = 'asc'
+  }
+ 
 }
