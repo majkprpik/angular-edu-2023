@@ -21,6 +21,8 @@ import { ApiService } from './services/api.service';
 import { AuthService } from './services/auth.service';
 import { LocalStorageService } from './services/local-storage.service';
 import { UserService } from './services/user.service';
+import { SortPipe } from './pipes/sort.pipe';
+import { TestPipe } from './pipes/test.pipe';
 
 export function tokenGetter() {
   return localStorage.getItem('accessToken');
@@ -37,6 +39,8 @@ export function tokenGetter() {
     GridViewComponent,
     CatalogComponent,
     ContactComponent,
+    SortPipe,
+    TestPipe,
   ],
   imports: [
     RouterModule,

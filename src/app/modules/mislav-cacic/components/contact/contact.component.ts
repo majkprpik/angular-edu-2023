@@ -1,19 +1,15 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) {
+  contact() {
+    this.router.navigate(['/contact']);
   }
-
-  // contact() {
-  //   this.router.navigate(['/contact'])
-  // }
-
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 // import { ProductServiceService } from '../../services/product-service.service';
 
 @Component({
@@ -8,10 +8,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-  constructor(
-    // private productServiceService: ProductServiceService,
-    private router: Router
-  ) {
-    // this.productServiceService.fetchProducts();
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.data.subscribe((response) => {
+      console.log(response);
+    });
+    
+    // constructor(
+    //   // private productServiceService: ProductServiceService,
+    //   private router: Router,
+    // ) {
+    //   // this.productServiceService.fetchProducts();
+    // }
   }
 }
