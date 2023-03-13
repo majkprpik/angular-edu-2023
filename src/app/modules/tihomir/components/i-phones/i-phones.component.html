@@ -1,0 +1,15 @@
+<link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+
+<div class="middle" [ngStyle]="{'height': '400px', 'width': '1100px', 'margin-top': '250px', 'margin-left': '150px', 'position': 'absolute', 'display': 'flex', 'justify-content': 'center', 'float': 'left'}">
+    
+    <div *ngFor="let iPhone of iPhones" [ngStyle]="{'margin-right': '50px'}">
+        <img [src]="iPhone.imageURL" alt="">
+        {{iPhone.description}}
+        <br>
+        <br>
+        <button mat-fab extended color="primary" [ngStyle]="{'background-color': 'yellow', 'color': 'black'}" (click)="addToCart(iPhone)">
+            Add to cart
+        </button>
+    </div>
+    
+</div>

@@ -1,7 +1,7 @@
+import { SidebarComponent } from './../sidebar/sidebar.component';
 import { BehaviorSubject } from 'rxjs';
 import { Product } from './../../models/product';
-import { ProductServiceService } from './../../services/product-service.service';
-import { Router } from '@angular/router';
+import { ProductServiceService, SliderValues } from './../../services/product-service.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -17,15 +17,20 @@ export class GridViewComponent {
     this.products
   );
 
+  sliderValue : SliderValues;
   productData : any = [];
 
-  constructor(private productService : ProductServiceService, private router : Router){
+  constructor(private productService : ProductServiceService){
+
+    this.productService.$sliderValue.subscribe((value) =>{
+      this.sliderValue = value;
+    });
 
     this.productData =  this.productService.getProductData();
 
     this.productService.$phones.subscribe((phones) => {
       this.products = phones;
     });
+
   }
-  
 }

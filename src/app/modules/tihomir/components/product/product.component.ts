@@ -15,9 +15,9 @@ export class ProductComponent {
 
   @Input() product: Product;
 
-  viewPhones(){
-    // if(this.product.name == "iPhone"){
-    //   this.router.navigate();
-    // }
+  viewPhones(name : string){
+    if(name == "iPhone"){
+      this.router.navigate(['tihomir', 'dashboard', 'i-phones']);
+    }
   }
 }

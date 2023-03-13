@@ -1,3 +1,5 @@
+import { CartComponent } from './components/cart/cart.component';
+import { IPhonesComponent } from './components/i-phones/i-phones.component';
 import { ProductResolver } from './resolvers/product.resolver';
 import { ListViewComponent } from './components/list-view/list-view.component';
 import { GridViewComponent } from './components/grid-view/grid-view.component';
@@ -32,6 +34,17 @@ const routes: Routes = [
           {
             path: '',
             component: ListViewComponent
+          },
+          {
+            path: 'i-phones',
+            component: IPhonesComponent,
+            resolve:{
+              products: ProductResolver
+            },
+          },
+          {
+            path: 'cart',
+            component : CartComponent
           }
         ]
       },

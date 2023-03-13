@@ -1,5 +1,5 @@
+import { SliderValues } from './../services/product-service.service';
 import { Product } from './../models/product';
-import { ProductServiceService } from './../services/product-service.service';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
@@ -7,9 +7,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TestPipe implements PipeTransform {
 
-  transform(value: Product[], price: number): any {
+  transform(value: Product[], priceRange : SliderValues): any {
     return value.filter((data : any) => {
-      return data.price > price;
+      return priceRange.min <= data.price && data.price <= priceRange.max;
     });
   }
 }

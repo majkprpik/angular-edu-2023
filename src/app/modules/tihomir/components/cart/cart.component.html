@@ -1,0 +1,17 @@
+<link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+
+<div class="middle" [ngStyle]="{'height': '400px', 'width': '1100px', 'margin-top': '250px', 'margin-left': '150px', 'position': 'absolute', 'display': 'flex', 'justify-content': 'center', 'float': 'left', 'flex-wrap': 'wrap'}">
+    
+    <div *ngFor="let product of products" [ngStyle]="{'margin-right': '50px'}">
+        <img [src]="product.imageURL" alt="">
+        <br>
+        <br>
+        <a mat-fab extended color="primary" [ngStyle]="{'background-color': 'yellow', 'color': 'black', 'margin-bottom': '20px'}">
+            {{product.price}}$
+        </a>
+        <a mat-fab extended color="primary" [ngStyle]="{'background-color': 'red', 'color': 'black', 'margin-bottom': '20px'}" (click)="removeFromCart(product)">
+            Remove from cart
+        </a>
+    </div>
+</div>
+
