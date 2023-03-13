@@ -1,6 +1,6 @@
-import { Product } from './Product';
+import { CartItem } from './CartItem';
 
-export interface Cart{
-    products:Product[],
-    totalPrice:number,
+export interface Cart {
+  cartItems: CartItem[];
+  totalPrice: number;
 }

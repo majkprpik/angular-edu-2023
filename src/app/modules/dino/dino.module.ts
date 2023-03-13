@@ -25,10 +25,9 @@ import { TestPipe } from './pipes/test.pipe';
 import {MatSliderModule} from '@angular/material/slider';
 import { MinimumPipe } from './pipes/minimum.pipe';
 import { MaximumPipe } from './pipes/maximum.pipe';
-import { CartComponent } from './components/cart/cart.component';
 import {MatButtonModule} from '@angular/material/button';
-import { CartProductComponent } from './components/cart-product/cart-product.component';
 import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
+import { CartDialogComponent } from './components/cart-dialog/cart-dialog.component';
 
 export function tokenGetter() {
   return localStorage.getItem('accessTokenDino');
@@ -46,8 +45,7 @@ export function tokenGetter() {
     TestPipe,
     MinimumPipe,
     MaximumPipe,
-    CartComponent,
-    CartProductComponent,
+    CartDialogComponent,
   ],
   imports: [
     CommonModule,

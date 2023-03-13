@@ -6,20 +6,14 @@ import { ProductService } from '../../services/product.service';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
+  styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent {
+  @Input() product: Product;
 
-  @Input() product:Product;
-  
-  /**
-   *
-   */
-  constructor(private cartService:CartService) {
-    
-  }
+  constructor(private cartService: CartService) {}
 
-  AddToCart(){
-    this.cartService.AddItem(this.product);
+  AddToCart() {
+    this.cartService.AddProduct(this.product);
   }
 }
