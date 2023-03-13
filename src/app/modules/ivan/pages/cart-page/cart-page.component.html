@@ -1,19 +1,19 @@
 <app-header></app-header>
-<div *ngIf=" cartItems.length >0" class="container">
+<div class="container">
     <ul>
-        <li *ngFor="let cartItem of cartItems">
+        <li *ngFor="let cartItem of cartProducts">
             <div>
-                <img [src]="cartItem.thumbnail" [alt]="cartItem.name">
+                <img [src]="cartItem.product.thumbnail" [alt]="cartItem.product.name">
             </div>
             <div>
-                    {{cartItem.name}}
+                    {{cartItem.product.name}}
             </div>
             <div>
-                {{cartItem.price | currency}}
+                {{cartItem.product.price | currency}}
             </div>
 
             <div>
-                <button class="remove-button" (click)="removeItem(cartItem)">
+                <button class="remove-button" (click)="removeItem(cartItem.product)">
                     Remove
                 </button>
             </div>

@@ -18,7 +18,7 @@ export class ProductsComponent {
   };
 
   cart: Cart = {
-    products: [],
+    cartItems: [],
     priceTotal: 0,
   };
 
@@ -26,24 +26,21 @@ export class ProductsComponent {
   selectField = 'desc';
   products: Product[] = [];
   selectedProducts: Product[] = [];
-  
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService,
-    private cartService:CartService
+    private productService: ProductService
   ) {
-
     this.productService.$products.subscribe((product) => {
-      this.products = product
-    })
+      this.products = product;
+    });
 
-    productService.getProducts()
+    productService.getProducts();
 
     this.productService.getProductsResolver();
     route.data.subscribe((data) => {
-      console.log(data)
-    })
+      console.log(data);
+    });
   }
 
   onDisplayModeChange(mode: number): void {
@@ -70,10 +67,7 @@ export class ProductsComponent {
       max: ev,
     };
   }
-
- 
-  }
-
+}
 
 export interface Slider {
   min: number;

@@ -1,5 +1,5 @@
 <app-header></app-header>
-<mat-slider [(ngModel)]="sliderValue"  min="0" max="2000" step="50" >
+<mat-slider [(ngModel)]="sliderValue"  min="0" max="2000" step="50">
     <input (valueChange)="changeMin($event)"[(ngModel)]="sliderValue.min"  matSliderStartThumb>{{sliderValue.min}}
     <input (valueChange)="changeMax($event)"[(ngModel)]="sliderValue.max" matSliderEndThumb>{{sliderValue.max}}
   </mat-slider>

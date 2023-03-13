@@ -5,32 +5,31 @@ import { Cart } from '../../shared/Cart';
 import { Slider } from '../products/products.component';
 import { CartService } from '../../services/cart.service';
 
-
-
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent {
-  @Input() slider: Slider
+  @Input() slider: Slider;
   @Input() product: Product;
-  
-  
+
   products: Product[] = [];
   cart: Cart = {
-    products: [],
+    cartItems: [],
     priceTotal: 0,
   };
- 
 
-  constructor(private productService:ProductService, private cartService:CartService) {
-    this.productService.$products.subscribe(products => {
-      this.products = products
-    })
+  constructor(
+    private productService: ProductService,
+    private cartService: CartService
+  ) {
+    this.productService.$products.subscribe((products) => {
+      this.products = products;
+    });
   }
 
-  addToCart(products){
-    this.cartService.addProductToCart(products)
+  addToCart(products) {
+    this.cartService.addProductToCart(products);
   }
 }

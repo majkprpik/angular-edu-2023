@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Cart } from '../../shared/Cart';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../shared/Product';
+import { CartItem } from '../../shared/CartItem';
 
 @Component({
   selector: 'app-cart-page',
@@ -10,14 +11,15 @@ import { Product } from '../../shared/Product';
   styleUrls: ['./cart-page.component.scss'],
 })
 export class CartPageComponent {
-  cartItems: Product[] = [];
+  cartProducts: CartItem[] = [];
   totalPrice: number;
 
   constructor(private cartService: CartService) {
     cartService.$cart.subscribe((cart) => {
-      this.cartItems = cart.products;
-      this.totalPrice = this.cartService.getTotalPrice()
+      this.cartProducts = this.cartService.cart.cartItems;
+      this.totalPrice = this.cartService.getTotalPrice();
     });
+    this.cartService.getStorage();
   }
 
   removeItem(product: Product) {
