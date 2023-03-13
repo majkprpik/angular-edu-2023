@@ -8,14 +8,15 @@ import {
 } from '@angular/router';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { ProductService } from '../services/product.service';
+import { Product } from '../shared/Product';
 
 @Injectable()
-export class ProductResolver implements Resolve<any> {
+export class ProductResolver implements Resolve<Product[]> {
   constructor(private productService: ProductService) {}
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<any> {
-    return this.productService.getProducts();
+    return this.productService.getProductsResolver();
   }
 }

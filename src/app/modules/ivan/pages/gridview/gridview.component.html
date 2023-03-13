@@ -1,10 +1,10 @@
 <div class="grid-item">
     <a routerLink="/ivan/product/{{product.id}}">
-    <img [src]="product.image" [alt]="product.title" class="item-image">
+    <img [src]="product.thumbnail" [alt]="product.name" class="item-image">
 <div class="item-detail">
     <div class="header">
         <span class="item-name">
-            {{product.title}}
+            {{product.name}}
         </span>
     </div>
     <div class="item-price">

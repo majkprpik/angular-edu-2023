@@ -1,4 +1,3 @@
-import { FlowerService } from './../../services/flower.service';
 import { Component } from '@angular/core';
 import { Tag } from '../../shared/Tag';
 
@@ -10,5 +9,5 @@ import { Tag } from '../../shared/Tag';
 export class SidebarComponent {
   tags: Tag[];
 
-  constructor(private FlowerService: FlowerService) {}
+  constructor() {}
 }

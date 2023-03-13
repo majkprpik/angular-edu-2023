@@ -1,11 +1,11 @@
 import { ProductService } from './../../services/product.service';
 import { Product } from './../../shared/Product';
-import { FlowerService } from './../../services/flower.service';
-import { Component, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Flower } from '../../shared/Flower';
-import { CartService } from '../../services/cart.service';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Cart } from '../../shared/Cart';
+import { Slider } from '../products/products.component';
+import { CartService } from '../../services/cart.service';
+
+
 
 @Component({
   selector: 'app-product',
@@ -13,29 +13,24 @@ import { Cart } from '../../shared/Cart';
   styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent {
+  @Input() slider: Slider
   @Input() product: Product;
-  @Input() flower: Flower;
-  flowers: Flower[] = [];
+  
+  
   products: Product[] = [];
-  cart: Cart[] = [];
+  cart: Cart = {
+    products: [],
+    priceTotal: 0,
+  };
+ 
 
-  constructor(
-    private route: ActivatedRoute,
-    private FlowerService: FlowerService,
-    private productService: ProductService,
-    private cartService: CartService
-  ) {
-    this.FlowerService.$flowers.subscribe((flowers) => {
-      this.flowers = flowers;
-    });
+  constructor(private productService:ProductService, private cartService:CartService) {
+    this.productService.$products.subscribe(products => {
+      this.products = products
+    })
+  }
 
-    this.productService.$products.subscribe((products) => {
-      this.products = products;
-    });
-
-    this.route.params.subscribe((params) => {
-      if (params['id'])
-        this.product = productService.getProductId(params['id']);
-    });
+  addToCart(products){
+    this.cartService.addProductToCart(products)
   }
 }

@@ -1,10 +1,10 @@
 import { BehaviorSubject } from 'rxjs';
 import { ProductService } from './../../services/product.service';
-import { FlowerService } from './../../services/flower.service';
 import { Component } from '@angular/core';
-import { Flower } from '../../shared/Flower';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../shared/Product';
+import { CartService } from '../../services/cart.service';
+import { Cart } from '../../shared/Cart';
 
 @Component({
   selector: 'app-products',
@@ -17,38 +17,34 @@ export class ProductsComponent {
     max: 2000,
   };
 
+  cart: Cart = {
+    products: [],
+    priceTotal: 0,
+  };
+
   displayMode = 1;
   selectField = 'desc';
-  flowers: Flower[] = [];
   products: Product[] = [];
   selectedProducts: Product[] = [];
+  
 
   constructor(
-    private flowerService: FlowerService,
     private route: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private cartService:CartService
   ) {
-    this.flowerService.$flowers.subscribe((flowers) => {
-      this.flowers = flowers;
-    });
-    this.productService.$products.subscribe((products) => {
-      this.products = products;
-    });
-    route.data.subscribe((responseData) => {
-      this.products = responseData['products'].products.map((p) => {
-        return {
-          id: p.id,
-          title: p.title,
-          image: p.thumbnail,
-          price: p.price,
-        };
-      });
-      this.$products.next(this.products);
-    });
+
+    this.productService.$products.subscribe((product) => {
+      this.products = product
+    })
+
+    productService.getProducts()
+
+    this.productService.getProductsResolver();
+    route.data.subscribe((data) => {
+      console.log(data)
+    })
   }
-  $products: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>(
-    this.products
-  );
 
   onDisplayModeChange(mode: number): void {
     this.displayMode = mode;
@@ -74,7 +70,10 @@ export class ProductsComponent {
       max: ev,
     };
   }
-}
+
+ 
+  }
+
 
 export interface Slider {
   min: number;

@@ -17,7 +17,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ProductComponent } from './pages/product/product.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { StorageService } from './services/storage.service';
-import { FlowerService } from './services/flower.service';
 import { CartService } from './services/cart.service';
 import { ProductService } from './services/product.service';
 import { ProductResolver } from './resolvers/product.resolver';
@@ -61,7 +60,6 @@ export function tokenGetter() {
     UserService,
     AuthGuard,
     StorageService,
-    FlowerService,
     CartService,
     ProductService,
     ProductResolver,

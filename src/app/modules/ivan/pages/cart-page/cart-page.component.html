@@ -1,1 +1,35 @@
 <app-header></app-header>
+<div *ngIf=" cartItems.length >0" class="container">
+    <ul>
+        <li *ngFor="let cartItem of cartItems">
+            <div>
+                <img [src]="cartItem.thumbnail" [alt]="cartItem.name">
+            </div>
+            <div>
+                    {{cartItem.name}}
+            </div>
+            <div>
+                {{cartItem.price | currency}}
+            </div>
+
+            <div>
+                <button class="remove-button" (click)="removeItem(cartItem)">
+                    Remove
+                </button>
+            </div>
+        </li>
+    </ul>
+
+    <div class="checkout">
+        <div>
+            <div class="total-price">{{totalPrice| currency}}</div>
+        </div>
+    </div>
+
+</div>
+   
+  
+ 
+
+
+

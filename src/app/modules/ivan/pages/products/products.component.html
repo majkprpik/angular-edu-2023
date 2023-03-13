@@ -1,6 +1,5 @@
 <app-header></app-header>
-<app-sidebar></app-sidebar>
-<mat-slider [(ngModel)]="sliderValue" min="0" max="2000" step="50" >
+<mat-slider [(ngModel)]="sliderValue"  min="0" max="2000" step="50" >
     <input (valueChange)="changeMin($event)"[(ngModel)]="sliderValue.min"  matSliderStartThumb>{{sliderValue.min}}
     <input (valueChange)="changeMax($event)"[(ngModel)]="sliderValue.max" matSliderEndThumb>{{sliderValue.max}}
   </mat-slider>
@@ -17,7 +16,7 @@
         </div>
     </div>
     <div class="item-list" *ngIf="displayMode === 1">
-        <app-product *ngFor="let product of products|range:sliderValue |test:[selectField]" [product]="product">
+        <app-product *ngFor="let product of products |range:sliderValue |test:[selectField]" [product]="product" >
         </app-product>
     </div>
     <div class="grid-container" *ngIf="displayMode === 2">
