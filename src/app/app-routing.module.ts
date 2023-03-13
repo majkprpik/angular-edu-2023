@@ -12,6 +12,10 @@ const routes: Routes = [
     path: 'filip',
     loadChildren: () =>
       import('./modules/filip/filip.module').then((m) => m.FilipModule),
+  },{
+    path: '',
+    loadChildren: () =>
+      import('./modules/filip/filip.module').then((m) => m.FilipModule),
   }
 ];
 
