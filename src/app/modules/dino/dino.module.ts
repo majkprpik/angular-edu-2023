@@ -25,6 +25,10 @@ import { TestPipe } from './pipes/test.pipe';
 import {MatSliderModule} from '@angular/material/slider';
 import { MinimumPipe } from './pipes/minimum.pipe';
 import { MaximumPipe } from './pipes/maximum.pipe';
+import { CartComponent } from './components/cart/cart.component';
+import {MatButtonModule} from '@angular/material/button';
+import { CartProductComponent } from './components/cart-product/cart-product.component';
+import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
 
 export function tokenGetter() {
   return localStorage.getItem('accessTokenDino');
@@ -42,6 +46,8 @@ export function tokenGetter() {
     TestPipe,
     MinimumPipe,
     MaximumPipe,
+    CartComponent,
+    CartProductComponent,
   ],
   imports: [
     CommonModule,
@@ -51,6 +57,8 @@ export function tokenGetter() {
     MatSlideToggleModule,
     MatChipsModule,
     MatSliderModule,
+    MatDialogModule,
+    MatButtonModule,
     HttpClientModule,
     JwtModule.forRoot({
       config: {
@@ -60,6 +68,6 @@ export function tokenGetter() {
       },
     }),
   ],
-  providers: [AuthService, UserService,AuthGuard,ProductService,CartService,ProductResolver],
+  providers: [AuthService, UserService,AuthGuard,ProductService,CartService,ProductResolver,{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
 })
 export class DinoModule {}

@@ -1,3 +1,4 @@
+import { CartComponent } from './components/cart/cart.component';
 import { ProductResolver } from './resolvers/product.resolver';
 import { AuthGuard } from './guards/auth.guard';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -25,9 +26,14 @@ const routes: Routes = [
           product:ProductResolver
         },
       },
+      // {
+      //   path: '**',
+      //   component: LoginComponent,
+      // },
       {
-        path: '**',
-        component: LoginComponent,
+        path:'Cart',
+        component:CartComponent,
+        canActivate:[AuthGuard],
       },
     ],
   },

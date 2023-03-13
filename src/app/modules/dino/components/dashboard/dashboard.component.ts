@@ -1,7 +1,9 @@
+import { CartService } from './../../services/cart.service';
+import { Cart } from './../../models/Cart';
 import { Product } from './../../models/Product';
 import { ProductService } from './../../services/product.service';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,6 +14,8 @@ export class DashboardComponent {
 
   products: Product[] = [];
   
+  cart:Cart;
+
   sortAscending=false;
 
   sliderValue=0;  
@@ -25,7 +29,7 @@ export class DashboardComponent {
     this.productService.ChangeSortOrder();
   }
 
-  constructor(private productService: ProductService,private activatedRoute:ActivatedRoute) {
+  constructor(private productService: ProductService,private activatedRoute:ActivatedRoute,private router:Router,private cartService:CartService) {
     productService.$products.subscribe((product) => {
       this.products = product;
     });
@@ -42,5 +46,16 @@ export class DashboardComponent {
     activatedRoute.data.subscribe((data)=>{
       console.log(data);
     })
+    cartService.$cart.subscribe((cart)=>{
+      this.cart=cart;
+    })
+  }
+
+  NavigateToCart(){
+    this.router.navigate(['Dino', 'Cart']);
+  }
+
+  CartDialog(){
+
   }
 }

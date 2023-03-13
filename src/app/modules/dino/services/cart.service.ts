@@ -16,7 +16,9 @@ export class CartService {
   AddItem(product: Product) {
     this.cart.products.push(product);
     this.$cart.next(this.cart);
+    console.table(product);
   }
+  
   RemoveItem(productId: number) {
     const productIndex = this.cart.products.findIndex(
       (product) => product.id == productId
