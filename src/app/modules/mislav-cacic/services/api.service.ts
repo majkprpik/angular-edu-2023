@@ -8,7 +8,9 @@ export class ApiService {
 
   getListOfFerrariModels() {
     return this.http
-      .get('https://parseapi.back4app.com/classes/Car_Model_List_Ferrari')
+      .get(
+        'https://parseapi.back4app.com/classes/Car_Model_List_Ferrari?limit=10'
+      )
       .pipe(map((res: any) => res));
   }
 }

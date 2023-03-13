@@ -8,4 +8,10 @@ import { Product } from './../../models/Product';
 })
 export class ProductComponent {
   @Input() product: Product;
+
+  viewPhones() {
+    // if(this.product.name == "iPhone"){
+    //   this.router.navigate();
+    // }
+  }
 }

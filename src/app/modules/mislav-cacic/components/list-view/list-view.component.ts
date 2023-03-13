@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { MislavCacicComponent } from '../../mislav-cacic.component';
+import { Product } from '../../models/Product';
+import { ProductServiceService } from '../../services/products/product-service.service';
 
 @Component({
   selector: 'app-list-view',
@@ -8,8 +8,11 @@ import { MislavCacicComponent } from '../../mislav-cacic.component';
   styleUrls: ['./list-view.component.scss'],
 })
 export class ListViewComponent {
-  constructor(
-    private mislavComponent: MislavCacicComponent,
-    private router: Router
-  ) {}
+  products: Product[] = [];
+
+  constructor(private productService: ProductServiceService) {
+    this.productService.$ferrarimodels.subscribe((ferrarimodels) => {
+      this.products = ferrarimodels;
+    });
+  }
 }

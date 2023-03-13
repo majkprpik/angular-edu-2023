@@ -1,7 +1,8 @@
+import { BehaviorSubject } from 'rxjs';
 import { Product } from './../../models/Product';
 import { ProductServiceService } from './../../services/products/product-service.service';
-// import { Router } from '@angular/router';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 // import { MislavCacicComponent } from '../../mislav-cacic.component';
 
 @Component({
@@ -11,10 +12,20 @@ import { Component } from '@angular/core';
 })
 export class GridViewComponent {
   products: Product[] = [];
+  $products: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>(
+    this.products
+  );
 
-  constructor(private productService: ProductServiceService) {
-    // this.productService.$products.subscribe((phones) => {
-    //   this.products = phones;
-    // });
+  productData: any = [];
+
+  constructor(
+    private productService: ProductServiceService,
+    private router: Router
+  ) {
+    this.productData = this.productService.getProductData();
+
+    this.productService.$ferrarimodels.subscribe((ferrarimodels) => {
+      this.products = ferrarimodels;
+    });
   }
 }
