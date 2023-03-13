@@ -10,19 +10,22 @@ import { Product } from '../../models/product';
 export class ProductComponent {
 sviProducti: Product[]=[];
 
+
 constructor(private productService: ProductService){
   this.productService.$products.subscribe((data)=>{
     this.sviProducti=data
   })
+  this.productService.$sortAscending.subscribe((data)=>{
+    this.sortAscending=data
+  })
 }
+//servis za pipe
 
 products: Product[] = [];
 
 sortAscending = true;
 
-sortOrderChanged(ascending: boolean) {
-  this.sortAscending = ascending;
-}
+
 
 // Product u "model-products" nije importan
 }

@@ -1,3 +1,4 @@
+import { MatSliderModule } from '@angular/material/slider';
 import { ProductsResolver } from './resolvers/products.resolver';
 import { CardComponent } from './component/card/card.component';
 import { ProductService } from './service/product.service';
@@ -30,6 +31,8 @@ import { PricePipe } from './pipe/price.pipe';
 
 import { SortByPricePipe } from './pipe/sort-by-price.pipe';
 import { SortingComponent } from './component/sorting/sorting.component';
+import { PriceSliderComponent } from './component/price-slider/price-slider.component';
+import { PriceFilterPipe } from './pipe/price-filter.pipe';
 
 
 export function tokenGetter() {
@@ -48,7 +51,9 @@ export function tokenGetter() {
     TestPipe,
     PricePipe,
     SortByPricePipe,
-    SortingComponent
+    SortingComponent,
+    PriceSliderComponent,
+    PriceFilterPipe
   
   ],
   providers: [
@@ -74,6 +79,7 @@ export function tokenGetter() {
     MatIconModule,
     MatListModule,
     MatCardModule,
+    MatSliderModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,

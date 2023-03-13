@@ -1,3 +1,4 @@
+import { KartComponent } from './component/kart/kart.component';
 import { ProductsResolver } from './resolvers/products.resolver';
 import { AuthGuard } from './guards/auth.guard';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
@@ -30,6 +31,9 @@ const routes: Routes = [
           product2:ProductsResolver,
           product3:ProductsResolver,
         }
+      },{
+        path: 'kart',
+        component:KartComponent
       },
       {
         path:'',

@@ -1,7 +1,7 @@
 <form action="">
 <section class="featured-products">
   <ul class="slike">
-    <li *ngFor="let product of sviProducti |  sortByPrice : sortAscending">
+    <li *ngFor="let product of sviProducti  |  sortByPrice :sortAscending ">
       <img  src="{{product.imgURL}}" alt="{{product.name}}" />
       <h3>{{product.name}}</h3>
       <p>{{product.price }} €</p>

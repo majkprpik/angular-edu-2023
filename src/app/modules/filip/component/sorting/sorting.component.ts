@@ -1,4 +1,4 @@
-import { Product } from './../../models/product';
+import { ProductService } from './../../service/product.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,11 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./sorting.component.scss']
 })
 export class SortingComponent {
-  products: Product[] = [];
+  sortOrder:[]=[];
+
+  constructor(private productService: ProductService){
+  
+  }
+
 
   sortAscending = true;
 
   sortOrderChanged(ascending: boolean) {
-    this.sortAscending = ascending;
+   this.productService.$sortAscending.next(ascending)
   }
 }

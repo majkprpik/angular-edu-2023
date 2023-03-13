@@ -110,6 +110,8 @@ export class ProductService {
     },
   ];
 
+
+
   $products = new BehaviorSubject<Product[]>(this.products);
 
   joke: any[] = [];
@@ -131,4 +133,18 @@ export class ProductService {
   getJokeWithoutSubscribe() {
     return this.http.get(this.apiUrl);
   }
+
+  // prod: Product[] = [];
+
+  // $prod = new BehaviorSubject<Product[]>(this.prod);
+ sliderValueMin=0;
+ $sliderValueMin= new BehaviorSubject<number>(this.sliderValueMin);
+
+
+  sortAscending = true;
+
+  $sortAscending = new BehaviorSubject<boolean>(this.sortAscending);
+
+
+
 }
