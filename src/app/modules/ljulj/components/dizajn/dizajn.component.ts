@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./dizajn.component.scss']
 })
 export class DizajnComponent {
+alertsEnabled: any;
 
 }

@@ -1,0 +1,54 @@
+.header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px; 
+}
+
+
+    .header button {
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-size: 18px;
+      padding: 10px 15px;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .header button:hover {
+      background-color: #555;
+    }
+    
+   
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 20px;
+    }
+    
+    .square {
+      background-color: #ddd;
+      height: 40px;
+      width: 40px;
+    }
+    .square {
+        background-color: #ddd;
+        height: 40px;
+        width: 40px;
+      }
+      .square {
+        background-color: rgb(255, 255, 255);
+        height: 40px;
+        width: 40px;
+      }
+      .square {
+        background-color: #ddd;
+        height: 40px;
+        width: 40px;
+      }
+ 

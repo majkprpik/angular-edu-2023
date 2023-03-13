@@ -8,7 +8,7 @@ import {Router} from '@angular/router'
 
 @Injectable()
 export class AuthService {
-  UserService: any;
+ 
   
   constructor(private http: HttpClient, private storageService:StorageService,private jwtHelper:JwtHelperService,private userService:UserService, private router:Router) {}
 
@@ -41,6 +41,7 @@ export class AuthService {
           this.userService.user.username=tokenPayload.userName
           console.log(tokenPayload);
           console.log(this.userService.user.username)
+          console.log(this.isLoggedIn());
           this.router.navigate(['Ljulj','Dashboard']);
 
          }
@@ -49,6 +50,6 @@ export class AuthService {
   }
 
   isLoggedIn() {
-  return this.UserService.user.username !='';
+  return this.userService.user.username !='';
 }
 }

@@ -1,0 +1,45 @@
+.wrapper {
+  height: 50vh;
+  width: 38vw;
+  margin: 10px;
+  display: grid;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.search {
+    grid-column: 2;
+    width: 500px; 
+    max-width: 100%;
+    justify-self: center;
+    }
+    
+    .search-form {
+    /* This bit sets up the horizontal layout */
+    display:flex;
+    flex-direction:row;
+    /* This bit draws the box around it */
+    border:2px solid grey;
+    border-radius: 15px 15px 15px 15px; 
+    width: 100%; 
+    max-width: 500px; /* added */
+    margin: 8px 0; /* added */
+    }
+    
+    #search-bar {
+    flex-grow:2;
+    border: white 1px;
+    font-size: 16px;
+    padding: 4px; 
+    border-radius: 15px 0 0 15px; 
+    }
+    
+    #forum-button{
+    background: gray;
+    color: black;
+    font-size: 16px;
+    border-radius: 0px 10px 10px 0px; 
+    border: gray solid 1px; 
+    padding: 2px; 
+    }
