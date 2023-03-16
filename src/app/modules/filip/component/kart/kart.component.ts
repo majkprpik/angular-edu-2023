@@ -1,3 +1,4 @@
+import { ProductService } from './../../service/product.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./kart.component.scss']
 })
 export class KartComponent {
-
+constructor(private productService: ProductService){}
 }

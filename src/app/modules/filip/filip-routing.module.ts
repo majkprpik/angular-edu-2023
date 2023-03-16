@@ -29,10 +29,10 @@ const routes: Routes = [
           product:ProductsResolver,
           product1:ProductsResolver,
           product2:ProductsResolver,
-          product3:ProductsResolver,
+          product3:ProductsResolver
         }
       },{
-        path: 'kart',
+        path: 'dashboard/kart',
         component:KartComponent
       },
       {

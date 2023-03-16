@@ -1,23 +1,45 @@
+import { cartItem } from './../models/cart-item';
+import { Product } from './../models/product';
 import { BehaviorSubject } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { cart } from './../models/cart';
 import { Injectable } from '@angular/core';
 
 @Injectable()
-
 export class KartService {
+  cart: cart = {
+    productList: [],
+    totalPrice: 0,
+  };
+  constructor() {}
+  $cart = new BehaviorSubject<cart>(this.cart);
 
-  constructor( private http: HttpClient) { }
+  addItem(product: Product) {
+    let temp = this.cart.productList.find((ci) => ci.product.id == product.id);
 
+    if (temp == undefined) {
+      let cartItem = {
+        product: product,
+        quantity: 1,
+       
+      };
+      this.cart.productList.push(cartItem);
+      this.cart.totalPrice +=product.price
+    }else{
+      temp.quantity++
+      this.cart.totalPrice +=product.price
+    }
 
-  kart :[]=[];
-
-  $kart = new BehaviorSubject<any[]>(this.kart);
-
-  addProductToKart(){
-    this.$kart.subscribe()
+    this.$cart.next(this.cart);
+    console.log(this.cart);
   }
 
-  removeProductFromKart(){
-    
+  removeItem(product: Product) {
+    const productIndex = this.cart.productList.findIndex(
+      (cartItem) => cartItem.product.id == product.id
+    );
+    if (productIndex > -1) {
+      this.cart.productList.splice(productIndex, 1);
+    }
+    this.$cart.next(this.cart);
   }
 }

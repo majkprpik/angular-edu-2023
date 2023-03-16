@@ -1,3 +1,4 @@
+import { KartService } from './service/kart.service';
 import { MatSliderModule } from '@angular/material/slider';
 import { ProductsResolver } from './resolvers/products.resolver';
 import { CardComponent } from './component/card/card.component';
@@ -26,6 +27,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import {MatMenuModule} from '@angular/material/menu';
 import { TestPipe } from './pipe/test.pipe';
 import { PricePipe } from './pipe/price.pipe';
 
@@ -63,6 +65,7 @@ export function tokenGetter() {
     AuthGuard,
     ProductService,
     ProductsResolver,
+    KartService
   ],
 
   imports: [
@@ -80,6 +83,7 @@ export function tokenGetter() {
     MatListModule,
     MatCardModule,
     MatSliderModule,
+    MatMenuModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,

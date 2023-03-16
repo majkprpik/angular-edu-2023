@@ -1,3 +1,4 @@
+import { KartService } from './../../service/kart.service';
 import { Component } from '@angular/core';
 import { ProductService } from '../../service/product.service';
 import { Product } from '../../models/product';
@@ -11,7 +12,7 @@ export class ProductComponent {
 sviProducti: Product[]=[];
 
 
-constructor(private productService: ProductService){
+constructor(private productService: ProductService, private cartService: KartService){
   this.productService.$products.subscribe((data)=>{
     this.sviProducti=data
   })
@@ -20,7 +21,9 @@ constructor(private productService: ProductService){
   })
 }
 //servis za pipe
-
+ addToCart(product: Product){
+this.cartService.addItem(product)
+ }
 products: Product[] = [];
 
 sortAscending = true;
