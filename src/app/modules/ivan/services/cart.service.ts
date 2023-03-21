@@ -12,11 +12,16 @@ export class CartService {
     priceTotal: 0,
   };
 
+  savedItem: Product;
+
   $cart: BehaviorSubject<Cart> = new BehaviorSubject<Cart>(this.cart);
 
-  constructor() {
-    const savedProducts = JSON.parse(localStorage.getItem('cart'))
-    if(savedProducts) this.$cart.next(savedProducts)
+  constructor(private storageService: StorageService) {
+    const cartData = this.storageService.getFromLocal('cart');
+    if (cartData) {
+      this.cart.cartItems = cartData;
+      this.$cart.next(this.cart);
+    }
   }
 
   addProductToCart(product: Product) {
@@ -30,7 +35,7 @@ export class CartService {
     if (tempProduct == undefined) {
       this.cart.cartItems.push(cartItem);
       this.cart.priceTotal = this.cart.priceTotal + product.price;
-      localStorage.setItem('cart', JSON.stringify (cartItem))
+      this.storageService.saveToLocal('cart', this.cart.cartItems);
     } else {
       tempProduct.quantity++;
       this.cart.priceTotal += tempProduct.product.price;
@@ -38,16 +43,15 @@ export class CartService {
     this.$cart.next(this.cart);
     console.log(this.cart);
   }
-  
+
   removeCartItem(cartItem: CartItem) {
     let productIndx = this.cart.cartItems.findIndex(
-      (p) => p.product.id == cartItem.product.id
+      (p) => p.product.id === cartItem.product.id
     );
-    this.cart.cartItems.splice(productIndx);
+    this.cart.cartItems.splice(productIndx, cartItem.quantity);
     this.cart.priceTotal -= cartItem.product.price * cartItem.quantity;
     this.$cart.next(this.cart);
   }
-
 
   removeQuantity(product: Product) {
     let productIndx = this.cart.cartItems.findIndex(
