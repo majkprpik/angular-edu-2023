@@ -73,6 +73,11 @@ export class ProductServiceService {
   }
 }
 
+export interface SliderValues {
+  min: number;
+  max: number;
+}
+
 // id: string;
 // year: number;
 // model: string;

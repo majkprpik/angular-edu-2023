@@ -12,12 +12,12 @@ export class DashboardComponent {
     this.activatedRoute.data.subscribe((response) => {
       console.log(response);
     });
-    
-    // constructor(
-    //   // private productServiceService: ProductServiceService,
-    //   private router: Router,
-    // ) {
-    //   // this.productServiceService.fetchProducts();
-    // }
   }
+
+  // constructor(
+  //   // private productServiceService: ProductServiceService,
+  //   private router: Router,
+  // ) {
+  //   // this.productServiceService.fetchProducts();
+  // }
 }

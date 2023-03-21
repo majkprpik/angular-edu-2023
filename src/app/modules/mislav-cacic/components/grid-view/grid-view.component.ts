@@ -1,6 +1,6 @@
 import { BehaviorSubject } from 'rxjs';
 import { Product } from './../../models/Product';
-import { ProductServiceService } from './../../services/products/product-service.service';
+import { ProductServiceService, SliderValues } from './../../services/products/product-service.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 // import { MislavCacicComponent } from '../../mislav-cacic.component';
@@ -16,7 +16,8 @@ export class GridViewComponent {
     this.products
   );
 
-  productData: any = [];
+  sliderValue : SliderValues;
+  productData : any = [];
 
   constructor(
     private productService: ProductServiceService,

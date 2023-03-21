@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from './../../models/Product';
 
 @Component({
@@ -9,9 +10,11 @@ import { Product } from './../../models/Product';
 export class ProductComponent {
   @Input() product: Product;
 
-  viewPhones() {
-    // if(this.product.name == "iPhone"){
-    //   this.router.navigate();
-    // }
+  constructor(private router: Router) {}
+
+  viewCars() {
+    if (this.product.model == 'Ferrari') {
+      this.router.navigate(['mislav-cacic', 'dashboard', 'catalog']);
+    }
   }
 }
