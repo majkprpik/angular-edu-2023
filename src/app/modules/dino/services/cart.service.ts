@@ -1,3 +1,4 @@
+import { StorageService } from './storage.service';
 import { Product } from './../models/Product';
 import { BehaviorSubject } from 'rxjs';
 import { Cart } from './../models/Cart';
@@ -11,14 +12,11 @@ export class CartService {
   };
 
   $cart: BehaviorSubject<Cart> = new BehaviorSubject<Cart>(this.cart);
-  constructor() {}
+  constructor(private storageService:StorageService) {
+    this.cart=storageService.LoadCart("cart");
+    this.$cart.next(this.cart);
+  }
 
-  // AddItem(product: Product) {
-  //   this.cart.products.push(product);
-  //   this.cart.totalPrice=this.cart.totalPrice+product.price;
-  //   this.$cart.next(this.cart);
-  //   console.table(product);
-  // }
   AddProduct(product: Product) {
     let cartItem = {
       product: product,
@@ -52,13 +50,4 @@ export class CartService {
     }
   }
 
-  // RemoveItem(productId: number) {
-  //   const productIndex = this.cart.products.findIndex(
-  //     (product) => product.id == productId
-  //   );
-  //   if (productIndex > -1) {
-  //     this.cart.products.splice(productIndex, 1);
-  //   }
-  //   this.$cart.next(this.cart);
-  // }
 }
