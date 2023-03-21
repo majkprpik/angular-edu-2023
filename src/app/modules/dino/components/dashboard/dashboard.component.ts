@@ -17,7 +17,7 @@ export class DashboardComponent {
 
   cart: Cart;
 
-  sortAscending = false;
+  sortAscending = true;
 
   sliderValue = 0;
   sliderMax = 26000;
@@ -28,6 +28,7 @@ export class DashboardComponent {
 
   ChangeOrder() {
     this.productService.ChangeSortOrder();
+    this.sortAscending=!this.sortAscending;
   }
 
   constructor(

@@ -1,7 +1,7 @@
 <app-listhome></app-listhome>
 <app-navigation></app-navigation>
 
-<mat-slide-toggle (click)="(ChangeOrder)"
+<mat-slide-toggle (click)="(ChangeOrder())"
   >Slide for descending order!</mat-slide-toggle
 ><br />
 <mat-slider [step]="sliderStep" [max]="sliderMax" [min]="sliderMin" discrete>
@@ -15,7 +15,7 @@
   class="cartButton"
   (click)="openDialog()"
 >
-  Open dialog
+  Open shopping cart
 </button>
 
 <div class="content">
