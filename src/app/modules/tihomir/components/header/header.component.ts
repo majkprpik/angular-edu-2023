@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-  Logo = "assets/tihomir/Logo.png";
+  Logo = "assets/tihomir/Logos/Logo.png";
   Cart = "assets/tihomir/Cart.png";
 
   totalPrice : number;
@@ -22,5 +22,9 @@ export class HeaderComponent {
 
   goToCart(){
     this.router.navigate(['tihomir', 'dashboard', 'cart']);
+  }
+
+  goToGridView(){
+    this.router.navigate(['tihomir', 'dashboard', 'grid-view']);
   }
 }

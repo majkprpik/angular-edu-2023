@@ -2,16 +2,16 @@
 
 <div class="middle" [ngStyle]="{'height': '400px', 'width': '1100px', 'margin-top': '250px', 'margin-left': '150px', 'position': 'absolute', 'display': 'flex', 'justify-content': 'center', 'float': 'left'}">
     
-    <div *ngFor="let iPhone of iPhones | test : sliderValue" [ngStyle]="{'margin-right': '50px'}">
-        <img [src]="iPhone.imageURL" alt="">
+    <div *ngFor="let phone of phones | test: sliderValue" [ngStyle]="{'margin-right': '50px'}">
+        <img [src]="phone.imageURL" alt="">
         <br>
-        {{iPhone.description}}
+        {{phone.description}}
         <br>
         <br>
         <a mat-fab extended color="primary" [ngStyle]="{'background-color': 'yellow', 'color': 'black'}">
-            Qty: {{iPhone.quantity}}
+            Qty: {{phone.quantity}}
         </a>        
-        <button mat-fab extended [ngStyle]="{'background-color': 'yellow', 'color': 'black'}" (click)="addToCart(iPhone)">
+        <button mat-fab extended [ngStyle]="{'background-color': 'yellow', 'color': 'black'}" (click)="addToCart(phone)">
             Add to cart
         </button>
     </div>

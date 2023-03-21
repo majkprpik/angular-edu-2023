@@ -13,9 +13,9 @@ export class ListViewComponent {
   products : Product[] = [];
 
   constructor(private productService : ProductServiceService){
-    this.productService.$phones.subscribe((phones) => {
-      this.products = phones;
-    })
+    // this.productService.$phones.subscribe((phones) => {
+    //   this.products = phones;
+    // })
   }
 
 }

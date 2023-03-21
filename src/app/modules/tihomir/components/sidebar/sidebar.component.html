@@ -3,24 +3,15 @@
 <div class="leftSide" [ngStyle]="{'background-color': 'black', 'width': '150px', 'height': '100vh', 'float': 'left'}">
 
     <div class="brands" [ngStyle]="{'background-color': 'yellow', 'width': '150px', 'height': '74px', 'margin-top': '100px'}">
-        <div class="brandsText" [ngStyle]="{'font-size': '28px', 'padding': '19px'}"> 
+        <div class="brandsText" [ngStyle]="{'font-size': '28px', 'padding-top': '25px'}"> 
             BRANDS
         </div>
 
     </div>
 
-    <div class="brandsInBrands" [ngStyle]="{'background-color': '#98970c', 'height': '200px', 'width': '150px', 'font-size': '16px', 'line-height': '11.5px'}">
-        <div class="appleBrand" [ngStyle]="{'padding-top': '35px'}">
-            APPLE
-        </div>
-        <div class="appleBrand" [ngStyle]="{'padding-top': '28.5px'}">
-            SAMSUNG
-        </div>
-        <div class="appleBrand" [ngStyle]="{'padding-top': '28.5px'}">
-            HUAWEI
-        </div>
-        <div class="appleBrand" [ngStyle]="{'padding-top': '28.5px'}">
-            XIAOMI
+    <div class="brandsInBrands" [ngStyle]="{'background-color': '#98970c', 'height': '180px', 'width': '150px', 'font-size': '16px', 'line-height': '11.5px'}">
+        <div *ngFor="let brand of brands" [ngStyle]="{'padding-top': '28.5px'}">
+            {{brand}}
         </div>
     </div>
 
@@ -32,12 +23,8 @@
         <div [ngStyle]="{'color': 'yellow'}">
             {{sliderValueMin}} - {{sliderValueMax}}
         </div>
-
-        <div [ngStyle]="{'color': 'red'}">
-            {{sliderValue}}
-        </div>
     
-        <mat-slider id="slider" [(ngModel)]="sliderValue" color="yellow" ngDefaultControl  min="500" max="1200" step="100" showTickMarks (change)="onSliderChange()">
+        <mat-slider id="slider" [(ngModel)]="sliderValue" color="yellow" ngDefaultControl  min="0" max="1200" step="100" showTickMarks (change)="onSliderChange()">
             <input [(ngModel)]="sliderValueMin" matSliderStartThumb>
             <input [(ngModel)]="sliderValueMax" matSliderEndThumb>
         </mat-slider>

@@ -30,6 +30,9 @@ import { TestPipe } from './pipes/test.pipe';
 import { SortPipe } from './pipes/sort.pipe';
 import { IPhonesComponent } from './components/i-phones/i-phones.component';
 import { CartComponent } from './components/cart/cart.component';
+import { SamsungsComponent } from './components/samsungs/samsungs.component';
+import { LGsComponent } from './components/lgs/lgs.component';
+import { SonysComponent } from './components/sonys/sonys.component';
 
 export function tokenGetter() {
   return localStorage.getItem('accessToken');
@@ -50,6 +53,9 @@ export function tokenGetter() {
     SortPipe,
     IPhonesComponent,
     CartComponent,
+    SamsungsComponent,
+    LGsComponent,
+    SonysComponent,
   ],
   imports: [
     CommonModule,

@@ -1,3 +1,6 @@
+import { SonysComponent } from './components/sonys/sonys.component';
+import { LGsComponent } from './components/lgs/lgs.component';
+import { SamsungsComponent } from './components/samsungs/samsungs.component';
 import { CartComponent } from './components/cart/cart.component';
 import { IPhonesComponent } from './components/i-phones/i-phones.component';
 import { ProductResolver } from './resolvers/product.resolver';
@@ -33,11 +36,32 @@ const routes: Routes = [
           },
           {
             path: '',
-            component: ListViewComponent
+            component: GridViewComponent
           },
           {
             path: 'i-phones',
             component: IPhonesComponent,
+            resolve:{
+              products: ProductResolver
+            },
+          },
+          {
+            path: 'samsungs',
+            component: SamsungsComponent,
+            resolve:{
+              products: ProductResolver
+            },
+          },
+          {
+            path: 'lgs',
+            component: LGsComponent,
+            resolve:{
+              products: ProductResolver
+            },
+          },
+          {
+            path: 'sonys',
+            component: SonysComponent,
             resolve:{
               products: ProductResolver
             },

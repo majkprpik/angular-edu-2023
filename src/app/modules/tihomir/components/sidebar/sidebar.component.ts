@@ -15,10 +15,12 @@ export class SidebarComponent {
   sliderValueMin = 0;
   sliderValueMax = 1200;
   sliderValue: number = 1200;
-
-  // @Input() color: ThemePalette = "warn";
-
-  
+  brands = [
+    "Apple",
+    "Samsung",
+    "LG",
+    "Sony"
+  ]
 
   constructor(private router: Router, private productService : ProductServiceService) {}
 

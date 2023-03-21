@@ -2,6 +2,13 @@
 
 <div class="middle" [ngStyle]="{'height': '400px', 'width': '1100px', 'margin-top': '250px', 'margin-left': '150px', 'position': 'absolute', 'display': 'flex', 'justify-content': 'center', 'float': 'left'}">
     
-    <app-product *ngFor="let product of products | sort : 'ascending' | test: sliderValue" [product]="product"></app-product>
+    <div *ngFor="let product of products" [ngStyle]="{'margin-right': '50px'}">
+        <img [src]="product.img" alt="image">
+        <button mat-fab extended [ngStyle]="{'background-color': 'yellow', 'color': 'black'}" (click)="viewPhones(product.name)">
+            {{product.name}}
+        </button>
+    </div>
+    
+    <!-- <app-product *ngFor="let product of products | sort : 'ascending' | test: sliderValue" [product]="product"></app-product> -->
 
 </div>

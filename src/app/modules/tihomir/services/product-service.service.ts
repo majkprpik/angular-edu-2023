@@ -5,58 +5,12 @@ import { Product } from '../models/product';
 
 @Injectable()
 export class ProductServiceService {
-  phones: Product[] = [
-    {
-      id: '',
-      name: 'iPhone',
-      imageURL: 'assets/tihomir/iphone14pro.jpg',
-      logo: 'assets/tihomir/appleLogo.png',
-      CPU: '',
-      RAM: '',
-      description: 'iPhone 14 Pro',
-      price: 1200,
-    },
-    {
-      id: '',
-      name: 'Samsung',
-      imageURL: 'assets/tihomir/GalaxyS22.jpg',
-      logo: 'assets/tihomir/samsungLogo.png',
-      CPU: '',
-      RAM: '',
-      description: 'Samsung Galaxy S22',
-      price: 1000,
-    },
-    {
-      id: '',
-      name: 'Huawei',
-      imageURL: 'assets/tihomir/Honor70.jpg',
-      logo: 'assets/tihomir/huaweiLogo.png',
-      CPU: '',
-      RAM: '',
-      description: 'Honor 70',
-      price: 550,
-    },
-    {
-      id: '',
-      name: 'Xiaomi',
-      imageURL: 'assets/tihomir/Xiaomi12S.jpg',
-      logo: 'assets/tihomir/xiaomiLogo.png',
-      description: 'Xiaomi 12S',
-      CPU: '',
-      RAM: '',
-      price: 900,
-    },
-  ];
-
   products: any[] = [];
-  iPhones: any[] = [];
-
-  $phones = new BehaviorSubject<Product[]>(this.phones);
   productsURL =
     'https://parseapi.back4app.com/classes/Dataset_Cell_Phones_Model_Brand?order=Brand&where=%7B%22CPU%22%3A%7B%22%24gt%22%3A%221.2%22%7D%2C%22Announced%22%3A%7B%22%24gt%22%3A%222016%22%7D%2C%22RAM%22%3A%7B%22%24gt%22%3A%222%22%7D%2C%22NFC%22%3A%7B%22%24exists%22%3Atrue%7D%2C%22Display_resolution%22%3A%7B%22%24lt%22%3A%225%22%7D%7D';
 
   sliderValue: SliderValues = {
-    min: 500,
+    min: 0,
     max: 1200,
   };
 
@@ -67,7 +21,9 @@ export class ProductServiceService {
     this.products
   );
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) {
+    this.getProductData();
+  }
 
   getProductData() {
     return this.httpClient
@@ -86,7 +42,8 @@ export class ProductServiceService {
             RAM: p.RAM,
             imageURL: "",
             price: 0,
-            description: ""
+            description: "",
+            quantity : Math.floor(Math.random() * 6)
           };
         });
         console.log(this.products);

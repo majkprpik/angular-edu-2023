@@ -12,8 +12,8 @@ import { Component } from '@angular/core';
   templateUrl: './i-phones.component.html',
   styleUrls: ['./i-phones.component.scss'],
 })
-export class IPhonesComponent {
-  Logo = 'assets/tihomir/Logo.png';
+export class IPhonesComponent 
+{
   products: Product[] = [];
   $products: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>(
     this.products
@@ -23,33 +23,27 @@ export class IPhonesComponent {
   iPhones: any = [];
   models = ['iPhone 6S', 'iPhone 7 Plus', 'Apple Watch 8', 'Apple Watch SE'];
   images = [
-    'assets/tihomir/iPhone6S.jpg',
-    'assets/tihomir/iPhone7Plus.jpg',
-    'assets/tihomir/AppleWatch8.jpg',
-    'assets/tihomir/AppleWatchSE2.jpg',
+    'assets/tihomir/Apple/iPhone6S.jpg',
+    'assets/tihomir/Apple/iPhone7Plus.jpg',
+    'assets/tihomir/Apple/AppleWatch8.jpg',
+    'assets/tihomir/Apple/AppleWatchSE2.jpg',
   ];
   prices = [700, 800, 400, 300];
   description: any = [];
-  productData: any = [];
 
-  constructor(private productService: ProductServiceService, private cartService : CartServiceService) {
+  constructor(private productService: ProductServiceService, private cartService: CartServiceService) 
+  {
     this.productService.$sliderValue.subscribe((value) => {
       this.sliderValue = value;
     });
 
-    this.productData = this.productService.getProductData();
-
     this.productService.$products.next(this.productService.products);
-
     this.productService.$products.subscribe((phones) => {
       this.iPhones = phones.filter((phone) => phone.name === 'Apple');
     });
 
-    console.log('iPhones lel: ');
-    console.log(this.iPhones);
-
     for (let i = 0; i < this.iPhones.length; i++) {
-      this.iPhones[i].name = this.models[i];
+      this.iPhones[i].model = this.models[i];
       this.iPhones[i].price = this.prices[i];
       this.iPhones[i].imageURL = this.images[i];
       this.iPhones[i].description =
@@ -59,16 +53,17 @@ export class IPhonesComponent {
         this.iPhones[i].CPU +
         ' and  ' +
         this.iPhones[i].RAM +
-        'starting at only ' +
+        ' starting at only ' +
         this.iPhones[i].price +
         '$';
     }
   }
 
-  addToCart(phone : any){
+  addToCart(phone: any) {
+    if(phone.quantity == 0){
+      return;
+    }
+    phone.quantity--;
     this.cartService.add(phone);
-    
-    console.log("Phone: " + phone.name + " added to cart!");
   }
-
 }

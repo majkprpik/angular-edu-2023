@@ -1,3 +1,4 @@
+import { CartItem } from './../../models/cart-item';
 import { Cart } from './../../models/cart';
 import { Product } from './../../models/product';
 import { CartServiceService } from './../../services/cart-service.service';
@@ -9,7 +10,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent {
-  products: Product[] = [];
+  products: CartItem[] = [];
   localCart: Cart;
   totalPrice: number;
 
@@ -17,13 +18,14 @@ export class CartComponent {
     this.cartService.$cart.subscribe((product) => {
       this.localCart = product;
     });
-
-    this.products = this.localCart.products;
+    
+    this.products = this.localCart.cartItems;
     this.totalPrice = this.cartService.cart.price;
   }
 
   removeFromCart(phone: any) {
     this.cartService.remove(phone);
-    this.products = this.localCart.products;
+    phone.quantity++;
+    this.products = this.localCart.cartItems;
   }
 }

@@ -1,6 +1,7 @@
+import { CartItem } from './cart-item';
 import { Product } from './product';
 
 export interface Cart {
-    products : Product[],
+    cartItems : CartItem[],
     price : number
 }
