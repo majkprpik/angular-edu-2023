@@ -2,12 +2,15 @@
     text-align:center;
     display: block;
     width:100%;
-    padding:15px;
+    padding:20px;
     border: none;
     text-align: center;
     font-weight: bold;
     background-color:#EEE0CB;
+    margin-top:10%;
+    margin-bottom:10%;
     cursor:pointer;
+    
   }
 
   .sidebar-btn:hover{
@@ -18,15 +21,18 @@
   #title{
     font-family:'Times New Roman', Times, serif;
     text-align:center;
-    font-size:270%;
+    font-size:300%;
+    margin-top:20%;
+    margin-bottom:20%;
   }
 
 
   .sidebar-logo{
     background-color:grey;
     height:175px;
-    width:200px;
-    margin-top:calc(100vh - 600px);
+    width:216px;
+    position: absolute;
+    bottom: 0;
   }
 
   .sidebar-logo img{

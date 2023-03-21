@@ -20,7 +20,7 @@ constructor(){
 spremi(){
 this.objekat.name = this.name;
 this.objekat.password = this.password;
-console.log(this.objekat,'log ime i pass')
+
 }
 
 
