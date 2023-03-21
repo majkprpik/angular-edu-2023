@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { Tag } from '../../shared/Tag';
+import { Product } from './../../shared/Product';
+import { Component, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-sidebar',
@@ -7,7 +8,5 @@ import { Tag } from '../../shared/Tag';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent {
-  tags: Tag[];
-
   constructor() {}
 }

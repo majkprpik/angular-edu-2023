@@ -8,12 +8,21 @@
             <div>
                     {{cartItem.product.name}}
             </div>
+            <button (click)="removeQuantity(cartItem.product)">
+                -
+              </button>
+              <span>{{ cartItem.quantity }}</span>
+              <button  (click)="onAddQuantity(cartItem.product)">
+                +
+              </button>
             <div>
-                {{cartItem.product.price | currency}}
+                {{cartItem.product.price | currency}} x {{cartItem.quantity}}
             </div>
 
             <div>
-                <button class="remove-button" (click)="removeItem(cartItem.product)">
+               <div>
+               </div> 
+                <button class="remove-button" (click)="removeItem(cartItem)">
                     Remove
                 </button>
             </div>

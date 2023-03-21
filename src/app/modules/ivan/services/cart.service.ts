@@ -14,42 +14,52 @@ export class CartService {
 
   $cart: BehaviorSubject<Cart> = new BehaviorSubject<Cart>(this.cart);
 
-  constructor(private storageService: StorageService) {}
+  constructor() {
+    const savedProducts = JSON.parse(localStorage.getItem('cart'))
+    if(savedProducts) this.$cart.next(savedProducts)
+  }
 
   addProductToCart(product: Product) {
-    let tempArray = this.cart.cartItems.find(
+    let tempProduct = this.cart.cartItems.find(
       (p) => p.product.id === product.id
     );
     let cartItem = {
       product: product,
       quantity: 1,
     };
-    if (tempArray) {
-      tempArray.quantity += 1;
+    if (tempProduct == undefined) {
+      this.cart.cartItems.push(cartItem);
+      this.cart.priceTotal = this.cart.priceTotal + product.price;
+      localStorage.setItem('cart', JSON.stringify (cartItem))
     } else {
-      this.cart.cartItems.push();
+      tempProduct.quantity++;
+      this.cart.priceTotal += tempProduct.product.price;
     }
-    this.cart.cartItems.push(cartItem);
     this.$cart.next(this.cart);
-    this.storageService.saveToLocal('product', this.cart);
     console.log(this.cart);
   }
-
-  removeCartItem(productId: number) {
-    this.cart.cartItems = this.cart.cartItems.filter((a) => {
-      return a.product.id != productId;
-    });
+  
+  removeCartItem(cartItem: CartItem) {
+    let productIndx = this.cart.cartItems.findIndex(
+      (p) => p.product.id == cartItem.product.id
+    );
+    this.cart.cartItems.splice(productIndx);
+    this.cart.priceTotal -= cartItem.product.price * cartItem.quantity;
     this.$cart.next(this.cart);
   }
 
-  getTotalPrice(): number {
-    let priceTotal = 0;
-    this.cart.cartItems.forEach((a: any) => {
-      priceTotal += a.product.price;
-    });
-    return priceTotal;
-  }
-  getStorage(): string {
-    return this.storageService.getFromLocal('product');
+
+  removeQuantity(product: Product) {
+    let productIndx = this.cart.cartItems.findIndex(
+      (p) => p.product.id == product.id
+    );
+    if (this.cart.cartItems[productIndx].quantity > 1) {
+      this.cart.cartItems[productIndx].quantity--;
+      this.cart.priceTotal -= product.price;
+    } else {
+      this.cart.cartItems.splice(productIndx, 1);
+      this.cart.priceTotal -= product.price;
+    }
+    this.$cart.next(this.cart);
   }
 }

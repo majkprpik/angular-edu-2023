@@ -23,6 +23,7 @@ export class ProductService {
           name: product.title,
           price: product.price,
           thumbnail: product.thumbnail,
+          category: product.category
         };
       });
       this.$products.next(this.products);
