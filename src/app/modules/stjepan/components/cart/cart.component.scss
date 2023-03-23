@@ -41,17 +41,16 @@
 }
 
 .quantity {
-  border: none;
   background-color: #fff;
   border: 1px solid black;
   color: #000;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 10px;
   cursor: pointer;
-}
 
-.quantity:hover {
-  background-color: #eee;
+  &:hover {
+    background-color: #eeeeeebd;
+  }
 }
 
 .cart-total {
