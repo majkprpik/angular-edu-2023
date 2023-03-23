@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Slider } from '../pages/products/products.component';
 
 @Injectable()
 export class ProductService {
