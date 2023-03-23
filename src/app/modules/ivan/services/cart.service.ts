@@ -48,16 +48,15 @@ export class CartService {
     this.storageService.saveToLocal('cart', this.cart.cartItems)
     console.log(this.cart);
   }
-  
+
   removeCartItem(cartItem: CartItem) {
     let productIndx = this.cart.cartItems.findIndex(
-      (p) => p.product.id == cartItem.product.id
+      (p) => p.product.id === cartItem.product.id
     );
     this.cart.cartItems.splice(productIndx);
     this.cart.totalPrice = this.TotalPrice
     this.$cart.next(this.cart);
   }
-
 
   removeQuantity(product: Product) {
     let productIndx = this.cart.cartItems.findIndex(

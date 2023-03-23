@@ -23,19 +23,16 @@ export class CartPageComponent {
     });
   }
 
-
-
-  removeItem(cartitem:CartItem) {
-    this.cartService.removeCartItem(cartitem);
+  removeItem(cartProduct: CartItem) {
+    this.cartService.removeCartItem(cartProduct);
   }
 
-
-  onAddQuantity(product:Product) {
-    this.cartService.addProductToCart(product)
+  onAddQuantity(product: Product) {
+    this.cartService.addProductToCart(product);
   }
 
-  removeQuantity(product:Product){
-    this.cartService.removeQuantity(product)
+  removeQuantity(product: Product) {
+    this.cartService.removeQuantity(product);
   }
 
   onClearCart(){
@@ -43,4 +40,3 @@ export class CartPageComponent {
   }
 
 }
- 
