@@ -1,3 +1,3 @@
-export interface Product{
-    products:[]
-  }
+export interface Product {
+  products: [];
+}

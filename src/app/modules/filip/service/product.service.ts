@@ -57,8 +57,7 @@ export class ProductService {
       name: 'Kobe 6',
       price: 500,
       id: 6,
-      imgURL:
-        '../../../../assets/filip-tod/produkti/kobe6.jpeg',
+      imgURL: '../../../../assets/filip-tod/produkti/kobe6.jpeg',
     },
 
     {
@@ -73,24 +72,21 @@ export class ProductService {
       name: 'PG',
       price: 90,
       id: 8,
-      imgURL:
-        '../../../../assets/filip-tod/produkti/paul-george-6.jpg',
+      imgURL: '../../../../assets/filip-tod/produkti/paul-george-6.jpg',
     },
 
     {
       name: 'PG',
       price: 110,
       id: 9,
-      imgURL:
-        '../../../../assets/filip-tod/produkti/PG4-shoe.jpg',
+      imgURL: '../../../../assets/filip-tod/produkti/PG4-shoe.jpg',
     },
 
     {
       name: 'LBJ 12',
       price: 350,
       id: 10,
-      imgURL:
-        '../../../../assets/filip-tod/produkti/lebron-james-12-a.jpg',
+      imgURL: '../../../../assets/filip-tod/produkti/lebron-james-12-a.jpg',
     },
 
     {
@@ -105,12 +101,9 @@ export class ProductService {
       name: 'KD 10',
       price: 170,
       id: 12,
-      imgURL:
-        '../../../../assets/filip-tod/produkti/Nike_KD_10.jpg',
+      imgURL: '../../../../assets/filip-tod/produkti/Nike_KD_10.jpg',
     },
   ];
-
-
 
   $products = new BehaviorSubject<Product[]>(this.products);
 
@@ -137,14 +130,10 @@ export class ProductService {
   // prod: Product[] = [];
 
   // $prod = new BehaviorSubject<Product[]>(this.prod);
- sliderValueMin=0;
- $sliderValueMin= new BehaviorSubject<number>(this.sliderValueMin);
-
+  sliderValueMin = 0;
+  $sliderValueMin = new BehaviorSubject<number>(this.sliderValueMin);
 
   sortAscending = true;
 
   $sortAscending = new BehaviorSubject<boolean>(this.sortAscending);
-
-
-
 }

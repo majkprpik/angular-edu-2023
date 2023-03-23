@@ -1,72 +1,71 @@
 * {
-    box-sizing: border-box;
-    
-  }
+  box-sizing: border-box;
+}
 
-  .glavna{
-    background-color: #007bff;
-  }
-  
-  /* Style the hero section */
-  .hero {
-    background-color: #063e8b;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-    padding: 2rem;
-    color: #fff;
-  }
-  
-  .hero h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  
-  .hero p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
+.glavna {
+  background-color: #007bff;
+}
 
-  .subscribe {
-    background-color: #007bff;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-  
-  .subscribe h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .subscribe form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-  }
-  
-  .subscribe input[type="email"] {
-    border: none;
-    border-radius: 0.25rem;
-    font-size: 1.5rem;
-    padding: 1rem;
-    width: 20rem;
-  }
-  
-  .subscribe button {
-    background-color: #fff;
-    color: #007bff;
-    border: none;
-    border-radius: 0.25rem;
-    font-size: 1.5rem;
-    padding: 1rem 2rem;
-    cursor: pointer;
-  }
+/* Style the hero section */
+.hero {
+  background-color: #063e8b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  padding: 2rem;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.subscribe {
+  background-color: #007bff;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.subscribe h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.subscribe form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.subscribe input[type="email"] {
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+  width: 20rem;
+}
+
+.subscribe button {
+  background-color: #fff;
+  color: #007bff;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}

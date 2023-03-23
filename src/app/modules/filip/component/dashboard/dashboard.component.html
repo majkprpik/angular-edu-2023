@@ -1,10 +1,20 @@
 <!-- nvbar -->
 <mat-toolbar class="primary">
-  <button (click)="goToHome()"  routerLink="/dashboard" class="home" aria-label="Example icon button with a home icon">
+  <button
+    (click)="goToHome()"
+    routerLink="/dashboard"
+    class="home"
+    aria-label="Example icon button with a home icon"
+  >
     <mat-icon>home</mat-icon>
   </button>
   <span class="example-spacer"></span>
-  <button style="background-color: blue;" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+  <button
+    style="background-color: blue"
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="Example icon-button with a menu"
+  >
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
@@ -16,18 +26,24 @@
       <mat-icon>mail</mat-icon>
       <span>inbox</span>
     </button>
-    <button  mat-menu-item>
+    <button mat-menu-item>
       <mat-icon>notifications_off</mat-icon>
       <span>Disable alerts</span>
     </button>
   </mat-menu>
-  
-  <button style="background-color: blue;" (click)="goToKart()" class="kart"  mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon  fontSize="large">shopping_cart</mat-icon>
+
+  <button
+    style="background-color: blue"
+    (click)="goToKart()"
+    class="kart"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon fontSize="large">shopping_cart</mat-icon>
   </button>
 </mat-toolbar>
 <!-- navbar -->
-
 
 <section class="hero">
   <h1>Welcome to</h1>
@@ -37,15 +53,14 @@
     alt=""
   />
   <p>Get your favorite NBA team's merchandise here!</p>
-  <p>{{ [1,2,3,4,5,6,7,8,9] | test: 'parni'  }}</p>
+  <p>{{ [1, 2, 3, 4, 5, 6, 7, 8, 9] | test : "parni" }}</p>
 </section>
 <app-sorting></app-sorting>
-<hr>
+<hr />
 <!-- napraviti pajp i da u html-u imam dvije tipke koja onda radi desending i asending price -->
 <app-price-slider></app-price-slider>
 <app-product *ngIf="!isOpenKart"></app-product>
-<app-kart *ngIf="!isOpenHome" ></app-kart>
- 
+<app-kart *ngIf="!isOpenHome"></app-kart>
 
 <section class="about-us">
   <h2>About Us</h2>
@@ -63,9 +78,3 @@
     <button>Subscribe</button>
   </form>
 </section>
-
-
-
-
-
-

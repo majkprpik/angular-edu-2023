@@ -7,67 +7,60 @@ import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 
-@Injectable(
-  
-)
+@Injectable()
 export class AuthService {
-
-  constructor(private http:HttpClient, private loginService:LoginServiceService, private userService:UserService, private jwtHelper: JwtHelperService,  private roter: Router) {
-    
-  let access= this.getAccessToken()
-  if(access!= null && !this.jwtHelper.isTokenExpired(access)){
-    let payload = this.jwtHelper.decodeToken(access);
-    this.userService.$user.next({username:payload.userName})
-    this.roter.navigate(['dashboard'])
-
-    
+  constructor(
+    private http: HttpClient,
+    private loginService: LoginServiceService,
+    private userService: UserService,
+    private jwtHelper: JwtHelperService,
+    private roter: Router
+  ) {
+    let access = this.getAccessToken();
+    if (access != null && !this.jwtHelper.isTokenExpired(access)) {
+      let payload = this.jwtHelper.decodeToken(access);
+      this.userService.$user.next({ username: payload.userName });
+      this.roter.navigate(['dashboard']);
+    }
   }
-
-   }
 
   urlToken = 'https://edu-back.azurewebsites.net/account/login-jwt';
 
-  getAccessToken(){
+  getAccessToken() {
     return this.loginService.getFromLocal('accessToken_Filip');
   }
 
-  getRefreshToken(){
+  getRefreshToken() {
     return this.loginService.getFromLocal('refreshToken_Filip');
   }
 
   loginToken(user: any) {
-      this.http
-     .post(this.urlToken, user)
-     .subscribe((response: any)=>{
+    this.http.post(this.urlToken, user).subscribe((response: any) => {
       console.log(response);
-      if(response.accessToken != null && response.refreshToken !=null && !this.jwtHelper.isTokenExpired(response.accessToken)){
-      const accessToken = response.accessToken;
-      const refreshToken = response.refreshToken;
-      this.loginService.saveToLocal('accessToken_Filip', accessToken);
-      this.loginService.saveToLocal('refreshToken_Filip', refreshToken);
-      let tokenPayload= this.jwtHelper.decodeToken(accessToken);
-      this.userService.user.username= tokenPayload.username
-      this.userService.$user.next({username: tokenPayload.userName})
-      this.roter.navigate(['filip', 'dashboard']);
-
-
-    }
+      if (
+        response.accessToken != null &&
+        response.refreshToken != null &&
+        !this.jwtHelper.isTokenExpired(response.accessToken)
+      ) {
+        const accessToken = response.accessToken;
+        const refreshToken = response.refreshToken;
+        this.loginService.saveToLocal('accessToken_Filip', accessToken);
+        this.loginService.saveToLocal('refreshToken_Filip', refreshToken);
+        let tokenPayload = this.jwtHelper.decodeToken(accessToken);
+        this.userService.user.username = tokenPayload.username;
+        this.userService.$user.next({ username: tokenPayload.userName });
+        this.roter.navigate(['filip', 'dashboard']);
+      }
     });
   }
 
-  isLoggedin(){
-  // return this.userService.user.username != '';
-  return this.userService.$user.value.username!='';
+  isLoggedin() {
+    // return this.userService.user.username != '';
+    return this.userService.$user.value.username != '';
   }
-
-
 
   // LoginApi(){
   //   this.http.get(this.apiUrl).subscribe(data => {
   //     console.log(data);
   //   });
-
-  
-
-
 }

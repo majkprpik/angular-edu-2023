@@ -21,10 +21,10 @@ li img {
 .slike img {
   width: 100%;
   height: auto;
-} 
- 
-.featured-products{
-  background-color: #8CC7A1;
+}
+
+.featured-products {
+  background-color: #8cc7a1;
 }
 
 button {
@@ -33,14 +33,12 @@ button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
 button:hover {
   transform: translateY(-2px);
-  box-shadow: 0px 4px 4px rgba(0,0,0,0.3);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
 }
-
-  

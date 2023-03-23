@@ -27,7 +27,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 import { TestPipe } from './pipe/test.pipe';
 import { PricePipe } from './pipe/price.pipe';
 
@@ -35,7 +35,6 @@ import { SortByPricePipe } from './pipe/sort-by-price.pipe';
 import { SortingComponent } from './component/sorting/sorting.component';
 import { PriceSliderComponent } from './component/price-slider/price-slider.component';
 import { PriceFilterPipe } from './pipe/price-filter.pipe';
-
 
 export function tokenGetter() {
   return localStorage.getItem('acessToken');
@@ -55,8 +54,7 @@ export function tokenGetter() {
     SortByPricePipe,
     SortingComponent,
     PriceSliderComponent,
-    PriceFilterPipe
-  
+    PriceFilterPipe,
   ],
   providers: [
     LoginServiceService,
@@ -65,7 +63,7 @@ export function tokenGetter() {
     AuthGuard,
     ProductService,
     ProductsResolver,
-    KartService
+    KartService,
   ],
 
   imports: [

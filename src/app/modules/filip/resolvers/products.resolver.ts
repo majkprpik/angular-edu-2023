@@ -10,7 +10,7 @@ import { Observable, of } from 'rxjs';
 
 @Injectable()
 export class ProductsResolver implements Resolve<any> {
-  constructor(private productservice:ProductService){}
+  constructor(private productservice: ProductService) {}
 
   resolve(
     route: ActivatedRouteSnapshot,
@@ -18,7 +18,4 @@ export class ProductsResolver implements Resolve<any> {
   ): Observable<any> {
     return this.productservice.getJokeWithoutSubscribe();
   }
-
- 
-
 }

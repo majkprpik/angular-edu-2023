@@ -2,7 +2,7 @@ import { Product } from './../models/product';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'sortByPrice'
+  name: 'sortByPrice',
 })
 export class SortByPricePipe implements PipeTransform {
   transform(products: Product[], ascending: boolean = true): Product[] {

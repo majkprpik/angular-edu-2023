@@ -1,27 +1,25 @@
-.primary{
-    background-color: #007bff;
+.primary {
+  background-color: #007bff;
 }
 
-
-.home{
-color: red;
-background-color: gray;
+.home {
+  color: red;
+  background-color: gray;
 }
 
 .center-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .example-spacer {
-    flex: 1 1 auto;
-  }
-  
-  .icon-group {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.icon-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

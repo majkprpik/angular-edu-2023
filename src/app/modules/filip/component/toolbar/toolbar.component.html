@@ -1,32 +1,42 @@
+<mat-toolbar class="primary">
+  <button
+    routerLink="/dashboard"
+    class="home"
+    mat-fab
+    color="warn"
+    aria-label="Example icon button with a home icon"
+  >
+    <mat-icon>home</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="Example icon-button with a menu"
+  >
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>person</mat-icon>
+      <span>Accaunt settings</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>mail</mat-icon>
+      <span>inbox</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon>
+      <span>Disable alerts</span>
+    </button>
+  </mat-menu>
 
-
-    <mat-toolbar class="primary">
-      <button  routerLink="/dashboard" class="home" mat-fab color="warn" aria-label="Example icon button with a home icon">
-        <mat-icon>home</mat-icon>
-      </button>
-      <span class="example-spacer"></span>
-      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-          <mat-icon>person</mat-icon>
-          <span>Accaunt settings</span>
-        </button>
-        <button mat-menu-item disabled>
-          <mat-icon>mail</mat-icon>
-          <span>inbox</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>notifications_off</mat-icon>
-          <span>Disable alerts</span>
-        </button>
-      </mat-menu>
-      
-      <button class="kart"  mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon fontSize="large">shopping_cart</mat-icon>
-      </button>
-    </mat-toolbar>
-
-  
- 
+  <button
+    class="kart"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon fontSize="large">shopping_cart</mat-icon>
+  </button>
+</mat-toolbar>

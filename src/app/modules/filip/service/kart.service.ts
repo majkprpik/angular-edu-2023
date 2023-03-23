@@ -20,13 +20,12 @@ export class KartService {
       let cartItem = {
         product: product,
         quantity: 1,
-       
       };
       this.cart.productList.push(cartItem);
-      this.cart.totalPrice +=product.price
-    }else{
-      temp.quantity++
-      this.cart.totalPrice +=product.price
+      this.cart.totalPrice += product.price;
+    } else {
+      temp.quantity++;
+      this.cart.totalPrice += product.price;
     }
 
     this.$cart.next(this.cart);
@@ -42,9 +41,6 @@ export class KartService {
     }
     this.$cart.next(this.cart);
   }
- 
-  showItemSelected(){
-    
-  }
- 
+
+  showItemSelected() {}
 }
