@@ -12,14 +12,22 @@ export class AutenService {
     private storageService: StorageService, 
     private userService: UserService,
     private jwtHelper: JwtHelperService,
-    private router: Router) {}
+    private router: Router) {
+      let access = localStorage.getItem('accessToken_stjepan');
+      let tokenPayload = this.jwtHelper.decodeToken(this.storageService.get('accessToken_stjepan'));
+
+      if(!this.jwtHelper.isTokenExpired(access)){
+        this.userService.$user.next({username: tokenPayload.userName});
+        this.userService.user.username = tokenPayload.userName;
+      }
+    }
 
   getAccessToken(): string {
-    return this.storageService.dohvatiIzLocala('accessToken_stjepan')
+    return this.storageService.get('accessToken_stjepan')
   }
 
   getRefreshToken(): string {
-    return this.storageService.dohvatiIzLocala('refreshToken_stjepan')
+    return this.storageService.get('refreshToken_stjepan')
   }
 
   AuthoriseUser(podaciOKorisniku: any) {
@@ -33,17 +41,20 @@ export class AutenService {
         && !this.jwtHelper.isTokenExpired(response.accessToken)) {
       const accessToken = response.accessToken;
       const refreshToken = response.refreshToken;
-      this.storageService.spremiULocal('accessToken_stjepan', accessToken);
-      this.storageService.spremiULocal('refreshToken_stjepan', refreshToken);
+      this.storageService.set('accessToken_stjepan', accessToken);
+      this.storageService.set('refreshToken_stjepan', refreshToken);
       let tokenPayload = this.jwtHelper.decodeToken(accessToken);
-      this.userService.user.username = tokenPayload.username;
+      this.userService.$user.next({username: tokenPayload.userName});
+      this.userService.user.username = tokenPayload.userName;
       this.router.navigate(['stjepan', 'dashboard'])
+      } else {
+        this.router.navigate(['stjepan']);
       }
     })
   }
 
   isLoggedIn() {
-    return this.userService.user.username != '';
+    return this.userService.$user.value.username != '';
   }
 }
 

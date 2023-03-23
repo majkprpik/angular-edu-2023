@@ -7,12 +7,16 @@ export class StorageService {
 
   constructor() { }
 
-  spremiULocal(key:string, value:any) {
+  set(key:string, value:any) {
     localStorage.setItem(key, JSON.stringify(value))
   }
 
-  dohvatiIzLocala(key:string) {
+  get(key:string) {
     const value = localStorage.getItem(key);
     return value ? JSON.parse(value) : null;
+  }
+
+  remove(key:string) {
+    localStorage.setItem
   }
 }
