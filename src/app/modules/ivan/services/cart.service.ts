@@ -51,7 +51,7 @@ export class CartService {
     let productIndx = this.cart.cartItems.findIndex(
       (p) => p.product.id === cartItem.product.id
     );
-    this.cart.cartItems.splice(productIndx);
+    this.cart.cartItems.splice(productIndx, 1);
     this.cart.totalPrice = this.TotalPrice;
     this.storageService.saveToLocal('cart', this.cart.cartItems);
     this.$cart.next(this.cart);
