@@ -1,3 +1,5 @@
+import { AuthService } from './services/auth.service';
+import { UserServiceService } from './user-service.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -5,4 +7,13 @@ import { Component } from '@angular/core';
   templateUrl: './my-module15.component.html',
   styleUrls: ['./my-module15.component.scss'],
 })
-export class MyModule15Component {}
+export class MyModule15Component {
+  /**
+   *
+   */
+
+  constructor(
+    private UserService: UserServiceService,
+    private authService: AuthService
+  ) {}
+}

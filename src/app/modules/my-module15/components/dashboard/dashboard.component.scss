@@ -1,0 +1,18 @@
+.main {
+  background-color: #eee0cb;
+  display: flex;
+  flex-direction: row;
+  .sidebar {
+    width: 216px;
+    height: 100vh;
+    background-color: #eee0cb;
+    position: fixed;
+  }
+  .products {
+    width: calc(100vw - 250px);
+    height: calc(100vh - 200px);
+    background-color: white;
+    position: absolute;
+    left: 216px;
+  }
+}
