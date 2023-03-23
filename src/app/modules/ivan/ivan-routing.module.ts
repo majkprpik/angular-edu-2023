@@ -31,12 +31,6 @@ const routes: Routes = [
         resolve: {
           products: ProductResolver,
         },
-        children: [
-          {
-            path: ':id',
-            component: ProductComponent,
-          },
-        ],
       },
       {
         path: 'cartPage',
