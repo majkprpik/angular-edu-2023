@@ -1,3 +1,4 @@
+import { FilterService } from './../../services/filter.service';
 import { StorageService } from './../../services/storage.service';
 import { CartService } from './../../services/cart.service';
 import { Router } from '@angular/router';
@@ -5,45 +6,47 @@ import { Component } from '@angular/core';
 import { Product } from './../../models/Products';
 import { ProductService } from './../../services/product.service';
 
-
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent {
-  
-  changeMin(ev){
+  changeMin(ev) {
     this.sliderValues = {
-      min : ev,
-      max : this.sliderValues.max
-    }
+      min: ev,
+      max: this.sliderValues.max,
+    };
   }
-  changeMax(ev){
+  changeMax(ev) {
     this.sliderValues = {
-    min : this.sliderValues.min,
-    max : ev
-  }}
+      min: this.sliderValues.min,
+      max: ev,
+    };
+  }
 
-  sliderValues : {
-    min: number,
-    max: number
+  sliderValues: {
+    min: number;
+    max: number;
   } = {
-    min : 0,
-    max : 1000,
-  }
+    min: 0,
+    max: 1000,
+  };
   minSliderValue = 0;
   maxSliderValue = 1000;
-  currentView = 'grid'; 
-  viewClass = 'grid-container'; 
+  currentView = 'grid';
+  viewClass = 'grid-container';
   sortAscending = true;
 
   products: Product[] = [];
-  
 
-  constructor(private productService: ProductService, private router: Router,
-  private cart: CartService, private storageService: StorageService) {
-    
+  constructor(
+    private productService: ProductService,
+    private router: Router,
+    private cart: CartService,
+    private storageService: StorageService,
+    private filterService: FilterService
+  ) {
     this.productService.getProducts();
     this.productService.$products.subscribe((data) => {
       this.products = data;
@@ -52,10 +55,10 @@ export class ProductComponent {
 
   category = '';
 
-  viewCart(){
-    this.router.navigate(['my-module15','cart']);
+  viewCart() {
+    this.router.navigate(['my-module15', 'cart']);
   }
-  
+
   toggleView(view: string) {
     this.currentView = view;
     if (view === 'grid') {
@@ -65,15 +68,11 @@ export class ProductComponent {
     }
   }
 
-  addToCart(product: Product){
-   this.cart.addToCart(product);
-   
+  addToCart(product: Product) {
+    this.cart.addToCart(product);
   }
 
-  getCartLength(){
+  getCartLength() {
     return this.cart.getCartLength();
   }
-  
 }
-
-

@@ -1,71 +1,70 @@
 .cart-container {
-    margin: 2rem auto;
-    width: 90%;
-    max-width: 800px;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 800px;
+}
+
+.cart-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 120%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+thead {
+  background-color: #f9f9f9;
+}
+
+thead th {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+tbody td {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody td:last-child {
+  text-align: right;
+}
+
+button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-total p {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  thead th:nth-child(1),
+  tbody td:nth-child(1) {
+    display: none;
   }
-  
-  .cart-container h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  table {
-    width: 120%;
-    border-collapse: collapse;
-    margin-bottom: 2rem;
-  }
-  
-  thead {
-    background-color: #f9f9f9;
-  }
-  
-  thead th {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 2px solid #ddd;
-  }
-  
-  tbody td {
-    padding: 1rem;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  tbody td:last-child {
-    text-align: right;
-  }
-  
-  button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1rem;
-    margin-top: 1rem;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
-  button:hover {
-    background-color: #3e8e41;
-  }
-  
-  .cart-total {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .cart-total p {
-    font-size: 1.5rem;
-  }
-  
-  @media (max-width: 600px) {
-    thead th:nth-child(1), 
-    tbody td:nth-child(1) {
-      display: none;
-    }
-  }
-  
+}

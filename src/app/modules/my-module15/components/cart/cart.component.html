@@ -1,30 +1,35 @@
 <button class="backToStore" (click)="backToStore()">Go back to store</button>
 
 <div class="cart-container">
-    <h2>My Cart</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Product</th>
-          <th>Quantity</th>
-          <th>Price</th>
-          <th>Total</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let cartItem of cart.cartProducts">
-          <td>{{ cartItem.cartProduct.title }}</td>
-          <td>{{ cartItem.quantity }}</td>
-          <td>{{ '€' + cartItem.cartProduct.price }}</td>
-          <td>{{ '€' + customRound(cartItem.quantity * cartItem.cartProduct.price, 2) }}</td>
-          <td><button (click)="removeFromCart(cartItem.cartProduct)">Remove</button></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="cart-total">
-      <p>Total: {{ '€' + getTotal() }}</p>
-      <button (click)="checkout()">Checkout</button>
-    </div>
+  <h2>My Cart</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cartItem of cart.cartProducts">
+        <td>{{ cartItem.cartProduct.title }}</td>
+        <td>{{ cartItem.quantity }}</td>
+        <td>{{ "€" + cartItem.cartProduct.price }}</td>
+        <td>
+          {{
+            "€" + customRound(cartItem.quantity * cartItem.cartProduct.price, 2)
+          }}
+        </td>
+        <td>
+          <button (click)="removeFromCart(cartItem.cartProduct)">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="cart-total">
+    <p>Total: {{ "€" + getTotal() }}</p>
+    <button (click)="checkout()">Checkout</button>
   </div>
-  
+</div>

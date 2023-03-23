@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class StorageService {
-
-  constructor() { }
+  constructor() {}
 
   set(key: string, value: any): void {
     try {
@@ -12,7 +11,7 @@ export class StorageService {
       console.error(`Error saving ${key} to localStorage`, error);
     }
   }
-  
+
   get(key: string): any {
     try {
       const value = localStorage.getItem(key);
@@ -23,10 +22,7 @@ export class StorageService {
     }
   }
 
-  remove(value:any){
-    localStorage.removeItem(value)
+  remove(value: any) {
+    localStorage.removeItem(value);
   }
 }
-
-
-

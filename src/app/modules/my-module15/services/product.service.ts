@@ -5,7 +5,7 @@ import { Product } from '../models/Products';
 
 @Injectable()
 export class ProductService {
-  constructor(private http: HttpClient, ) {}
+  constructor(private http: HttpClient) {}
 
   products: Product[] = [];
 
@@ -15,20 +15,23 @@ export class ProductService {
 
   getProducts(): void {
     this.http
-      .get('https://fakestoreapi.com/products?limit=18')
+      .get('https://api.escuelajs.co/api/v1/products?offset=0&limit=18')
       .subscribe((products2: any) => {
         this.products = products2.map((p: any) => {
-          return {...p, quantity: Math.floor(Math.random()*100)}
-          
+          return {
+            ...p,
+            quantity: Math.floor(Math.random() * 100),
+            image: p.images[0],
+          };
         });
         this.$products.next(this.products);
         console.log(this.products);
       });
   }
 
-  getProducts2(){
-    return this.http.get('https://fakestoreapi.com/products?limit=9');
+  getProducts2() {
+    return this.http.get(
+      'https://api.escuelajs.co/api/v1/products?offset=0&limit=18'
+    );
   }
-
-  
 }

@@ -6,17 +6,8 @@ import { MartinRoutingModule } from './martin-routing.module';
 import { MartinComponent } from './martin.component';
 import { LoginComponent } from './components/login/login.component';
 
-
-
 @NgModule({
-  declarations: [
-    MartinComponent,
-    LoginComponent
-  ],
-  imports: [
-    CommonModule,
-    MartinRoutingModule,
-    FormsModule
-  ]
+  declarations: [MartinComponent, LoginComponent],
+  imports: [CommonModule, MartinRoutingModule, FormsModule],
 })
-export class MartinModule { }
+export class MartinModule {}

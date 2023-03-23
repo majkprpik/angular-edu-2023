@@ -9,33 +9,24 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProductsResolver } from './resolvers/products.resolver';
 
-
-
 const routes: Routes = [
   {
     path: '',
     component: MyModule15Component,
     children: [
-      
       {
         path: '',
         component: LoginComponent,
-        
       },
-      
+
       {
         path: 'dashboard',
         component: DashboardComponent,
-        canActivate : [AuthGuard],
-        resolve : {
-          product : ProductsResolver,
-        }
+        canActivate: [AuthGuard],
+        resolve: {
+          product: ProductsResolver,
+        },
       },
-      {
-        path:'product',
-        component:ProductComponent,
-      },
-
       {
         path: 'cart',
         component: CartComponent,
@@ -44,14 +35,12 @@ const routes: Routes = [
         path: '**',
         component: LoginComponent,
       },
-    ]
-  }
-  
-]
-
+    ],
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class MyModule15RoutingModule { }
+export class MyModule15RoutingModule {}

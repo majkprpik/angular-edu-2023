@@ -4,14 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path : '',
-    component : TihomirComponent
-  }
+    path: '',
+    component: TihomirComponent,
+  },
 ];
-
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class TihomirRoutingModule { }
+export class TihomirRoutingModule {}

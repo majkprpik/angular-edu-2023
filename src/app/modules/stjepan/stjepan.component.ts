@@ -3,21 +3,21 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-stjepan',
   templateUrl: './stjepan.component.html',
-  styleUrls: ['./stjepan.component.scss']
+  styleUrls: ['./stjepan.component.scss'],
 })
 export class StjepanComponent {
-  username: string = "";
-  password: string = "";
+  username: string = '';
+  password: string = '';
 
   onSubmit() {
     const podaciOKorisniku = {
       username: this.username,
-      password: this.password
-    }
+      password: this.password,
+    };
 
-  this.username = "";
-  this.password = "";
+    this.username = '';
+    this.password = '';
 
-  console.log(podaciOKorisniku);
+    console.log(podaciOKorisniku);
   }
 }

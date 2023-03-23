@@ -23,7 +23,7 @@ export class AuthService {
     if (!this.JwtHelper.isTokenExpired(access)) {
       let payload = this.JwtHelper.decodeToken(access);
       this.UserService.user.username = payload.userName;
-      this.UserService.$user.next({username: payload.username});
+      this.UserService.$user.next({ username: payload.username });
     }
   }
 
@@ -36,7 +36,7 @@ export class AuthService {
   }
 
   isLogedIn() {
-    return this.UserService.$user.value.username!= '';
+    return this.UserService.$user.value.username != '';
   }
 
   logout() {
