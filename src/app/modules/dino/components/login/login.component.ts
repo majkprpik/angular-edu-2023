@@ -22,6 +22,8 @@ export class LoginComponent {
   @Output() passwordEmit = new EventEmitter<string>();
 
   printLoginInfo() {
+    console.log(this.emailValue);
+    console.log(this.passwordValue);
     this.emailEmit.emit(this.userEmail);
     this.passwordEmit.emit(this.passwordValue);
     this.emailValue = this.userEmail;
