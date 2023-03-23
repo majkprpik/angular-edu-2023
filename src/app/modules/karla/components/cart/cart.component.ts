@@ -11,6 +11,6 @@ export class CartComponent {
   cartProducts: any;
 
   constructor(private cartService: CartService) {
-    this.cartService.GetItem
+    this.cartService.GetItem;
   }
 }

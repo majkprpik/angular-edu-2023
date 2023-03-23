@@ -13,7 +13,7 @@ const routes: Routes = [
     path: 'karla',
     loadChildren: () =>
       import('./modules/karla/karla.module').then((m) => m.KarlaModule),
-  }
+  },
 ];
 
 @NgModule({

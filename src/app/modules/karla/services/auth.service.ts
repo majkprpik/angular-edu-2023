@@ -29,9 +29,6 @@ export class AuthService {
     }
   }
 
-
-
-
   urlToken = 'https://edu-back.azurewebsites.net/account/login-jwt';
 
   getAccessToken() {

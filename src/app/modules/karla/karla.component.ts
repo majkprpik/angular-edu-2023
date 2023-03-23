@@ -12,19 +12,14 @@ import { UserService } from './services/user.service';
   styleUrls: ['./karla.component.scss'],
 })
 export class KarlaComponent {
-
-    constructor(
-      private authGuard: AuthGuard, 
-      private storageService: StorageService,
-      private jwtHelperService: JwtHelperService,
-      private userService: UserService,
-      ) 
-      {
-        this.checkToken()
-      }
- 
-    checkToken(){
-     
-    
+  constructor(
+    private authGuard: AuthGuard,
+    private storageService: StorageService,
+    private jwtHelperService: JwtHelperService,
+    private userService: UserService
+  ) {
+    this.checkToken();
   }
+
+  checkToken() {}
 }

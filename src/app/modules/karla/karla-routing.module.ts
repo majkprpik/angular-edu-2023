@@ -20,7 +20,6 @@ const routes: Routes = [
         path: 'dashboard',
         component: DashboardComponent,
         canActivate: [AuthGuard],
-        
       },
       {
         path: 'cart',
@@ -35,8 +34,6 @@ const routes: Routes = [
     ],
   },
 ];
-
-
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

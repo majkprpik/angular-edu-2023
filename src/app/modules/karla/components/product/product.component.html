@@ -22,15 +22,13 @@
   </div>
 </div> -->
 
-
 <div *ngFor="let product of products | priceSort : true" class="product_grid">
   <div class="product_card">
+    <img src="{{ product.image_link }}" style="height: 230px" alt="" />
 
-     <img src="{{product.image_link }}" style="height: 230px;" alt=""> 
-    
     <div class="details">
-      <div class="name">{{product.name}}</div>
-      <div class="price">{{product.price }}</div>
+      <div class="name">{{ product.name }}</div>
+      <div class="price">{{ product.price }}</div>
       <button (click)="AddToCart(product)" class="button">Add to cart</button>
     </div>
   </div>

@@ -7,7 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  constructor(private userService: UserService) {
-   
-  }
+  constructor(private userService: UserService) {}
 }

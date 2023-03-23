@@ -16,8 +16,8 @@ export class CartService {
   constructor() {}
   $cart = new BehaviorSubject<Cart>(this.cart);
 
-  GetItem(product: Product){
-    return this.cart
+  GetItem(product: Product) {
+    return this.cart;
   }
 
   AddItem(product: Product) {
@@ -29,14 +29,13 @@ export class CartService {
         quantity: 1,
       };
       this.cart.productList.push(cartItem);
-      this.cart.totalPrice += Number(product.price)
+      this.cart.totalPrice += Number(product.price);
     } else {
       temp.quantity++;
       this.cart.totalPrice += Number(product.price);
     }
     this.$cart.next(this.cart);
     console.log(this.cart);
-    
   }
 
   RemoveItem(productId: number) {

@@ -6,10 +6,9 @@ import { ProductService } from '../../services/product.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-
   products: Product[] = [];
   $products = new BehaviorSubject<Product[]>(this.products);
 
@@ -18,6 +17,4 @@ export class DashboardComponent {
       (product) => (this.products = product)
     );
   }
-
-
 }

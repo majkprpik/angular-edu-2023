@@ -15,5 +15,4 @@ export class UserService {
   user: User = { username: '' };
   $user: BehaviorSubject<User> = new BehaviorSubject<User>(this.user); // mora imati pocetnu vrijednost
   // $userSubject: Subject<User> = new Subject<User>(); //nema pocetnu vrijednost
-
 }

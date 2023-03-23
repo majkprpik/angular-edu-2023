@@ -16,14 +16,14 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { StorageService } from './services/storage.service';
 import { ProductComponent } from './components/product/product.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { PriceSortPipe } from './pipes/price-sort.pipe';
 import { PriceFilterPipe } from './pipes/price-filter.pipe';
 import { SortComponent } from './components/sort/sort.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { CartComponent } from './components/cart/cart.component';
 
-export function tokenGetter(){
+export function tokenGetter() {
   return localStorage.getItem('accessToken');
 }
 
@@ -41,7 +41,13 @@ export function tokenGetter(){
     SliderComponent,
     CartComponent,
   ],
-  providers: [AuthService, UserService, StorageService, AuthGuard,ProductService],
+  providers: [
+    AuthService,
+    UserService,
+    StorageService,
+    AuthGuard,
+    ProductService,
+  ],
   imports: [
     CommonModule,
     KarlaRoutingModule,
@@ -49,11 +55,11 @@ export function tokenGetter(){
     HttpClientModule,
     MatIconModule,
     JwtModule.forRoot({
-      config: {   
-      tokenGetter: tokenGetter,
-      allowedDomains: ['localhost:4200'],
-      disallowedRoutes: []
-    }
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ['localhost:4200'],
+        disallowedRoutes: [],
+      },
     }),
   ],
 })

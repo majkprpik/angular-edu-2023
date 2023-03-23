@@ -8,7 +8,7 @@ export class LoginServiceService {
   url = 'https://edu-back.azurewebsites.net/account/login-basic';
 
   login(user: any) {
-    return this.http.post(this.url, user)
+    return this.http.post(this.url, user);
   }
 
   urlToken = 'https://edu-back.azurewebsites.net/account/login-jwt';
