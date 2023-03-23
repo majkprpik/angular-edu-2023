@@ -15,7 +15,7 @@ export class ProductService {
 
   products: Product[] = [
     {
-      name: 'product1',
+      name: 'Ja One',
       price: 100,
       id: 1,
       imgURL:
@@ -23,14 +23,14 @@ export class ProductService {
     },
 
     {
-      name: 'product2',
+      name: 'LeBron witnes 4',
       price: 150,
       id: 2,
       imgURL: '../../../../assets/filip-tod/produkti/lb4.png',
     },
 
     {
-      name: 'product3',
+      name: 'LBJ lakers',
       price: 120,
       id: 3,
       imgURL:
@@ -38,7 +38,7 @@ export class ProductService {
     },
 
     {
-      name: 'product4',
+      name: 'KD 4',
       price: 200,
       id: 4,
       imgURL:
@@ -46,7 +46,7 @@ export class ProductService {
     },
 
     {
-      name: 'product5',
+      name: 'Nike Zion',
       price: 150,
       id: 5,
       imgURL:
@@ -61,7 +61,7 @@ export class ProductService {
     },
 
     {
-      name: 'product7',
+      name: 'Nike Zion',
       price: 120,
       id: 7,
       imgURL:
