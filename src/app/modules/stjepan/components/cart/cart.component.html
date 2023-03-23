@@ -23,7 +23,9 @@
             +
           </button>
         </td>
-        <td>{{ "€" + item.quantity * item.cartProduct.price }}</td>
+        <td>
+          {{ "€" + totalItemPrice(item.quantity, item.cartProduct.price) }}
+        </td>
         <td>
           <button class="remove-btn" (click)="removeItem(item.cartProduct)">
             Remove

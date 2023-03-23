@@ -46,6 +46,10 @@ export class CartComponent {
     }
   }
 
+  totalItemPrice(quantity: number, itemPrice: number): number {
+    return round(quantity*itemPrice, 2);
+  }
+
   removeItem(item: Product) {
     this.cartService.removeFromCart(item);
   }
