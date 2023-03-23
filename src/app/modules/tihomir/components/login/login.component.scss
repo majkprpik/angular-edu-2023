@@ -1,0 +1,17 @@
+.form {
+  height: 100px;
+  width: 170px;
+  background-color: lightgray;
+
+  margin-top: 20px;
+  padding: 5px;
+
+  border: 2px solid black;
+  box-shadow: 0 2px 4px 0 black;
+}
+
+.loginButton {
+  &:hover {
+    background-color: aquamarine;
+  }
+}
