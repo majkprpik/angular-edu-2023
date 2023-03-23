@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class TestPipe implements PipeTransform {
 
   transform(value: any, parnost:string): unknown {
-    return "kikiriki" ;
+    return "MJ is the G.O.A.T." ;
   }
 
 }

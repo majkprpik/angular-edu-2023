@@ -23,10 +23,12 @@ constructor(private productService: ProductService, private cartService: KartSer
 //servis za pipe
  addToCart(product: Product){
 this.cartService.addItem(product)
+
  }
 products: Product[] = [];
 
 sortAscending = true;
+
 
 
 

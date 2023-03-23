@@ -119,3 +119,30 @@
   background-color: #8CC7A1;
   margin: 20px;
 }
+
+.primary{
+  background-color: #007bff;
+}
+
+
+.home{
+color: red;
+background-color: gray;
+}
+
+.center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.icon-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

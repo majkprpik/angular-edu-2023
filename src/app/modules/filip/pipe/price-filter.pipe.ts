@@ -1,5 +1,6 @@
 import { Product } from './../models/product';
 import { Pipe, PipeTransform } from '@angular/core';
+import { filter } from 'rxjs';
 
 @Pipe({
   name: 'priceFilter'
@@ -7,7 +8,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class PriceFilterPipe implements PipeTransform {
 
   transform(product: Product[], price:number ): any {
-    return null;
-  }
-
+    return product.filter((p)=>{
+      return p.price<=price;
+     })
+    }
 }

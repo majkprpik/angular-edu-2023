@@ -9,12 +9,24 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
+  isOpenKart= false;
+  isOpenHome= true;
 
 constructor(private productservice: ProductService, private activatedRoute: ActivatedRoute){
   this.productservice.getJoke()
   this.activatedRoute.data.subscribe((data)=>{
     console.log(data);
   })
+}
+
+goToHome(){
+  this.isOpenHome= true;
+  this.isOpenKart = false;
+}
+
+goToKart(){
+  this.isOpenKart = true;
+  this.isOpenHome= false;
 }
 
 }

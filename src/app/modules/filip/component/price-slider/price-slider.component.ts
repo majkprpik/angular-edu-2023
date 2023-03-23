@@ -1,3 +1,4 @@
+import { Product } from './../../models/product';
 import { ProductService } from './../../service/product.service';
 import { Component } from '@angular/core';
 
@@ -13,8 +14,10 @@ export class PriceSliderComponent {
   }
 
   filterProductsByPrice(price: number) {
-    return this.productService.$sliderValueMin.next(price);
+  //  this.productService = this.productService.products.filter(Product=>Product.price>=price);
   }
+
+  // {{ value_expression | slice : start [ : end ] }} zamisao je sa slice pipom implementirati product slider
 
   
 }
