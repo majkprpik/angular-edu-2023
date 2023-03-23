@@ -1,0 +1,27 @@
+<div class="loginBox">
+  <h1>Login</h1>
+  <form action="/">
+    <hr />
+    <label id="icon" for="name"></label><!-- <fa-icon [icon]="faEnvelope"></fa-icon> -->
+    <input type="text" name="name" id="name" placeholder="Email" required [(ngModel)]="userEmail"/>
+    <label id="icon" for="password"></label><!-- <fa-icon [icon]="faUnlock"></fa-icon> -->
+    <input
+      type="password"
+      name="password"
+      id="password"
+      placeholder="Password"
+      required
+      [(ngModel)]="userPassword"
+    />
+    <hr />
+    <div class="loginBlock">
+      <p>
+        By clicking Register, you agree on our
+        <a href="#">Privacy Policy</a>.
+      </p>
+      <button type="submit"  (click)="printLoginInfo()">Login</button>
+    </div>
+  </form>
+</div>
+<p>User email: {{emailValue}}</p>
+<p>User password: {{passwordValue}}</p>

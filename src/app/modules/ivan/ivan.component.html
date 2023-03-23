@@ -1,1 +1,11 @@
-<p>ivan works!</p>
+<form (submit)="onSubmit()" class="myForm">
+    <div class="form-control">
+        <label for="text">Username</label>
+        <input name="username" [(ngModel)]="username" type="text" >
+    </div>
+    <div class="form-control">
+        <label for="text">Password</label>
+        <input name="password" [(ngModel)]="password" type="password">
+    </div>
+    <button>Submit</button>
+</form>

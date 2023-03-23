@@ -1,6 +1,6 @@
-import { MislavCacicComponent } from './mislav-cacic.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MislavCacicComponent } from './mislav-cacic.component';
 
 const routes: Routes = [
   {

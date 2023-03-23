@@ -5,4 +5,18 @@ import { Component } from '@angular/core';
   templateUrl: './ivan.component.html',
   styleUrls: ['./ivan.component.scss'],
 })
-export class IvanComponent {}
+export class IvanComponent {
+  username: string;
+  password: string;
+
+  onSubmit() {
+    const userData = {
+      username: this.username,
+      password: this.password,
+    };
+
+    (this.username = ''), (this.password = '');
+
+    console.log(userData);
+  }
+}
