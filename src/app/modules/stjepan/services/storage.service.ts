@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StorageService {
+  constructor() {}
 
-  constructor() { }
-
-  spremiULocal(key:string, value:any) {
-    localStorage.setItem(key, JSON.stringify(value))
+  spremiULocal(key: string, value: any) {
+    localStorage.setItem(key, JSON.stringify(value));
   }
 
-  dohvatiIzLocala(key:string) {
+  dohvatiIzLocala(key: string) {
     const value = localStorage.getItem(key);
     return value ? JSON.parse(value) : null;
   }

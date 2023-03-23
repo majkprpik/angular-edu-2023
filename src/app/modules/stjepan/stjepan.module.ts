@@ -8,20 +8,9 @@ import { StjepanComponent } from './stjepan.component';
 import { AutenService } from './services/auth.service';
 import { LoginComponent } from './login/login/login.component';
 
-
 @NgModule({
-  declarations: [
-    StjepanComponent,
-    LoginComponent
-  ],
-  imports: [
-    CommonModule,
-    StjepanRoutingModule,
-    FormsModule,
-    HttpClientModule
-  ],
-  providers: [
-    AutenService
-  ]
+  declarations: [StjepanComponent, LoginComponent],
+  imports: [CommonModule, StjepanRoutingModule, FormsModule, HttpClientModule],
+  providers: [AutenService],
 })
-export class StjepanModule { }
+export class StjepanModule {}

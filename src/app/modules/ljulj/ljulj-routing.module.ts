@@ -8,7 +8,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',component:LjuljComponent, children: [
+    path: '',
+    component: LjuljComponent,
+    children: [
       {
         path: '',
         component: LoginComponent,
@@ -16,14 +18,10 @@ const routes: Routes = [
       {
         path: 'Dashboard',
         component: DashboardComponent,
-        canActivate: [AuthGuard]
-        
-      
+        canActivate: [AuthGuard],
       },
-
-    ]
-  }
-  
+    ],
+  },
 ];
 
 @NgModule({

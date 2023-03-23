@@ -5,13 +5,13 @@ import { DinoComponent } from './dino.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component:LoginComponent,
+    path: '',
+    component: LoginComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class DinoRoutingModule { }
+export class DinoRoutingModule {}
