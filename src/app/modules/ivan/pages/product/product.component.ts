@@ -1,9 +1,7 @@
-import { ProductService } from './../../services/product.service';
 import { Product } from './../../shared/Product';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Slider } from '../products/products.component';
 import { CartService } from '../../services/cart.service';
-import { ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -13,10 +11,7 @@ import { ActivatedRoute, Params} from '@angular/router';
 export class ProductComponent {
   @Input() slider: Slider;
   @Input() product: Product;
-  constructor(
-    private cartService: CartService,
-  ) {
-  }
+  constructor(private cartService: CartService) {}
 
   addToCart(products) {
     this.cartService.addProductToCart(products);

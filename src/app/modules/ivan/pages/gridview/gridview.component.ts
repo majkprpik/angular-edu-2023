@@ -9,18 +9,16 @@ import { Product } from '../../shared/Product';
   styleUrls: ['./gridview.component.scss'],
 })
 export class GridviewComponent {
-  @Input() product: Product
+  @Input() product: Product;
   flowers: any[] = [];
-  products: any[] = []
+  products: any[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService
   ) {
     this.productService.$products.subscribe((products) => {
-      this.products = products
-  
-    })
-
+      this.products = products;
+    });
   }
 }

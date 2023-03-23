@@ -1,49 +1,36 @@
 <app-header></app-header>
 <div class="container">
-    <ul>
-        <li *ngFor="let cartItem of cart.cartItems">
-            <div>
-                <img [src]="cartItem.product.thumbnail" [alt]="cartItem.product.name">
-            </div>
-            <div>
-                    {{cartItem.product.name}}
-            </div>
-            <button (click)="removeQuantity(cartItem.product)">
-                -
-              </button>
-              <span>{{ cartItem.quantity }}</span>
-              <button  (click)="onAddQuantity(cartItem.product)">
-                +
-              </button>
-            <div>
-                {{cartItem.product.price | currency}} x {{cartItem.quantity}}
-            </div>
+  <ul>
+    <li *ngFor="let cartItem of cart.cartItems">
+      <div>
+        <img [src]="cartItem.product.thumbnail" [alt]="cartItem.product.name" />
+      </div>
+      <div>
+        {{ cartItem.product.name }}
+      </div>
+      <button (click)="removeQuantity(cartItem.product)">-</button>
+      <span>{{ cartItem.quantity }}</span>
+      <button (click)="onAddQuantity(cartItem.product)">+</button>
+      <div>
+        {{ cartItem.product.price | currency }} x {{ cartItem.quantity }}
+      </div>
 
-            <div>
-               <div>
-               </div> 
-                <button class="remove-button" (click)="removeItem(cartItem)">
-                    Remove
-                </button>
-            </div>
-        </li>
-    </ul>
-    <div class="checkout">
-        <div>
-            <div class="total-price">{{cart.totalPrice| currency}}</div>
-        </div>
-        <div>
-            <button (click)="onClearCart()">Clear cart</button>
-            <hr>
-            <button>Checkout</button>
-        </div>
+      <div>
+        <div></div>
+        <button class="remove-button" (click)="removeItem(cartItem)">
+          Remove
+        </button>
+      </div>
+    </li>
+  </ul>
+  <div class="checkout">
+    <div>
+      <div class="total-price">{{ cart.totalPrice | currency }}</div>
     </div>
+    <div>
+      <button (click)="onClearCart()">Clear cart</button>
+      <hr />
+      <button>Checkout</button>
+    </div>
+  </div>
 </div>
-
-
-   
-  
- 
-
-
-
