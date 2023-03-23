@@ -11,17 +11,15 @@ import { CartItem } from '../../shared/CartItem';
   styleUrls: ['./cart-page.component.scss'],
 })
 export class CartPageComponent {
-  cartProducts: CartItem[] = [];
-  totalPrice: number;
-  
+  cart: Cart
+ 
 
   
-  
+
 
   constructor(private cartService: CartService) {
-    cartService.$cart.subscribe((cart) => {
-      this.cartProducts = this.cartService.cart.cartItems;
-      this.totalPrice = this.cartService.cart.priceTotal
+    cartService.$cart.subscribe((cartData) => {
+      this.cart = cartData
     });
   }
 
@@ -38,6 +36,10 @@ export class CartPageComponent {
 
   removeQuantity(product:Product){
     this.cartService.removeQuantity(product)
+  }
+
+  onClearCart(){
+    this.cartService.ClearCart()
   }
 
 }

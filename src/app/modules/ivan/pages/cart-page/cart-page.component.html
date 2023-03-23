@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="container">
     <ul>
-        <li *ngFor="let cartItem of cartProducts">
+        <li *ngFor="let cartItem of cart.cartItems">
             <div>
                 <img [src]="cartItem.product.thumbnail" [alt]="cartItem.product.name">
             </div>
@@ -28,14 +28,19 @@
             </div>
         </li>
     </ul>
-
     <div class="checkout">
         <div>
-            <div class="total-price">{{totalPrice| currency}}</div>
+            <div class="total-price">{{cart.totalPrice| currency}}</div>
+        </div>
+        <div>
+            <button (click)="onClearCart()">Clear cart</button>
+            <hr>
+            <button>Checkout</button>
         </div>
     </div>
-
 </div>
+
+
    
   
  

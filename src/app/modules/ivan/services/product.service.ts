@@ -13,7 +13,8 @@ export class ProductService {
   );
   private apiUrl = 'https://dummyjson.com/products?limit=10';
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) {}
+  constructor(private http: HttpClient, private route: ActivatedRoute) {
+  }
 
   getProducts() {
     this.http.get(this.apiUrl).subscribe((valueData: any) => {
@@ -37,5 +38,12 @@ export class ProductService {
 
   getProductsResolver() {
     return this.http.get(this.apiUrl);
+  }
+
+  getOneProduct(id: number) : Product {
+    const productId = this.products.find((p) => {
+      return p.id === id
+    })
+    return productId
   }
 }

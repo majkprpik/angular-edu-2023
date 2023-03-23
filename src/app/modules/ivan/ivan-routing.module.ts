@@ -30,11 +30,12 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         resolve: {
           products: ProductResolver,
-        },
-      },
-      {
-        path: 'product/:id',
-        component: ProductComponent,
+        },  children: [
+          {
+            path: ':id',
+            component: ProductComponent
+          }
+        ]
       },
       {
         path: 'cartPage',

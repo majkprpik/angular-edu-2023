@@ -1,17 +1,17 @@
-<div class="container">
-    <a routerLink="/ivan/product/{{product.id}}">
+<div class="item-list">
+    <div class="item">
+    <a routerLink="/ivan/products/{{product.id}}">
     <img [src]="product.thumbnail" [alt]="product.name" class="item-image">
 <div class="item-detail">
-    <div class="header">
         <span class="item-name">
             {{product.name}}
         </span>
-    </div>
     <div class="item-price">
         {{product.price|currency}}
     </div>
 </div>
 </a>
 <button (click)="addToCart(product)">Add to cart</button>
+</div>
 </div>
 
