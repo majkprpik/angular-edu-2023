@@ -1,0 +1,31 @@
+.wrapper {
+  margin-bottom: 15px;
+  border: 1px solid blue;
+  height: 200px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.wrapper label {
+  margin-bottom: 5px;
+}
+
+.wrapper button {
+  width: 60px;
+  height: 30px;
+  border: 1px solid blue;
+  background-color: aqua;
+  border-radius: 5px;
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+.wrapper button:hover {
+  background-color: red;
+  color: #000000;
+  cursor: pointer;
+}
