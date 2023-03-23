@@ -1,0 +1,35 @@
+<!-- <div *ngFor="let product of products" class="product_grid">
+  <div class="product_card">
+    <div class="image"></div>
+    <div class="details">
+      <div class="name">{{ product.name }}</div>
+      <div class="price">{{ product.price }}</div>
+      <button class="button">Add to cart</button>
+    </div>
+  </div>
+</div> -->
+<!-- 
+<div *ngFor="let product of products" class="product_grid">
+  <div class="product_card">
+
+    <img src="/assets/lipgloss3.jpeg">
+
+    <div class="details">
+      <div class="name">{{ product.name }}</div>
+      <div class="price">{{ product.price }}</div>
+      <button class="button">Add to cart</button>
+    </div>
+  </div>
+</div> -->
+
+<div *ngFor="let product of products | priceSort : true" class="product_grid">
+  <div class="product_card">
+    <img src="{{ product.image_link }}" style="height: 230px" alt="" />
+
+    <div class="details">
+      <div class="name">{{ product.name }}</div>
+      <div class="price">{{ product.price }}</div>
+      <button (click)="AddToCart(product)" class="button">Add to cart</button>
+    </div>
+  </div>
+</div>

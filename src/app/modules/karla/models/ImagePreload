@@ -1,0 +1,32 @@
+// import { Directive, Input, HostBinding, HostListener, ElementRef } from '@angular/core';
+
+// @Directive({
+//   selector: '[imgFallback]',
+//   host: {
+//     '(error)': 'updateUrl()',
+//     '(load)': 'load()',
+//     '[src]': 'src'
+//   }
+// })
+// export class ImageFallbackDirective {
+//   @Input() src: string;
+//   @Input() default: string;
+//   // @HostBinding('src') srcName;
+//   // @HostListener('error') onError = this.updateUrl;
+
+//   // constructor(private el: ElementRef){}
+
+//   // ngOnInit() {
+//   //   this.srcName = this.src;
+//   // }
+
+//   updateUrl() {
+//     this.src = this.default;
+//     // this.srcName = this.default;
+//     // this.el.nativeElement.src = this.default;
+//   }
+
+//   load() {
+//     console.log('Image loaded.')
+//   }
+// }
