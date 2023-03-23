@@ -6,22 +6,21 @@ import { Cart } from '../../models/Cart';
 import { CartService } from '../../services/cart.service';
 import { StorageService } from '../../services/storage.service';
 
-
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+  styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent {
   constructor(
     private router: Router,
     private cartService: CartService,
-    private storageService: StorageService,
-    ) {
-      this.cartService.$cart.subscribe((data) => {
-        this.cart = data;
-      })
-    }
+    private storageService: StorageService
+  ) {
+    this.cartService.$cart.subscribe((data) => {
+      this.cart = data;
+    });
+  }
 
   cart: Cart;
 
@@ -30,20 +29,24 @@ export class CartComponent {
   }
 
   subQuantity(product: Product) {
-    let index = this.cart.cartProducts.findIndex((p) => p.cartProduct.id == product.id)
-    if(this.cart.cartProducts[index].quantity > 1) {
+    let index = this.cart.cartProducts.findIndex(
+      (p) => p.cartProduct.id == product.id
+    );
+    if (this.cart.cartProducts[index].quantity > 1) {
       this.cart.cartProducts[index].quantity--;
     }
   }
 
   addQuantity(product: Product) {
-    let index = this.cart.cartProducts.findIndex((p) => p.cartProduct.id == product.id)
-    if(this.cart.cartProducts[index].quantity >= 1) {
+    let index = this.cart.cartProducts.findIndex(
+      (p) => p.cartProduct.id == product.id
+    );
+    if (this.cart.cartProducts[index].quantity >= 1) {
       this.cart.cartProducts[index].quantity++;
     }
   }
 
-  removeItem(item :Product) {
+  removeItem(item: Product) {
     this.cartService.removeFromCart(item);
   }
 

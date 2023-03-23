@@ -9,9 +9,9 @@ const routes: Routes = [
   },
   {
     path: 'stjepan',
-    loadChildren:() =>
-    import('./modules/stjepan/stjepan.module').then((m) => m.StjepanModule),
-  }
+    loadChildren: () =>
+      import('./modules/stjepan/stjepan.module').then((m) => m.StjepanModule),
+  },
 ];
 
 @NgModule({

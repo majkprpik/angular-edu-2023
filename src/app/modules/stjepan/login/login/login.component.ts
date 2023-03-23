@@ -5,22 +5,25 @@ import { StorageService } from '../../services/storage.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  username: string = "";
-  password: string = "";
+  username: string = '';
+  password: string = '';
 
-  constructor(public autenService: AutenService, public storgeService:StorageService) {}
+  constructor(
+    public autenService: AutenService,
+    public storgeService: StorageService
+  ) {}
 
   onSubmit() {
     const podaciOKorisniku = {
       username: this.username,
-      password: this.password
-    }
+      password: this.password,
+    };
 
-    this.username = "";
-    this.password = "";
+    this.username = '';
+    this.password = '';
 
     this.autenService.AuthoriseUser(podaciOKorisniku);
     this.autenService.AuthoriseTokenUser(podaciOKorisniku);

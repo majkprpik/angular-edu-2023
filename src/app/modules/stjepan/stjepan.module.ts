@@ -33,7 +33,6 @@ export function tokenGetter() {
     ProductComponent,
     CartComponent,
     SortPricePipe,
-    
   ],
   imports: [
     CommonModule,
@@ -44,8 +43,8 @@ export function tokenGetter() {
       config: {
         tokenGetter: tokenGetter,
         allowedDomains: ['localhost:5003'],
-        disallowedRoutes: []
-      }
+        disallowedRoutes: [],
+      },
     }),
   ],
   providers: [
@@ -54,6 +53,6 @@ export function tokenGetter() {
     AuthGuard,
     ProductsService,
     CartService,
-  ]
+  ],
 })
-export class StjepanModule { }
+export class StjepanModule {}

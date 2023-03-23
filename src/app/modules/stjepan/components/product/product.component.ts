@@ -6,7 +6,7 @@ import { ProductsService } from '../../services/product.service';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
+  styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent {
   products: Product[] = [];
@@ -21,10 +21,11 @@ export class ProductComponent {
 
   constructor(
     private productService: ProductsService,
-    private cartService: CartService) {
-    this.productService.getProducts()
+    private cartService: CartService
+  ) {
+    this.productService.getProducts();
     this.productService.$products.subscribe((p) => {
       this.products = p;
-    })
+    });
   }
 }
