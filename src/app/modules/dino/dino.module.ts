@@ -20,13 +20,16 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { ProductComponent } from './components/product/product.component';
 import { ProductService } from './services/product.service';
 import { CartService } from './services/cart.service';
-import {MatChipsModule} from '@angular/material/chips';
+import { MatChipsModule } from '@angular/material/chips';
 import { TestPipe } from './pipes/test.pipe';
-import {MatSliderModule} from '@angular/material/slider';
+import { MatSliderModule } from '@angular/material/slider';
 import { MinimumPipe } from './pipes/minimum.pipe';
 import { MaximumPipe } from './pipes/maximum.pipe';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import {
+  MatDialogModule,
+  MAT_DIALOG_DEFAULT_OPTIONS,
+} from '@angular/material/dialog';
 import { CartDialogComponent } from './components/cart-dialog/cart-dialog.component';
 
 export function tokenGetter() {
@@ -66,6 +69,14 @@ export function tokenGetter() {
       },
     }),
   ],
-  providers: [AuthService, UserService,AuthGuard,ProductService,CartService,ProductResolver,{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
+  providers: [
+    AuthService,
+    UserService,
+    AuthGuard,
+    ProductService,
+    CartService,
+    ProductResolver,
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } },
+  ],
 })
 export class DinoModule {}

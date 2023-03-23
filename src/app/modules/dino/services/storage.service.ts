@@ -2,25 +2,24 @@ import { Cart } from './../models/Cart';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StorageService {
+  constructor() {}
 
-  constructor() { }
-
-  saveToLocal(key:string, value:any){
-    localStorage.setItem(key,JSON.stringify(value));
+  saveToLocal(key: string, value: any) {
+    localStorage.setItem(key, JSON.stringify(value));
     console.log(value);
   }
-  CheckForKey(key:string){
+  CheckForKey(key: string) {
     return localStorage.getItem(key);
   }
 
-  SaveCart(key:string, value:Cart){
-    localStorage.setItem(key,JSON.stringify(value));
+  SaveCart(key: string, value: Cart) {
+    localStorage.setItem(key, JSON.stringify(value));
     console.log(value);
   }
-  LoadCart(key:string){
+  LoadCart(key: string) {
     return JSON.parse(localStorage.getItem(key));
   }
 }

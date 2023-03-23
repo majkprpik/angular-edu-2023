@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './dino.component.html',
   styleUrls: ['./dino.component.scss'],
 })
-export class DinoComponent {
-  
-}
+export class DinoComponent {}

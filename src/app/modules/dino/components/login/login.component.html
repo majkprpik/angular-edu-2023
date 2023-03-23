@@ -2,9 +2,20 @@
   <h1>Login</h1>
   <form action="/">
     <hr />
-    <label id="icon" for="username"><fa-icon [icon]="faEnvelope"></fa-icon></label>
-    <input type="text" name="username" id="username" placeholder="Username" required [(ngModel)]='User.username'/>
-    <label id="icon" for="password"><fa-icon [icon]="faUnlock"></fa-icon></label>
+    <label id="icon" for="username"
+      ><fa-icon [icon]="faEnvelope"></fa-icon
+    ></label>
+    <input
+      type="text"
+      name="username"
+      id="username"
+      placeholder="Username"
+      required
+      [(ngModel)]="User.username"
+    />
+    <label id="icon" for="password"
+      ><fa-icon [icon]="faUnlock"></fa-icon
+    ></label>
     <input
       type="password"
       name="password"
@@ -19,9 +30,9 @@
         By clicking Register, you agree on our
         <a href="#">Privacy Policy</a>.
       </p>
-      <button type="submit"  (click)="loginTokenUser()">Login</button>
+      <button type="submit" (click)="loginTokenUser()">Login</button>
     </div>
   </form>
 </div>
-<p>User username: {{usernameValue}}</p>
-<p>User password: {{passwordValue}}</p>
+<p>User username: {{ usernameValue }}</p>
+<p>User password: {{ passwordValue }}</p>

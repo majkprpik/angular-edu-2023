@@ -7,23 +7,29 @@ import { Product } from '../models/Product';
 export class ProductService {
   constructor(private http: HttpClient) {}
 
-  sortAscending=true;
-  $sortAscending: BehaviorSubject<boolean>= new BehaviorSubject<boolean>(this.sortAscending);
+  sortAscending = true;
+  $sortAscending: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    this.sortAscending
+  );
 
-  minimumPrice=0;
-  maximumPrice=1800;
+  minimumPrice = 0;
+  maximumPrice = 1800;
 
-  $minimumPrice: BehaviorSubject<number>= new BehaviorSubject<number>(this.minimumPrice);
-  $maximumPrice: BehaviorSubject<number>= new BehaviorSubject<number>(this.maximumPrice);
+  $minimumPrice: BehaviorSubject<number> = new BehaviorSubject<number>(
+    this.minimumPrice
+  );
+  $maximumPrice: BehaviorSubject<number> = new BehaviorSubject<number>(
+    this.maximumPrice
+  );
 
-  ChangeSortOrder(){
+  ChangeSortOrder() {
     this.sortAscending = !this.sortAscending;
     this.$sortAscending.next(this.sortAscending);
   }
 
-  UpdateSlider(min,max){
-    this.minimumPrice=min;
-    this.maximumPrice=max;
+  UpdateSlider(min, max) {
+    this.minimumPrice = min;
+    this.maximumPrice = max;
     this.$minimumPrice.next(this.minimumPrice);
     this.$maximumPrice.next(this.maximumPrice);
   }

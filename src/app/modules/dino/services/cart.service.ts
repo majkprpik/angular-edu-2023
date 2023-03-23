@@ -12,8 +12,8 @@ export class CartService {
   };
 
   $cart: BehaviorSubject<Cart> = new BehaviorSubject<Cart>(this.cart);
-  constructor(private storageService:StorageService) {
-    this.cart=storageService.LoadCart("cart");
+  constructor(private storageService: StorageService) {
+    this.cart = storageService.LoadCart('cart');
     this.$cart.next(this.cart);
   }
 
@@ -25,29 +25,28 @@ export class CartService {
     let itemIndex = this.cart.cartItems.findIndex(
       (c) => c.product.id == product.id
     );
-    let tempItem=this.cart.cartItems.find((p)=>p.product.id==product.id)
-    
-    if(tempItem==undefined){
+    let tempItem = this.cart.cartItems.find((p) => p.product.id == product.id);
+
+    if (tempItem == undefined) {
       this.cart.cartItems.push(cartItem);
-      this.cart.totalPrice=this.cart.totalPrice+product.price;
-    }else{
+      this.cart.totalPrice = this.cart.totalPrice + product.price;
+    } else {
       tempItem.quantity++;
-      this.cart.totalPrice+=tempItem.product.price;
+      this.cart.totalPrice += tempItem.product.price;
     }
     this.$cart.next(this.cart);
   }
 
-  RemoveProduct(product:Product){
+  RemoveProduct(product: Product) {
     let itemIndex = this.cart.cartItems.findIndex(
       (c) => c.product.id == product.id
     );
-    if(this.cart.cartItems[itemIndex].quantity>1){
+    if (this.cart.cartItems[itemIndex].quantity > 1) {
       this.cart.cartItems[itemIndex].quantity--;
-      this.cart.totalPrice-=product.price;
-    }else{
-      this.cart.cartItems.splice(itemIndex,1);
-      this.cart.totalPrice-=product.price;
+      this.cart.totalPrice -= product.price;
+    } else {
+      this.cart.cartItems.splice(itemIndex, 1);
+      this.cart.totalPrice -= product.price;
     }
   }
-
 }

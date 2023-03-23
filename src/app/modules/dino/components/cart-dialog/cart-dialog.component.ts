@@ -8,18 +8,22 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'app-cart-dialog',
   templateUrl: './cart-dialog.component.html',
-  styleUrls: ['./cart-dialog.component.scss']
+  styleUrls: ['./cart-dialog.component.scss'],
 })
 export class CartDialogComponent {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: Cart,private cartService:CartService,storageService:StorageService) {
-    this.storageService=storageService;
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: Cart,
+    private cartService: CartService,
+    storageService: StorageService
+  ) {
+    this.storageService = storageService;
   }
-  storageService:StorageService;
-  RemoveItem(product:Product){
+  storageService: StorageService;
+  RemoveItem(product: Product) {
     this.cartService.RemoveProduct(product);
   }
 
-  SaveCart(){
-    this.storageService.SaveCart("cart",this.data);
+  SaveCart() {
+    this.storageService.SaveCart('cart', this.data);
   }
 }

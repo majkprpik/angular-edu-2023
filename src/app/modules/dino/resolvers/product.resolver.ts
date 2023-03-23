@@ -10,14 +10,12 @@ import { Observable, of } from 'rxjs';
 
 @Injectable()
 export class ProductResolver implements Resolve<any> {
-
   constructor(private productService: ProductService) {}
 
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<any> {
-    return this.productService.getProductsNoSubscribe()
+    return this.productService.getProductsNoSubscribe();
   }
-
 }
