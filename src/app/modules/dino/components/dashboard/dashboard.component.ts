@@ -28,7 +28,7 @@ export class DashboardComponent {
 
   ChangeOrder() {
     this.productService.ChangeSortOrder();
-    this.sortAscending=!this.sortAscending;
+    //this.sortAscending=!this.sortAscending;
   }
 
   constructor(
