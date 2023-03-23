@@ -1,3 +1,4 @@
+import { CartComponent } from './components/cart/cart.component';
 import { KarlaComponent } from './karla.component';
 import { GridComponent } from './components/grid/grid.component';
 import { LoginComponent } from './components/login/login.component';
@@ -18,15 +19,25 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: DashboardComponent,
-        canActivate : [AuthGuard],
+        canActivate: [AuthGuard],
+        
       },
       {
+        path: 'cart',
+        component: CartComponent,
+        canActivate: [AuthGuard],
+      },
+
+      {
         path: '**',
-        component: LoginComponent
-      }
-    ]
-  }
+        component: LoginComponent,
+      },
+    ],
+  },
 ];
+
+
+
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],

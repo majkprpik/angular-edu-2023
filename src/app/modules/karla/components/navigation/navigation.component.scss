@@ -1,14 +1,10 @@
 .grid_shape{
-    width: 20px;
     height: 20px;
     margin: 40px;
-    background-color: black;
 }
 .list_shape{
-    width: 20px;
     height: 20px;
-    margin: 40px;
-    background-color: black;
+    margin-right: 40px;
 }
 .line{
     height: 40px;
@@ -31,4 +27,12 @@
       line-height: 1.5;
       letter-spacing: 1px;
     }
+}
+
+.cart_shape{
+    margin-left: 40px;
+}
+button{
+    border: none;
+    background: none;
 }

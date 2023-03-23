@@ -1,11 +1,14 @@
 <div class="nav_bar">
-    <div class="grid_shape"></div>
-    <div class="list_shape"></div>
+    <mat-icon class="grid_shape">apps</mat-icon>
+    <mat-icon class="list_shape">reorder</mat-icon>
     <div class="line"></div>
-    <div class="line"></div>
+    
 
     <a class="link">Lipgloss</a>
     <a class="link">Foundation</a>
     <a class="link">Highlighter</a>
     <a class="link">Blush</a>
+    <div class="line"></div>
+    <button (click)="NavigateToCart()" ><mat-icon class="cart_shape">shopping_cart</mat-icon></button>
+    <!-- onclick="NavigateToCart()" -->
 </div>

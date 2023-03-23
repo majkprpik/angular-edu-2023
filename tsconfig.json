@@ -4,8 +4,11 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "strictPropertyInitialization": false,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+
+
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -14,6 +17,7 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
+    
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2022",
