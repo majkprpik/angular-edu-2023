@@ -26,6 +26,7 @@ export class CartServiceService {
         this.cart.cartItems[i].quantity++;
         this.cart.price += product.price;
         this.$cart.next(this.cart);
+        localStorage.setItem("cart", JSON.stringify(this.cart));
         return;
       }
     }
@@ -33,6 +34,7 @@ export class CartServiceService {
     this.cart.cartItems.push(cartItemTemp);
     this.cart.price += product.price;
     this.$cart.next(this.cart);
+    localStorage.setItem("cart", JSON.stringify(this.cart));
   }
 
   remove(product: Product) {
@@ -44,6 +46,7 @@ export class CartServiceService {
         }
         this.cart.price -= product.price;
         this.$cart.next(this.cart);
+        localStorage.setItem("cart", JSON.stringify(this.cart));
         return;
       }
     }
@@ -55,5 +58,6 @@ export class CartServiceService {
     console.log('Cart after remove: ');
     console.log(this.cart);
     this.$cart.next(this.cart);
+    localStorage.setItem("cart", JSON.stringify(this.cart));
   }
 }
