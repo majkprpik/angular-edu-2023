@@ -33,7 +33,7 @@ export class ProductService {
   $product = new BehaviorSubject<Product[]>(this.product);
 
   urlMakeupAPI =
-    'http://makeup-api.herokuapp.com/api/v1/products.json?product_category=concealer&product_type=foundation';
+    'http://makeup-api.herokuapp.com/api/v1/products.json?brand=nyx';
   getMakeupProducts() {
     return this.http.get(this.urlMakeupAPI);
   }
