@@ -1,25 +1,23 @@
-<h2>Ljuljich</h2>
-
 <form action="/action_page.php" method="post">
   <div class="container">
-    <label for="uname"><b>Email</b></label>
+    <label for="uname"><b>Username</b></label>
     <input
       type="text"
-      [(ngModel)]="osoba.email"
       placeholder="Enter Username"
       name="uname"
       required
+      [(ngModel)]="user.username"
     />
 
     <label for="psw"><b>Password</b></label>
     <input
       type="password"
-      [(ngModel)]="osoba.password"
+      [(ngModel)]="user.password"
       placeholder="Enter Password"
       name="psw"
       required
     />
 
-    <button (click)="ispisosoba()" type="submit">Login</button>
+    <button (click)="loginUser()" type="submit">Login</button>
   </div>
 </form>
