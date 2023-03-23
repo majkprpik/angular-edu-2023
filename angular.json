@@ -25,13 +25,10 @@
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-<<<<<<< HEAD
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "@angular/material/prebuilt-themes/purple-green.css",
-=======
               "@angular/material/prebuilt-themes/pink-bluegrey.css",
->>>>>>> martin
               "src/styles.scss"
             ],
             "scripts": []
