@@ -1,0 +1,18 @@
+<form (ngSubmit)="spremi()">
+  <div class="wrapper">
+    <label for="name">Name:</label>
+    <input id="name" [(ngModel)]="name" type="text" name="name" />
+    <label for="password">Password:</label>
+    <input
+      [(ngModel)]="password"
+      type="password"
+      id="password"
+      name="password"
+    />
+    <button type="submit">Create</button>
+  </div>
+</form>
+
+<span>{{
+  objekat.name && objekat.password ? objekat.name + " " + objekat.password : ""
+}}</span>

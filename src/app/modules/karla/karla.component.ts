@@ -22,4 +22,12 @@ export class KarlaComponent {
   }
 
   checkToken() {}
+  user = {
+    username: '',
+    password: '',
+  };
+
+  login() {
+    console.log(this.user);
+  }
 }
