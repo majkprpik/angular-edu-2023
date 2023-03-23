@@ -1,0 +1,28 @@
+<div class="sidebar">
+  <a
+    [routerLink]="['/martin', 'dashboard', 'list']"
+    class="w3-bar-item w3-button"
+    >LIST VIEW</a
+  >
+
+  <a
+    [routerLink]="['/martin', 'dashboard', 'grid']"
+    class="w3-bar-item w3-button"
+    >GRID VIEW</a
+  >
+  <button mat-button id="asc" (click)="changeSortAsc()">
+    <mat-icon>arrow_upward</mat-icon>
+  </button>
+  <button mat-button id="desc" (click)="changeSortDesc()">
+    <mat-icon>arrow_downward</mat-icon>
+  </button>
+  <button mat-button id="cart" (click)="goToCart()">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+  <!-- <mat-slider discrete="true" showTickMarks min="0" max="2000" step="100">
+    <input matSliderStartThumb [(ngModel)]="sliderValueMin" />
+    <input matSliderEndThumb [(ngModel)]="sliderValueMax" />
+  </mat-slider> -->
+
+  <img id="logo" src="assets/logo_martin.png" alt="NK Osijek" />
+</div>

@@ -1,0 +1,55 @@
+.sidebar {
+  height: 100%;
+  width: 8%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 40px;
+  background-color: lightblue;
+}
+
+.sidebar a {
+  padding: 8px;
+  font-size: 15px;
+  display: block;
+  margin-bottom: 30px;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+.sidebar a:after {
+  content: "";
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+}
+
+.sidebar a:hover:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+#logo {
+  bottom: 0;
+  position: fixed;
+  height: fit-content;
+  width: 8%;
+  left: 0;
+}
+button {
+  background-color: rgb(223, 239, 242);
+  width: 90%;
+  margin: 5%;
+}
+mat-icon {
+  color: #3f51b5;
+  align-items: center;
+  left: 4%;
+}
