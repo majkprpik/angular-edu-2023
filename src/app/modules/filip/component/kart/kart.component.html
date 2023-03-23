@@ -3,10 +3,14 @@
     <h1>you'r total bill is</h1>
 
     <ul>
-      <li *ngFor="let item of itemsSelected">
-        <p>{{ item.productList }}</p>
-        <p>{{ item.totalPrice }} EUR</p>
+      <li *ngFor="let ci of cart.productList">
+        <!-- <p>{{ item.productList }}</p> -->
+        <diV >
+        {{ci.product.name}}
+        <img src="{{'imgURL'}}" alt="">
+        </diV>
       </li>
-    </ul>
+    </ul> 
+    <p>{{ cart.totalPrice }} EUR</p>
   </section>
 </section>

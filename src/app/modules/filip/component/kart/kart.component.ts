@@ -8,11 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./kart.component.scss'],
 })
 export class KartComponent {
-  itemsSelected: cart[] = [];
+  cart: cart={
+    productList:[],
+    totalPrice:0
+  } ;
 
   constructor(private cartService: KartService) {
     this.cartService.$cart.subscribe((data) => {
-      this.itemsSelected.push(data);
+      this.cart=data;
     });
   }
 
