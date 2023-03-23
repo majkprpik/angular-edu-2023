@@ -1,10 +1,11 @@
 <section class="glavna">
 <section class="hero">
-<h1>Welcome to you'r Cart</h1>
+<h1>you'r total bill is</h1>
 
 <ul>
-    <li *ngFor="let item of ">
-
+    <li *ngFor="let item of itemsSelected ">
+        <p>{{item.productList}}</p>
+     <p>{{item.totalPrice}} EUR</p>
     </li>
 </ul>
  
