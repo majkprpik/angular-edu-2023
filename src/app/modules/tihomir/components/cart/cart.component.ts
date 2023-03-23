@@ -1,6 +1,5 @@
 import { CartItem } from './../../models/cart-item';
 import { Cart } from './../../models/cart';
-import { Product } from './../../models/product';
 import { CartServiceService } from './../../services/cart-service.service';
 import { Component } from '@angular/core';
 
@@ -18,7 +17,6 @@ export class CartComponent {
     this.cartService.$cart.subscribe((product) => {
       this.localCart = product;
     });
-    
     this.products = this.localCart.cartItems;
     this.totalPrice = this.cartService.cart.price;
   }

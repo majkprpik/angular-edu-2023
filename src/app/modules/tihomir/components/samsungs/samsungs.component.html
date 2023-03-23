@@ -1,6 +1,6 @@
 <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
 
-<div class="middle" [ngStyle]="{'height': '600px', 'width': '1200px', 'margin-top': '250px', 'margin-left': '150px', 'position': 'absolute', 'display': 'flex', 'flex-wrap': 'wrap', 'justify-content': 'center', 'float': 'left', 'overflow-x': 'auto'}">
+<div class="middle" [ngStyle]="{'width': '1200px', 'margin-top': '250px', 'margin-left': '150px', 'position': 'absolute', 'display': 'flex', 'flex-wrap': 'wrap', 'justify-content': 'center', 'float': 'left', 'overflow-x': 'auto'}">
     
     <div *ngFor="let phone of phones | test: sliderValue" [ngStyle]="{'margin-right': '20px', 'margin-bottom': '20px', 'flex-basis': 'calc(25% - 30px)', 'flex-grow': '1'}">
         <img [src]="phone.imageURL" alt="">

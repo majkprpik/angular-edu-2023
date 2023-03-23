@@ -14,7 +14,7 @@ export class LGsComponent {
   $products: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>(
     this.products
   );
-
+  index = 0;
   sliderValue: SliderValues;
   LGs: any = [];
   models = ['K8', 'Watch Sport'];

@@ -13,7 +13,7 @@ export class ProductServiceService {
     min: 0,
     max: 1200,
   };
-
+  index = 0;
   $sliderValue: BehaviorSubject<SliderValues> =
     new BehaviorSubject<SliderValues>(this.sliderValue);
 

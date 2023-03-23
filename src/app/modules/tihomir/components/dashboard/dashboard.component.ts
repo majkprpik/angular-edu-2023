@@ -11,5 +11,7 @@ export class DashboardComponent {
     this.activatedRoute.data.subscribe((response) =>{
       console.log(response);
     });
+
+    
   }
 }
