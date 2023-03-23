@@ -1,19 +1,48 @@
-<link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
 
-<div class="middle" [ngStyle]="{'width': '1200px', 'margin-top': '250px', 'margin-left': '150px', 'position': 'absolute', 'display': 'flex', 'flex-wrap': 'wrap', 'justify-content': 'center', 'float': 'left', 'overflow-x': 'auto'}">
-    
-    <div *ngFor="let phone of phones | test: sliderValue" [ngStyle]="{'margin-right': '20px', 'margin-bottom': '20px', 'flex-basis': 'calc(25% - 30px)', 'flex-grow': '1'}">
-        <img [src]="phone.imageURL" alt="">
-        <br>
-        {{phone.description}}
-        <br>
-        <br>
-        <a mat-fab extended color="primary" [ngStyle]="{'background-color': 'yellow', 'color': 'black'}">
-            Qty: {{phone.quantity}}
-        </a>        
-        <button mat-fab extended [ngStyle]="{'background-color': 'yellow', 'color': 'black'}" (click)="addToCart(phone)">
-            Add to cart
-        </button>
-    </div>
-    
+<div
+  class="middle"
+  [ngStyle]="{
+    width: '1200px',
+    'margin-top': '250px',
+    'margin-left': '150px',
+    position: 'absolute',
+    display: 'flex',
+    'flex-wrap': 'wrap',
+    'justify-content': 'center',
+    float: 'left',
+    'overflow-x': 'auto'
+  }"
+>
+  <div
+    *ngFor="let phone of phones | test : sliderValue"
+    [ngStyle]="{
+      'margin-right': '20px',
+      'margin-bottom': '20px',
+      'flex-basis': 'calc(25% - 30px)',
+      'flex-grow': '1'
+    }"
+  >
+    <img [src]="phone.imageURL" alt="" />
+    <br />
+    {{ phone.description }}
+    <br />
+    <br />
+    <a
+      mat-fab
+      extended
+      color="primary"
+      [ngStyle]="{ 'background-color': 'yellow', color: 'black' }"
+    >
+      Qty: {{ phone.quantity }}
+    </a>
+    <button
+      mat-fab
+      extended
+      [ngStyle]="{ 'background-color': 'yellow', color: 'black' }"
+      (click)="addToCart(phone)"
+    >
+      Add to cart
+    </button>
+  </div>
 </div>

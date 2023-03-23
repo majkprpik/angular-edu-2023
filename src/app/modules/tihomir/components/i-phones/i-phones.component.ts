@@ -12,8 +12,7 @@ import { Component } from '@angular/core';
   templateUrl: './i-phones.component.html',
   styleUrls: ['./i-phones.component.scss'],
 })
-export class IPhonesComponent 
-{
+export class IPhonesComponent {
   products: Product[] = [];
   $products: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>(
     this.products
@@ -31,8 +30,10 @@ export class IPhonesComponent
   prices = [700, 800, 400, 300];
   description: any = [];
 
-  constructor(private productService: ProductServiceService, private cartService: CartServiceService) 
-  {
+  constructor(
+    private productService: ProductServiceService,
+    private cartService: CartServiceService
+  ) {
     this.productService.$sliderValue.subscribe((value) => {
       this.sliderValue = value;
     });
@@ -60,7 +61,7 @@ export class IPhonesComponent
   }
 
   addToCart(phone: any) {
-    if(phone.quantity == 0){
+    if (phone.quantity == 0) {
       return;
     }
     phone.quantity--;

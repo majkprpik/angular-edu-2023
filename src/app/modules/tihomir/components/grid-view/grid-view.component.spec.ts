@@ -8,9 +8,8 @@ describe('BackgroundComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GridViewComponent ]
-    })
-    .compileComponents();
+      declarations: [GridViewComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(GridViewComponent);
     component = fixture.componentInstance;

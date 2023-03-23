@@ -35,7 +35,10 @@ export class GridViewComponent {
     },
   ];
 
-  constructor(private productService: ProductServiceService, private router: Router) {
+  constructor(
+    private productService: ProductServiceService,
+    private router: Router
+  ) {
     this.productService.$sliderValue.subscribe((value) => {
       this.sliderValue = value;
     });

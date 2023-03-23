@@ -5,26 +5,25 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  Logo = 'assets/tihomir/Logos/Logo.png';
+  Cart = 'assets/tihomir/Cart.png';
 
-  Logo = "assets/tihomir/Logos/Logo.png";
-  Cart = "assets/tihomir/Cart.png";
+  totalPrice: number;
 
-  totalPrice : number;
-
-  constructor(private router : Router, private cartService : CartServiceService){
-    this.cartService.$cart.subscribe((cart) =>{
+  constructor(private router: Router, private cartService: CartServiceService) {
+    this.cartService.$cart.subscribe((cart) => {
       this.totalPrice = cart.price;
-    })
+    });
   }
 
-  goToCart(){
+  goToCart() {
     this.router.navigate(['tihomir', 'dashboard', 'cart']);
   }
 
-  goToGridView(){
+  goToGridView() {
     this.router.navigate(['tihomir', 'dashboard', 'grid-view']);
   }
 }

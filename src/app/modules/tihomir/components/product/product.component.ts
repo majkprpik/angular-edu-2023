@@ -8,15 +8,12 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent {
-
-  constructor(private router : Router){
-
-  }
+  constructor(private router: Router) {}
 
   @Input() product: Product;
 
-  viewPhones(name : string){
-    if(name == "iPhone"){
+  viewPhones(name: string) {
+    if (name == 'iPhone') {
       this.router.navigate(['tihomir', 'dashboard', 'i-phones']);
     }
   }

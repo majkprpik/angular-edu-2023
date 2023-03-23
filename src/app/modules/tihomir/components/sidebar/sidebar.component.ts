@@ -15,14 +15,12 @@ export class SidebarComponent {
   sliderValueMin = 0;
   sliderValueMax = 1200;
   sliderValue: number = 1200;
-  brands = [
-    "Apple",
-    "Samsung",
-    "LG",
-    "Sony"
-  ]
+  brands = ['Apple', 'Samsung', 'LG', 'Sony'];
 
-  constructor(private router: Router, private productService : ProductServiceService) {}
+  constructor(
+    private router: Router,
+    private productService: ProductServiceService
+  ) {}
 
   switchView() {
     if (this.viewText == 'GRID VIEW') {
@@ -36,8 +34,8 @@ export class SidebarComponent {
 
   onSliderChange() {
     this.productService.$sliderValue.next({
-      min : this.sliderValueMin,
-      max : this.sliderValueMax
+      min: this.sliderValueMin,
+      max: this.sliderValueMax,
     });
   }
 }

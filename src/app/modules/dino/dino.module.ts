@@ -4,14 +4,8 @@ import { CommonModule } from '@angular/common';
 import { DinoRoutingModule } from './dino-routing.module';
 import { DinoComponent } from './dino.component';
 
-
 @NgModule({
-  declarations: [
-    DinoComponent
-  ],
-  imports: [
-    CommonModule,
-    DinoRoutingModule
-  ]
+  declarations: [DinoComponent],
+  imports: [CommonModule, DinoRoutingModule],
 })
-export class DinoModule { }
+export class DinoModule {}

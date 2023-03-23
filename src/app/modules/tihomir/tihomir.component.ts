@@ -6,11 +6,10 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 @Component({
   selector: 'app-tihomir',
   templateUrl: './tihomir.component.html',
-  styleUrls: ['./tihomir.component.scss']
+  styleUrls: ['./tihomir.component.scss'],
 })
 export class TihomirComponent {
-
-  constructor(){
-    console.log("Tihomir component");
+  constructor() {
+    console.log('Tihomir component');
   }
 }

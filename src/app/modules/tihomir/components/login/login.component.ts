@@ -5,20 +5,17 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-
-  constructor(private authService : AuthService){
-    
-  }
+  constructor(private authService: AuthService) {}
 
   osoba = {
-    username : "",
-    password : ""
+    username: '',
+    password: '',
   };
 
-  login(){
+  login() {
     this.authService.login(this.osoba);
   }
 }

@@ -1,5 +1,8 @@
 import { CartServiceService } from './../../services/cart-service.service';
-import { SliderValues, ProductServiceService } from './../../services/product-service.service';
+import {
+  SliderValues,
+  ProductServiceService,
+} from './../../services/product-service.service';
 import { BehaviorSubject } from 'rxjs';
 import { Product } from './../../models/product';
 import { Component } from '@angular/core';
@@ -7,7 +10,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-sonys',
   templateUrl: './sonys.component.html',
-  styleUrls: ['./sonys.component.scss']
+  styleUrls: ['./sonys.component.scss'],
 })
 export class SonysComponent {
   products: Product[] = [];
@@ -26,7 +29,10 @@ export class SonysComponent {
   prices = [300, 500, 700];
   description: any = [];
 
-  constructor(private productService : ProductServiceService, private cartService : CartServiceService){
+  constructor(
+    private productService: ProductServiceService,
+    private cartService: CartServiceService
+  ) {
     this.productService.$sliderValue.subscribe((value) => {
       this.sliderValue = value;
     });
@@ -54,7 +60,7 @@ export class SonysComponent {
   }
 
   addToCart(phone: any) {
-    if(phone.quantity == 0){
+    if (phone.quantity == 0) {
       return;
     }
     phone.quantity--;

@@ -6,9 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'test',
 })
 export class TestPipe implements PipeTransform {
-
-  transform(value: Product[], priceRange : SliderValues): any {
-    return value.filter((data : any) => {
+  transform(value: Product[], priceRange: SliderValues): any {
+    return value.filter((data: any) => {
       return priceRange.min <= data.price && data.price <= priceRange.max;
     });
   }

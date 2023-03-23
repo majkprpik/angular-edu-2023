@@ -1,5 +1,8 @@
 import { CartServiceService } from './../../services/cart-service.service';
-import { SliderValues, ProductServiceService } from './../../services/product-service.service';
+import {
+  SliderValues,
+  ProductServiceService,
+} from './../../services/product-service.service';
 import { BehaviorSubject } from 'rxjs';
 import { Product } from './../../models/product';
 import { Component } from '@angular/core';
@@ -7,7 +10,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-lgs',
   templateUrl: './lgs.component.html',
-  styleUrls: ['./lgs.component.scss']
+  styleUrls: ['./lgs.component.scss'],
 })
 export class LGsComponent {
   products: Product[] = [];
@@ -25,7 +28,10 @@ export class LGsComponent {
   prices = [200, 300];
   description: any = [];
 
-  constructor(private productService : ProductServiceService, private cartService : CartServiceService){
+  constructor(
+    private productService: ProductServiceService,
+    private cartService: CartServiceService
+  ) {
     this.productService.$sliderValue.subscribe((value) => {
       this.sliderValue = value;
     });
@@ -53,7 +59,7 @@ export class LGsComponent {
   }
 
   addToCart(phone: any) {
-    if(phone.quantity == 0){
+    if (phone.quantity == 0) {
       return;
     }
     phone.quantity--;

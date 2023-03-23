@@ -4,14 +4,8 @@ import { CommonModule } from '@angular/common';
 import { IvanRoutingModule } from './ivan-routing.module';
 import { IvanComponent } from '../ivan/ivan.component';
 
-
 @NgModule({
-  declarations: [
-    IvanComponent
-  ],
-  imports: [
-    CommonModule,
-    IvanRoutingModule
-  ]
+  declarations: [IvanComponent],
+  imports: [CommonModule, IvanRoutingModule],
 })
-export class IvanModule { }
+export class IvanModule {}

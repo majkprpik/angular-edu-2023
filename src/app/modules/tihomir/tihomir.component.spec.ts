@@ -8,9 +8,8 @@ describe('TihomirComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TihomirComponent ]
-    })
-    .compileComponents();
+      declarations: [TihomirComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TihomirComponent);
     component = fixture.componentInstance;

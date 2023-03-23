@@ -79,7 +79,7 @@ export function tokenGetter() {
     AuthGuard,
     ProductServiceService,
     ProductResolver,
-    CartServiceService
+    CartServiceService,
   ],
 })
 export class TihomirModule {}

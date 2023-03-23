@@ -40,10 +40,10 @@ export class ProductServiceService {
             name: p.Brand,
             CPU: p.CPU,
             RAM: p.RAM,
-            imageURL: "",
+            imageURL: '',
             price: 0,
-            description: "",
-            quantity : Math.floor(Math.random() * 6)
+            description: '',
+            quantity: Math.floor(Math.random() * 6),
           };
         });
         console.log(this.products);

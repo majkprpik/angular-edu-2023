@@ -1,6 +1,14 @@
-<div class="background" [ngStyle]="{'display': 'flex', 'flex-direction': 'row-reverse','font-family': 'Inter', 'font-weight': 'bold', 'text-align': 'center'}">
-    <app-header></app-header>
-    <router-outlet></router-outlet>
-    <app-sidebar [ngStyle]="{'position': 'fixed', 'left': '0'}"></app-sidebar>
+<div
+  class="background"
+  [ngStyle]="{
+    display: 'flex',
+    'flex-direction': 'row-reverse',
+    'font-family': 'Inter',
+    'font-weight': 'bold',
+    'text-align': 'center'
+  }"
+>
+  <app-header></app-header>
+  <router-outlet></router-outlet>
+  <app-sidebar [ngStyle]="{ position: 'fixed', left: '0' }"></app-sidebar>
 </div>
-

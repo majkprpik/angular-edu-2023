@@ -1,5 +1,8 @@
 import { CartServiceService } from './../../services/cart-service.service';
-import { SliderValues, ProductServiceService } from './../../services/product-service.service';
+import {
+  SliderValues,
+  ProductServiceService,
+} from './../../services/product-service.service';
 import { BehaviorSubject } from 'rxjs';
 import { Product } from './../../models/product';
 import { Component } from '@angular/core';
@@ -7,7 +10,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-samsungs',
   templateUrl: './samsungs.component.html',
-  styleUrls: ['./samsungs.component.scss']
+  styleUrls: ['./samsungs.component.scss'],
 })
 export class SamsungsComponent {
   products: Product[] = [];
@@ -29,7 +32,10 @@ export class SamsungsComponent {
   prices = [300, 400, 200, 150, 350, 500];
   description: any = [];
 
-  constructor(private productService : ProductServiceService, private cartService : CartServiceService){
+  constructor(
+    private productService: ProductServiceService,
+    private cartService: CartServiceService
+  ) {
     this.productService.$sliderValue.subscribe((value) => {
       this.sliderValue = value;
     });
@@ -57,7 +63,7 @@ export class SamsungsComponent {
   }
 
   addToCart(phone: any) {
-    if(phone.quantity == 0){
+    if (phone.quantity == 0) {
       return;
     }
     phone.quantity--;

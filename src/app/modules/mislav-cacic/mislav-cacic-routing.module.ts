@@ -6,11 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: MislavCacicComponent,
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class MislavCacicRoutingModule { }
+export class MislavCacicRoutingModule {}

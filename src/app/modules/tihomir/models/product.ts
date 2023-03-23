@@ -5,8 +5,8 @@ export interface Product {
   imageURL: string;
   logo: string;
   price: number;
-  CPU : string;
-  RAM : string;
+  CPU: string;
+  RAM: string;
   description: string;
   quantity?: number;
 }

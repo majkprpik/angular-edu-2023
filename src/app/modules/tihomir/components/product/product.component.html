@@ -1,8 +1,13 @@
-<div [ngStyle]="{'margin-right': '50px'}">
-    <img [src]= "product.imageURL" alt="iphone">
+<div [ngStyle]="{ 'margin-right': '50px' }">
+  <img [src]="product.imageURL" alt="iphone" />
 
-    <a mat-fab extended color="primary" [ngStyle]="{'background-color': 'yellow', 'color': 'black'}" (click)="viewPhones(product.name)">
-        {{product.name}}
-    </a>
-    
+  <a
+    mat-fab
+    extended
+    color="primary"
+    [ngStyle]="{ 'background-color': 'yellow', color: 'black' }"
+    (click)="viewPhones(product.name)"
+  >
+    {{ product.name }}
+  </a>
 </div>

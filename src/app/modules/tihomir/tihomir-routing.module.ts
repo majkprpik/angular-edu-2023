@@ -21,56 +21,56 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: DashboardComponent,
-        canActivate : [AuthGuard],
-        resolve:{
-          products: ProductResolver
+        canActivate: [AuthGuard],
+        resolve: {
+          products: ProductResolver,
         },
-        children:[
+        children: [
           {
             path: 'grid-view',
-            component : GridViewComponent
+            component: GridViewComponent,
           },
           {
             path: 'list-view',
-            component: ListViewComponent
+            component: ListViewComponent,
           },
           {
             path: '',
-            component: GridViewComponent
+            component: GridViewComponent,
           },
           {
             path: 'i-phones',
             component: IPhonesComponent,
-            resolve:{
-              products: ProductResolver
+            resolve: {
+              products: ProductResolver,
             },
           },
           {
             path: 'samsungs',
             component: SamsungsComponent,
-            resolve:{
-              products: ProductResolver
+            resolve: {
+              products: ProductResolver,
             },
           },
           {
             path: 'lgs',
             component: LGsComponent,
-            resolve:{
-              products: ProductResolver
+            resolve: {
+              products: ProductResolver,
             },
           },
           {
             path: 'sonys',
             component: SonysComponent,
-            resolve:{
-              products: ProductResolver
+            resolve: {
+              products: ProductResolver,
             },
           },
           {
             path: 'cart',
-            component : CartComponent
-          }
-        ]
+            component: CartComponent,
+          },
+        ],
       },
     ],
   },
@@ -80,7 +80,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component : LoginComponent
+    component: LoginComponent,
   },
 ];
 
