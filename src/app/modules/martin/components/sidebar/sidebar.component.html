@@ -1,31 +1,28 @@
-<!-- <div>
-  <div id="grid">GRID VIEW</div>
-  <div id="list">LIST VIEW</div>
-</div> -->
-
-<!-- <div class="w3-sidebar w3-bar-block" style="width: 25%; right: 0">
-  <h5 class="w3-bar-item">Menu</h5>
-  <a
-    href="http://localhost:4200/martin/dashboard/list"
-    class="w3-bar-item w3-button"
-    >List View</a
-  >
-  <a
-    href="http://localhost:4200/martin/dashboard/grid"
-    class="w3-bar-item w3-button"
-    >Grid View</a
-  >
-</div> -->
-
 <div class="sidebar">
   <a
-    href="http://localhost:4200/martin/dashboard/list"
+    [routerLink]="['/martin', 'dashboard', 'list']"
     class="w3-bar-item w3-button"
-    >List View</a
+    >LIST VIEW</a
   >
+
   <a
-    href="http://localhost:4200/martin/dashboard/grid"
+    [routerLink]="['/martin', 'dashboard', 'grid']"
     class="w3-bar-item w3-button"
-    >Grid View</a
+    >GRID VIEW</a
   >
+  <button mat-button id="asc" (click)="changeSortAsc()">
+    <mat-icon>arrow_upward</mat-icon>
+  </button>
+  <button mat-button id="desc" (click)="changeSortDesc()">
+    <mat-icon>arrow_downward</mat-icon>
+  </button>
+  <button mat-button id="cart" (click)="goToCart()">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+  <!-- <mat-slider discrete="true" showTickMarks min="0" max="2000" step="100">
+    <input matSliderStartThumb [(ngModel)]="sliderValueMin" />
+    <input matSliderEndThumb [(ngModel)]="sliderValueMax" />
+  </mat-slider> -->
+
+  <img id="logo" src="assets/logo_martin.png" alt="NK Osijek" />
 </div>

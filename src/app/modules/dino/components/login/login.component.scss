@@ -1,8 +1,11 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-h1,form,input,p {
+h1,
+form,
+input,
+p {
   padding: 0;
   margin: 0;
   outline: none;
@@ -31,7 +34,7 @@ hr {
   border-radius: 5px;
   border: solid 1px #ccc;
   //box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.31);
-  box-shadow: 0 0 20px 0 #1c87c9; 
+  box-shadow: 0 0 20px 0 #1c87c9;
   background: #ebebeb;
 }
 form {

@@ -1,3 +1,4 @@
+import { ProductService } from './services/product.service';
 import { AuthService } from './services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -15,6 +16,16 @@ import { GridComponent } from './components/grid/grid.component';
 import { ListComponent } from './components/list/list.component';
 import { ProductComponent } from './components/product/product.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ProductgComponent } from './components/productg/productg.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { ProductResolver } from './resolvers/product.resolver';
+import { TestPipe } from './pipes/test.pipe';
+import { SortPipe } from './pipes/sort.pipe';
+import { MatSliderModule } from '@angular/material/slider';
+import { CartComponent } from './components/cart/cart.component';
 
 export function tokenGetter() {
   return localStorage.getItem('accessToken_Martin');
@@ -29,12 +40,22 @@ export function tokenGetter() {
     ListComponent,
     ProductComponent,
     SidebarComponent,
+    ProductgComponent,
+    TestPipe,
+    SortPipe,
+    CartComponent,
   ],
   imports: [
     CommonModule,
+    MatSlideToggleModule,
+    MatButtonToggleModule,
+    MatButtonModule,
+    MatIconModule,
     MartinRoutingModule,
     FormsModule,
     HttpClientModule,
+    MatSliderModule,
+
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
@@ -43,6 +64,12 @@ export function tokenGetter() {
       },
     }),
   ],
-  providers: [AuthService, UserService, AuthGuard],
+  providers: [
+    AuthService,
+    UserService,
+    AuthGuard,
+    ProductService,
+    ProductResolver,
+  ],
 })
 export class MartinModule {}

@@ -22,9 +22,10 @@ export class LoginComponent {
   //   this.auth.loginToken(this.person);
   // }
 
-  loginUser() {
-    this.auth.sendTestInfo(this.person).subscribe((user) => console.log(user));
-  }
+  // loginUser() {
+  //   this.auth.sendTestInfo(this.person).subscribe((user) => console.log(user));
+  // }
+
   loginTokenUser() {
     this.auth.sendTestTokenInfo(this.person);
   }

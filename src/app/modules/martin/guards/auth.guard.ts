@@ -29,11 +29,6 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    let accessToken = this.storageService.readFromLocal('accessToken_Martin');
-    if (!this.jwtService.isTokenExpired(accessToken)) {
-      let payload = this.jwtService.decodeToken(accessToken);
-      this.userService.user.username = payload.userName;
-    }
     if (this.authService.isLoggedIn()) {
       return true;
     } else {

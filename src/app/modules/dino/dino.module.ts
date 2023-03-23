@@ -7,16 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 @NgModule({
-  declarations: [
-    DinoComponent,
-    LoginComponent,
-  ],
-  imports: [
-    CommonModule,
-    DinoRoutingModule,
-    FontAwesomeModule,
-    FormsModule,
-  ]
+  declarations: [DinoComponent, LoginComponent],
+  imports: [CommonModule, DinoRoutingModule, FontAwesomeModule, FormsModule],
 })
-export class DinoModule { 
-}
+export class DinoModule {}

@@ -5,17 +5,8 @@ import { FilipComponent } from './filip.component';
 import { LoginComponent } from './component/login/login.component';
 import { FormsModule } from '@angular/forms';
 
-
-
 @NgModule({
-  declarations: [
-    FilipComponent,
-    LoginComponent
-  ],
-  imports: [
-    CommonModule,
-    FilipRoutingModule,
-    FormsModule
-  ]
+  declarations: [FilipComponent, LoginComponent],
+  imports: [CommonModule, FilipRoutingModule, FormsModule],
 })
-export class FilipModule { }
+export class FilipModule {}

@@ -7,6 +7,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { GridComponent } from './components/grid/grid.component';
 import { ListComponent } from './components/list/list.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ProductResolver } from './resolvers/product.resolver';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,9 @@ const routes: Routes = [
         path: 'dashboard',
         component: DashboardComponent,
         canActivate: [AuthGuard],
+        resolve: {
+          products: ProductResolver,
+        },
         children: [
           {
             path: '',
@@ -33,6 +38,10 @@ const routes: Routes = [
           {
             path: 'list',
             component: ListComponent,
+          },
+          {
+            path: 'cart',
+            component: CartComponent,
           },
         ],
       },

@@ -1,51 +1,51 @@
 #form-wrap {
-    background-color: rgba(96, 12, 138, 0.2);
-    width: 35%;
-    margin: 60px auto;
+  background-color: rgba(96, 12, 138, 0.2);
+  width: 35%;
+  margin: 60px auto;
+  text-align: center;
+  padding: 20px 0 0 0;
+  border-radius: 4px;
+  box-shadow: 0px 30px 50px 0px rgba(0, 0, 0, 0.2);
+
+  h1 {
+    color: rgba(185, 16, 16, 0.785);
+    padding: 14px 20px;
+    font-weight: 300;
     text-align: center;
-    padding: 20px 0 0 0;
-    border-radius: 4px;
-    box-shadow: 0px 30px 50px 0px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+  }
 
-    h1 {
-        color: rgba(185, 16, 16, 0.785);
-        padding: 14px 20px;
-        font-weight: 300;
-        text-align: center;
-        margin-bottom: 30px;
+  #login-form {
+    padding: 0 60px;
+
+    p {
+      position: relative;
     }
 
-    #login-form {
-        padding: 0 60px;
-
-        p {
-            position: relative;
-        }
-    
-        input {
-            display: block;
-            color: rgba(185, 16, 16, 0.785);
-            box-sizing: border-box;
-            width: 100%;
-            outline: none;
-            height: 60px;
-            text-align: center;
-            line-height: 60px;
-            border-radius: 4px;
-        }
-    
-        button {
-            background-color: rgba(185, 16, 16, 0.785);
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 80%;
-    
-            button:hover {
-                opacity: 0.8;
-            }
-        }
+    input {
+      display: block;
+      color: rgba(185, 16, 16, 0.785);
+      box-sizing: border-box;
+      width: 100%;
+      outline: none;
+      height: 60px;
+      text-align: center;
+      line-height: 60px;
+      border-radius: 4px;
     }
+
+    button {
+      background-color: rgba(185, 16, 16, 0.785);
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 80%;
+
+      button:hover {
+        opacity: 0.8;
+      }
+    }
+  }
 }
