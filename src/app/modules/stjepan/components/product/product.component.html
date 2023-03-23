@@ -1,0 +1,25 @@
+<div id="utility">
+  <div class="btn" (click)="ascendingToDesending = !ascendingToDesending">
+    <img
+      id="product-sort"
+      src="assets/stjepan/Product_sort.png"
+      alt="No image"
+    />
+  </div>
+  <div class="text">Sort by price:</div>
+</div>
+
+<div class="grid-container" [ngClass]="viewClass">
+  <div
+    class="product-card"
+    *ngFor="let product of products | sortPrice : ascendingToDesending"
+  >
+    <img src="{{ product.image }}" alt="{{ product.title }}" />
+    <h3 class="product-title">{{ product.title }}</h3>
+
+    <p class="price">{{ "€" + product.price }}</p>
+    <button class="cart-btn" (click)="addToCart(product)">
+      {{ "Add to cart" }}
+    </button>
+  </div>
+</div>

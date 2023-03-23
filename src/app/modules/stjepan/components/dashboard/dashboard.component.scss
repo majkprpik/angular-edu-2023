@@ -1,0 +1,35 @@
+.main {
+  display: flex;
+  flex-direction: row;
+
+  .sidebar {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+
+    background: #99a3c6;
+    mix-blend-mode: lighten;
+  }
+
+  .header {
+    position: absolute;
+    width: calc(100vw - 250px);
+    height: 80px;
+    top: 0;
+    left: 250px;
+    float: left;
+
+    background: #b83333;
+  }
+
+  .products {
+    position: absolute;
+    width: calc(100vw - 250px);
+    height: calc(100vh - 80px);
+    left: 250px;
+    top: 80px;
+    float: left;
+  }
+}
