@@ -38,9 +38,10 @@ img {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 250px);
+  grid-auto-rows: minmax(150px, auto);
   justify-content: center;
   align-items: center;
-  grid-gap: 250px;
+  grid-gap: 400px;
 }
 
 li a:hover {
