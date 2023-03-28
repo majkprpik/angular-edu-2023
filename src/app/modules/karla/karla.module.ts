@@ -1,3 +1,4 @@
+
 import { ProductService } from './services/product.service';
 import { AuthGuard } from './guards/auth.guard';
 import { UserService } from './services/user.service';
@@ -22,6 +23,7 @@ import { PriceFilterPipe } from './pipes/price-filter.pipe';
 import { SortComponent } from './components/sort/sort.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { CartComponent } from './components/cart/cart.component';
+import { CartService } from './services/cart.service';
 
 export function tokenGetter() {
   return localStorage.getItem('accessToken');
@@ -47,6 +49,7 @@ export function tokenGetter() {
     StorageService,
     AuthGuard,
     ProductService,
+    CartService
   ],
   imports: [
     CommonModule,

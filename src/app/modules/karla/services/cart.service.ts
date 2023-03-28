@@ -4,9 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Cart } from '../models/Cart';
 import { Product } from '../models/product';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class CartService {
   cart: Cart = {
     productList: [],

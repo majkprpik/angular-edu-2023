@@ -5,9 +5,7 @@ import { Injectable } from '@angular/core';
 import { StorageService } from './storage.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class AuthService {
   constructor(
     private http: HttpClient,
