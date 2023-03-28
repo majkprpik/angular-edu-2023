@@ -26,5 +26,12 @@ export class KartComponent {
     this.cartService.removeItem(product)
      }
 
+     quantityMinus(product: Product){
+      this.cartService.decrementQuantity(product)
+       }
 
+       quantityPlus(product: Product){
+        this.cartService.addItem(product)
+         }
+     
 }

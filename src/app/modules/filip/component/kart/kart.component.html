@@ -7,18 +7,21 @@
         <!-- <p>{{ item.productList }}</p> -->
         <diV >
         {{ci.product.name}}
+        <br>
         {{ci.product.price}} EUR
         <img
         [src]="ci.product.imgURL"
         alt="item">
-        <p>{{ci.quantity}}</p>
-        <button (click)="deleteItems(ci.product)">ukloni proizvod</button>
+        <p>količina proizvoda :{{ci.quantity}}</p>
+        <button class="ukloni-btn" (click)="deleteItems(ci.product)">ukloni proizvod</button>
+        <button class="incrementing" (click)="quantityPlus(ci.product)">+1</button>
+        <button class="decrement" (click)="quantityMinus(ci.product)">-1</button>
         </diV>
         <hr>
       </li>
     </ul> 
-    <h6>you'r total price is :</h6>
-    <p>{{ cart.totalPrice }} EUR</p>
+    <h2 style="color: white;">you'r total price is :</h2>
+    <p class="total-price">{{ cart.totalPrice }} EUR</p>
   </section>
 </div>
 

@@ -47,5 +47,16 @@ export class KartService {
     
   }
 
+  decrementQuantity(product: Product) {
+    const productIndex = this.cart.productList.findIndex(
+      (cartItem) => cartItem.product.id == product.id
+    );
+    if (productIndex > -1 && this.cart.productList[productIndex].quantity > 1) {
+      this.cart.productList[productIndex].quantity -= 1;
+      this.cart.totalPrice -= product.price;
+      this.$cart.next(this.cart);
+    }
+  }
+
   
 }
