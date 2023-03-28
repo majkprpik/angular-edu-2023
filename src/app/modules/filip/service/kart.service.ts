@@ -58,5 +58,14 @@ export class KartService {
     }
   }
 
+  savetoLocal(){
+localStorage.setItem('cart', JSON.stringify(this.cart));
+
+let cart = localStorage.getItem('cart');
+if (cart) {
+  this.cart = JSON.parse(cart);
+}
+
   
+  }
 }
