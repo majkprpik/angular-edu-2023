@@ -37,11 +37,14 @@ export class KartService {
       (cartItem) => cartItem.product.id == product.id
     );
     if (productIndex > -1) {
+      const removedProduct = this.cart.productList[productIndex];
       this.cart.productList.splice(productIndex, 1);
+      const removedProductPrice = removedProduct.product.price * removedProduct.quantity;
+      this.cart.totalPrice -= removedProductPrice;
       
     }
     this.$cart.next(this.cart);
-    this.cart.totalPrice -= product.price;
+    
   }
 
   
