@@ -1,6 +1,8 @@
 import { cart } from './../../models/cart';
 import { KartService } from './../../service/kart.service';
 import { Component } from '@angular/core';
+import { Product } from '../../models/product';
+
 
 @Component({
   selector: 'app-kart',
@@ -17,7 +19,12 @@ export class KartComponent {
     this.cartService.$cart.subscribe((data) => {
       this.cart=data;
     });
+
   }
 
-  showItems() {}
+  deleteItems(product: Product){
+    this.cartService.removeItem(product)
+     }
+
+
 }

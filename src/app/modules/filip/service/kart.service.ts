@@ -42,5 +42,5 @@ export class KartService {
     this.$cart.next(this.cart);
   }
 
-  showItemSelected() {}
+  
 }
