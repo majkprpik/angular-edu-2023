@@ -1,3 +1,5 @@
+import { DashboardComponent } from './modules/karla/components/dashboard/dashboard.component';
+import { KarlaModule } from './modules/karla/karla.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 

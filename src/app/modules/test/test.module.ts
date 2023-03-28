@@ -3,10 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { TestRoutingModule } from './test-routing.module';
 import { TestComponent } from './test.component';
-import { IvanRoutingModule } from '../ivan/ivan-routing.module';
 
 @NgModule({
   declarations: [TestComponent],
-  imports: [CommonModule, TestRoutingModule, IvanRoutingModule],
+  imports: [CommonModule, TestRoutingModule],
 })
 export class TestModule {}

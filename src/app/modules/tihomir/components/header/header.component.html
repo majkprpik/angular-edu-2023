@@ -1,0 +1,22 @@
+<link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
+
+<div
+  class="top"
+  [ngStyle]="{
+    'background-color': 'yellow',
+    width: 'calc(100vw - 150px)',
+    height: '100px',
+    float: 'none',
+    display: 'flex'
+  }"
+>
+  <div class="logo" [ngStyle]="{ 'margin-left': '550px' }">
+    <img [src]="Logo" alt="logo" (click)="goToGridView()" />
+  </div>
+
+  <div [ngStyle]="{ 'margin-left': '450px', 'margin-top': '20px' }">
+    <img [src]="Cart" alt="" (click)="goToCart()" />
+    <br />
+    Total price: {{ totalPrice }}$
+  </div>
+</div>

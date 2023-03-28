@@ -1,4 +1,6 @@
 .wrapper {
+  position: absolute;
+  top: -100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,6 +9,8 @@
   background-color: #fff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   z-index: 100;
+  position: fixed;
+  width: 100%;
 
   .link {
     color: #000;
@@ -19,7 +23,7 @@
     transition: color 0.2s ease-in-out;
 
     &:hover {
-      color: #ff0000;
+      color: #5a5858;
     }
   }
 }

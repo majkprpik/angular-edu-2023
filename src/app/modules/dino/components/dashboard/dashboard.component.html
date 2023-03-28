@@ -1,0 +1,37 @@
+<app-listhome></app-listhome>
+<app-navigation></app-navigation>
+
+<mat-slide-toggle (click)="ChangeOrder()" class="sortButton"
+  >Slide for descending order!</mat-slide-toggle
+><br />
+<mat-slider [step]="sliderStep" [max]="sliderMax" [min]="sliderMin" discrete>
+  <input matSliderStartThumb [(ngModel)]="sliderValueMin" />
+  <input matSliderEndThumb [(ngModel)]="sliderValueMax" />
+</mat-slider>
+
+<button
+  mat-flat-button
+  color="accent"
+  class="cartButton"
+  (click)="openDialog()"
+>
+  Open shopping cart
+</button>
+
+<div class="content">
+  <div class="products">
+    <app-product
+      *ngFor="
+        let product of products
+          | minimum : sliderValueMin
+          | maximum : sliderValueMax
+          | test : sortAscending
+      "
+      [product]="product"
+    ></app-product>
+  </div>
+  <div class="viewSelector">
+    <img src="assets/dino/listView.png" alt="" />
+    <img src="assets/dino/gridView.png" alt="" />
+  </div>
+</div>

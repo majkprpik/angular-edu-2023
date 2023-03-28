@@ -8,19 +8,18 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
   user: {
-    username:string,
-    password:string
-  }
+    username: string;
+    password: string;
+  };
   router: any;
   loginUser() {
-    this.authService.CreateTokenUser(this.user)
-    
+    this.authService.CreateTokenUser(this.user);
   }
   constructor(private authService: AuthService) {
-    this.user={
-      username:'',
-      password:''
-    }
+    this.user = {
+      username: '',
+      password: '',
+    };
   }
   email: string = '';
   password: string = '';

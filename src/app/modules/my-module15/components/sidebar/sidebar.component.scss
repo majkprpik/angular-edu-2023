@@ -1,0 +1,39 @@
+.sidebar-btn {
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 20px;
+  border: none;
+  text-align: center;
+  font-weight: bold;
+  background-color: #eee0cb;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  cursor: pointer;
+}
+
+.sidebar-btn:hover {
+  background-color: #bbb;
+}
+
+#title {
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-size: 300%;
+  margin-top: 20%;
+  margin-bottom: 20%;
+  background-color: light-grey;
+}
+
+.sidebar-logo {
+  background-color: grey;
+  height: 175px;
+  width: 216px;
+  position: absolute;
+  bottom: 0;
+}
+
+.sidebar-logo img {
+  width: 100%;
+  height: 100%;
+}

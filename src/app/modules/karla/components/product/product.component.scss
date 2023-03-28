@@ -1,0 +1,40 @@
+.product_card {
+  width: 300px;
+  height: 370px;
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+
+  .img {
+    height: 230px;
+    display: flex;
+    justify-content: center;
+    // height: 100%;
+    // border-radius: 20px 20px 0px 0px;
+    // background: no-repeat;
+    // background: url("https://www.musingsofamuse.com/wp-content/uploads/2017/09/Fenty-Beauty-Gloss-Bomb-Universal-Lip-Luminizer3.jpg") no-repeat center/cover;
+  }
+
+  .details {
+    padding: 20px 20px;
+    .name {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #000000;
+    }
+    .price {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #000000;
+    }
+    .button {
+      font-family: "Poppins";
+      font-size: 14px;
+      background-color: #000;
+      color: #ffffff;
+      letter-spacing: 1.5;
+      padding: 4px 18px;
+      border-radius: 10px;
+    }
+  }
+}

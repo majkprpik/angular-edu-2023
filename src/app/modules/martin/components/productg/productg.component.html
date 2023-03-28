@@ -1,0 +1,33 @@
+<div id="slider">
+  <mat-slider discrete="true" showTickMarks min="0" max="2000" step="50">
+    <input
+      matSliderStartThumb
+      [(ngModel)]="sliderValueMin"
+      (valueChange)="sliderValueChange()"
+    />
+    <input
+      matSliderEndThumb
+      [(ngModel)]="sliderValueMax"
+      (valueChange)="sliderValueChange()"
+    />
+  </mat-slider>
+</div>
+
+<div class="main">
+  <div
+    class="product"
+    *ngFor="
+      let product of products | test : priceMax : priceMin | sort : sortUD
+    "
+  >
+    <div class="prodName">
+      <p id="name">{{ product.name }}</p>
+      {{ product.desc }}
+      <br />
+      {{ product.price }} $ <br />
+      <br />
+      <p id="cart" (click)="addToCart(product)">Add to cart</p>
+      <img src="{{ product.imgUrl }}" alt="" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+header {
+  background-color: #2c3337;
+  padding: 0;
+  border-bottom: 1px solid black;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+
+.links {
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+a {
+  color: white;
+}

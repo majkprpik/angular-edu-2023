@@ -1,0 +1,42 @@
+<link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
+
+<div
+  class="middle"
+  [ngStyle]="{
+    height: '400px',
+    width: '1100px',
+    'margin-top': '250px',
+    'margin-left': '150px',
+    position: 'absolute',
+    display: 'flex',
+    'justify-content': 'center',
+    float: 'left'
+  }"
+>
+  <div
+    *ngFor="let lg of LGs | test : sliderValue"
+    [ngStyle]="{ 'margin-right': '50px' }"
+  >
+    <img [src]="lg.imageURL" alt="" />
+    <br />
+    {{ lg.description }}
+    <br />
+    <br />
+    <a
+      mat-fab
+      extended
+      color="primary"
+      [ngStyle]="{ 'background-color': 'yellow', color: 'black' }"
+    >
+      Qty: {{ lg.quantity }}
+    </a>
+    <button
+      mat-fab
+      extended
+      [ngStyle]="{ 'background-color': 'yellow', color: 'black' }"
+      (click)="addToCart(lg)"
+    >
+      Add to cart
+    </button>
+  </div>
+</div>

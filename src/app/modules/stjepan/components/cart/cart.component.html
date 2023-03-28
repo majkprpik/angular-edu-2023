@@ -1,0 +1,44 @@
+<button class="toHome" (click)="toHome()">Go back</button>
+<div class="cart-container">
+  <table class="cart-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="cart-item" *ngFor="let item of cart.cartProducts">
+        <td>{{ item.cartProduct.title }}</td>
+        <td>{{ "€" + item.cartProduct.price }}</td>
+        <td>
+          <button class="quantity" (click)="subQuantity(item.cartProduct)">
+            -
+          </button>
+          {{ item.quantity }}
+          <button class="quantity" (click)="addQuantity(item.cartProduct)">
+            +
+          </button>
+        </td>
+        <td>
+          {{ "€" + totalItemPrice(item.quantity, item.cartProduct.price) }}
+        </td>
+        <td>
+          <button class="remove-btn" (click)="removeItem(item.cartProduct)">
+            Remove
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3"></td>
+        <td>Total: {{ "€" + totalPrice() }}</td>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
