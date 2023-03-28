@@ -16,11 +16,10 @@ import { LoginServiceService } from './service/login-service.service';
 import { LoginComponent } from './component/login/login.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { JwtModule } from '@auth0/angular-jwt';
-import { ButtonModule } from 'primeng/button';
+
 import { ToolbarComponent } from './component/toolbar/toolbar.component';
-import { ToolbarModule } from 'primeng/toolbar';
-import { SplitButtonModule } from 'primeng/splitbutton';
-import { AccordionModule } from 'primeng/accordion';
+
+
 import { KartComponent } from './component/kart/kart.component';
 import { ProductComponent } from './component/product/product.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -71,10 +70,6 @@ export function tokenGetter() {
     FilipRoutingModule,
     FormsModule,
     HttpClientModule,
-    ButtonModule,
-    ToolbarModule,
-    SplitButtonModule,
-    AccordionModule,
     MatToolbarModule,
     MatToolbarModule,
     MatIconModule,
