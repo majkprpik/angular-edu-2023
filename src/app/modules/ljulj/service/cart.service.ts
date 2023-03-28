@@ -6,15 +6,17 @@ import { HttpClient } from '@angular/common/http';
 import { StorageService } from '../services/storage.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, from } from 'rxjs';
 import { Product } from '../model/product';
-import {}
 
-Injectable();
+
+Injectable ();
+import { Cart } from '../model/Cart';
 export class CartService {
   cart: Cart = {
     products: [],
     totalPrice: 0,
+    Cartitems: [],
   };
 
   $cart: BehaviorSubject<Cart> = new BehaviorSubject<Cart>(this.cart);

@@ -1,3 +1,4 @@
+import { Product } from './../model/product';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
@@ -5,8 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class MaximumPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(product: Product[], minimum: number): Product[] {
+    return product.filter((product)=>product.price<=minimum)
   }
 
 }

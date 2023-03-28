@@ -36,15 +36,15 @@ export class ProductService {
       description:
         'Huawei made this watch special and long lasting.Beautiful and durable titanium casing with real sapphire glass gives it a lot of attention.',
       price: 300,
-      imageUrl: 'assets/dino/gt2pro.png',
+      
     },
     {
       id: 2222,
-      name: 'Galaxy watch 5 ',
+      name: 'Iphone ',
       description:
         'Samsung made this watch special and long lasting.Beautiful and great for everyday.',
       price: 400,
-      imageUrl: 'assets/dino/galaxy5.webp',
+      
     },
   ];
 

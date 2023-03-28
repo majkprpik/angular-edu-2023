@@ -1,5 +1,5 @@
 import { CartService } from './../../service/cart.service';
-import { Cart } from './../../models/Cart';
+import { Cart } from './../../model/Cart';
 import { Product } from './../../model/product';
 import { ProductService } from './../../services/product.service';
 import { Component } from '@angular/core';
@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
+[x: string]: any;
 
   products: Product[] = [];
   
