@@ -1,0 +1,17 @@
+<div class="productBox">
+  <div class="imgContainer">
+    <!-- <img src="assets/dino/gt2pro.png" alt="" /> -->
+    <img [src]="product.imageUrl" alt="" />
+  </div>
+  <div class="info">
+    <div class="productDescription">
+      <p>
+        {{ product.description }}
+      </p>
+    </div>
+    <div class="productPrice" (click)="AddToCart()">
+      <p>{{ product.name }}</p>
+      <p style="float: right">{{ product.price }} €</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<mat-slider min="0" max="2000" step="50">
+  <input
+    (valueChange)="changeMin($event)"
+    [(ngModel)]="sliderValue.min"
+    matSliderStartThumb
+  />{{ sliderValue.min }}
+  <input
+    (valueChange)="changeMax($event)"
+    [(ngModel)]="sliderValue.max"
+    matSliderEndThumb
+  />{{ sliderValue.max }}
+</mat-slider>
+<div class="btn-wrap">
+  <div class="btn">
+    <button
+      type="button"
+      (click)="onDisplayModeChange(1)"
+      [ngClass]="{ 'btn-primary active': displayMode === 1 }"
+    >
+      list
+    </button>
+    <button
+      type="button"
+      (click)="onDisplayModeChange(2)"
+      [ngClass]="{ 'btn-primary active': displayMode === 2 }"
+    >
+      grid
+    </button>
+    <select [(ngModel)]="selectField">
+      <option value="desc" (change)="onDescend()">desc</option>
+      <option value="asc" (change)="onAscend()">asc</option>
+    </select>
+  </div>
+</div>
+<div class="item-list" *ngIf="displayMode === 1">
+  <app-product
+    *ngFor="
+      let product of products | range : sliderValue | test : [selectField]
+    "
+    [product]="product"
+  >
+  </app-product>
+</div>
+<div class="grid-container" *ngIf="displayMode === 2">
+  <app-gridview
+    *ngFor="
+      let product of products | range : sliderValue | test : [selectField]
+    "
+    [product]="product"
+  ></app-gridview>
+</div>

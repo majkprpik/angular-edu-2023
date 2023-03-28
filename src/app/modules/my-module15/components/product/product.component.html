@@ -1,0 +1,59 @@
+<div class="command">
+  <button id="list-view" (click)="toggleView('list')">
+    <img src="/assets/Teo/list-view-icon.png" alt="List View" />
+  </button>
+  <button id="grid-view" (click)="toggleView('grid')">
+    <img src="/assets/Teo/grid-view-icon.png" alt="Grid View" />
+  </button>
+
+  <button class="sort-price" (click)="sortAscending = !sortAscending">
+    {{ "Sort by price: " }}
+    {{ sortAscending ? "↓" : "↑" }}
+  </button>
+
+  <button id="cart-btn" (click)="viewCart()">
+    <img src="/assets/Teo/kosarica.png" alt="" />
+    <div class="cart-count" *ngIf="getCartLength() > 0">
+      {{ getCartLength() }}
+    </div>
+  </button>
+  <app-search-bar></app-search-bar>
+</div>
+
+<br />
+
+<div class="grid-container" [ngClass]="viewClass">
+  <div
+    class="product-card"
+    *ngFor="
+      let product of products
+        | filterPrice : sliderValues
+        | sortPrice : sortAscending
+        | category : category
+    "
+  >
+    <img src="{{ product.image }}" alt="{{ product.title }}" />
+    <h3 class="product-title">{{ product.title }}</h3>
+
+    <p class="price">{{ "€" + product.price }}</p>
+    <button class="cart-btn" (click)="addToCart(product)">
+      {{ "Add to cart" }}
+    </button>
+  </div>
+</div>
+
+<br /><br />
+
+<!-- slider -->
+
+<!--   
+  <h3>Price range: </h3>
+  <mat-slider min="0" max="1000">
+    <input (valueChange)="changeMin($event)" [(ngModel)]="sliderValues.min" matSliderStartThumb>
+    <input (valueChange)="changeMax($event)" [(ngModel)]="sliderValues.max" matSliderEndThumb>
+
+  </mat-slider>
+
+  {{sliderValues.min + ' ' + sliderValues.max}};
+
+   -->

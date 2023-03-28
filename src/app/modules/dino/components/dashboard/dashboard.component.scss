@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+.content {
+  //width: 100%;
+  display: flex;
+  width: 80%;
+  margin: 24px auto 0 auto;
+}
+.cartButton {
+  margin: 0 24px;
+}
+.sortButton {
+  padding: 12px;
+}
+// .products{
+//     float:left;
+// }
+// .viewSelector{
+//     img{
+//         width: 100px;
+//     }
+// }

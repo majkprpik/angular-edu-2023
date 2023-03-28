@@ -1,0 +1,27 @@
+<div id="empty" *ngIf="cart.cartItems.length === 0">Your cart is empty!</div>
+<div id="total" *ngIf="cart.cartItems.length > 0">
+  Total price of your cart is: {{ cart.totalPrice }} $
+  <div id="center">
+    <div id="products" *ngFor="let cartItem of cart.cartItems">
+      {{ cartItem.product.name }} - {{ cartItem.product.price }} $
+      <br />
+      <img id="image" src="{{ cartItem.product.imgUrl }}" alt="img" />
+      <br />
+      this many items: {{ cartItem.quantity }}
+      <br />
+      <br />
+      <p id="removeFromCart" (click)="removeFromCart(cartItem)">
+        Remove from cart
+      </p>
+    </div>
+  </div>
+</div>
+<div>
+  <button mat-button id="list" (click)="goToList()">
+    <mat-icon>list</mat-icon>
+  </button>
+
+  <button mat-button id="grid" (click)="goToGrid()">
+    <mat-icon>grid_on</mat-icon>
+  </button>
+</div>

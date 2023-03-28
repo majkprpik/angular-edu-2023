@@ -10,4 +10,19 @@ import { StorageService } from './services/storage.service';
   templateUrl: './stjepan.component.html',
   styleUrls: ['./stjepan.component.scss'],
 })
-export class StjepanComponent {}
+export class StjepanComponent {
+  username: string = '';
+  password: string = '';
+
+  onSubmit() {
+    const podaciOKorisniku = {
+      username: this.username,
+      password: this.password,
+    };
+
+    this.username = '';
+    this.password = '';
+
+    console.log(podaciOKorisniku);
+  }
+}

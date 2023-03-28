@@ -1,0 +1,117 @@
+<link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
+
+<div
+  class="leftSide"
+  [ngStyle]="{
+    'background-color': 'black',
+    width: '150px',
+    height: '100vh',
+    float: 'left'
+  }"
+>
+  <div
+    class="brands"
+    [ngStyle]="{
+      'background-color': 'yellow',
+      width: '150px',
+      height: '74px',
+      'margin-top': '100px'
+    }"
+  >
+    <div
+      class="brandsText"
+      [ngStyle]="{ 'font-size': '28px', 'padding-top': '25px' }"
+    >
+      BRANDS
+    </div>
+  </div>
+
+  <div
+    class="brandsInBrands"
+    [ngStyle]="{
+      'background-color': '#98970c',
+      height: '180px',
+      width: '150px',
+      'font-size': '16px',
+      'line-height': '11.5px'
+    }"
+  >
+    <div *ngFor="let brand of brands" [ngStyle]="{ 'padding-top': '28.5px' }">
+      {{ brand }}
+    </div>
+  </div>
+
+  <div class="slider">
+    <div [ngStyle]="{ color: 'yellow', 'margin-top': '10px' }">
+      Price range:
+    </div>
+
+    <div [ngStyle]="{ color: 'yellow' }">
+      {{ sliderValueMin }} - {{ sliderValueMax }}
+    </div>
+
+    <mat-slider
+      id="slider"
+      [(ngModel)]="sliderValue"
+      color="yellow"
+      ngDefaultControl
+      min="0"
+      max="1200"
+      step="100"
+      showTickMarks
+      (change)="onSliderChange()"
+    >
+      <input [(ngModel)]="sliderValueMin" matSliderStartThumb />
+      <input [(ngModel)]="sliderValueMax" matSliderEndThumb />
+    </mat-slider>
+  </div>
+
+  <div class="info" [ngStyle]="{ 'margin-top': '50px', height: '162px' }">
+    <a
+      mat-fab
+      extended
+      color="primary"
+      [ngStyle]="{
+        color: 'black',
+        'margin-bottom': '21px',
+        'background-color': 'yellow',
+        width: '100px',
+        height: '60px',
+        'padding-top': '5px'
+      }"
+      (click)="switchView()"
+    >
+      {{ viewText }}
+    </a>
+    <a
+      mat-fab
+      extended
+      color="primary"
+      [ngStyle]="{
+        color: 'black',
+        'margin-bottom': '21px',
+        'background-color': 'yellow',
+        width: '100px',
+        height: '30px',
+        'padding-top': '5px'
+      }"
+    >
+      ABOUT
+    </a>
+    <a
+      mat-fab
+      extended
+      color="primary"
+      [ngStyle]="{
+        color: 'black',
+        'margin-bottom': '21px',
+        'background-color': 'yellow',
+        width: '100px',
+        height: '30px',
+        'padding-top': '5px'
+      }"
+    >
+      CONTACT
+    </a>
+  </div>
+</div>
