@@ -28,11 +28,11 @@ export class CartComponent {
     this.cart.cartProducts.splice(0);
     const index = this.cart.cartProducts.length;
     this.cartService.$cart.value.cartProducts.splice(index, 1);
-      localStorage.setItem(
-        'cart',
-        JSON.stringify(this.cartService.$cart.value.cartProducts)
-      );
-      this.cartService.$cart.next(this.cart);
+    localStorage.setItem(
+      'cart',
+      JSON.stringify(this.cartService.$cart.value.cartProducts)
+    );
+    this.cartService.$cart.next(this.cart);
   }
 
   toHome() {
@@ -46,7 +46,7 @@ export class CartComponent {
     if (this.cart.cartProducts[index].quantity > 1) {
       this.cart.cartProducts[index].quantity--;
     }
-    
+
     localStorage.setItem(
       'cart',
       JSON.stringify(this.cartService.$cart.value.cartProducts)
@@ -70,7 +70,7 @@ export class CartComponent {
   }
 
   totalItemPrice(quantity: number, itemPrice: number): number {
-    return round(quantity*itemPrice, 2);
+    return round(quantity * itemPrice, 2);
   }
 
   removeItem(item: Product) {

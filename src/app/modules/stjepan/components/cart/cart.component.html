@@ -1,9 +1,9 @@
 <div id="utility">
   <button class="btn" (click)="toHome()">
-    <img class="picture" src="assets/stjepan/home.png" alt="home">
+    <img class="picture" src="assets/stjepan/home.png" alt="home" />
   </button>
   <button class="btn" (click)="cartClear()">
-    <img class="picture" src="assets/stjepan/cart_clear.png" alt="cart_clear">
+    <img class="picture" src="assets/stjepan/cart_clear.png" alt="cart_clear" />
   </button>
 </div>
 <div class="cart-container">
@@ -20,7 +20,7 @@
     <tbody>
       <tr class="cart-item" *ngFor="let item of cart.cartProducts">
         <td class="product-name">
-          <img src="{{ item.cartProduct.image }}" alt="No Picture">
+          <img src="{{ item.cartProduct.image }}" alt="No Picture" />
           <div>{{ item.cartProduct.title }}</div>
         </td>
         <td>{{ "€" + item.cartProduct.price }}</td>

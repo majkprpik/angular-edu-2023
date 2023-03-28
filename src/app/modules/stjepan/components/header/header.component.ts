@@ -15,7 +15,7 @@ export class HeaderComponent {
     this.router.navigate(['stjepan', 'cart']);
   }
 
-  productView(view:string) {
+  productView(view: string) {
     this.viewEvent.emit(view);
   }
 }
