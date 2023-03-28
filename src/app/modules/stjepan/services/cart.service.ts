@@ -44,9 +44,9 @@ export class CartService {
 
   removeFromCart(product: Product) {
     const index = this.cart.cartProducts.findIndex(
-      (p) => p.cartProduct.id === product.id
+      (p) => p.cartProduct.id == product.id
     );
-    if (index !== -1) {
+    if (index != -1) {
       this.$cart.value.cartProducts.splice(index, 1); // removaj iz $cart
       localStorage.setItem(
         'cart',

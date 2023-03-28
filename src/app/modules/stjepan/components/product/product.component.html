@@ -1,4 +1,23 @@
 <div id="utility">
+  <mat-slider color="primary" min="0" max="1000" step="5">
+    <input
+      (valueChange)="changeMin($event)"
+      [(ngModel)]="sliderValues.min"
+      matSliderStartThumb
+    />
+    <div class="slider_vaule" [ngStyle]="{ float: 'left' }">
+      {{ sliderValues.min }}
+    </div>
+    <div class="slider_vaule" [ngStyle]="{ float: 'right' }">
+      {{ sliderValues.max }}
+    </div>
+    <input
+      (valueChange)="changeMax($event)"
+      [(ngModel)]="sliderValues.max"
+      matSliderEndThumb
+    />
+  </mat-slider>
+
   <div class="btn" (click)="ascendingToDesending = !ascendingToDesending">
     <img
       id="product-sort"
@@ -12,7 +31,11 @@
 <div class="grid-container" [ngClass]="viewClass">
   <div
     class="product-card"
-    *ngFor="let product of products | sortPrice : ascendingToDesending"
+    *ngFor="
+      let product of products
+        | filterPrice : sliderValues
+        | sortPrice : ascendingToDesending
+    "
   >
     <img src="{{ product.image }}" alt="{{ product.title }}" />
     <h3 class="product-title">{{ product.title }}</h3>

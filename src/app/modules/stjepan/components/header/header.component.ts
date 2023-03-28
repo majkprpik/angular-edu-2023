@@ -9,7 +9,13 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class HeaderComponent {
   constructor(private router: Router) {}
 
+  @Output() viewEvent = new EventEmitter<string>();
+
   toCart() {
     this.router.navigate(['stjepan', 'cart']);
+  }
+
+  productView(view:string) {
+    this.viewEvent.emit(view);
   }
 }

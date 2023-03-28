@@ -1,4 +1,11 @@
-<button class="toHome" (click)="toHome()">Go back</button>
+<div id="utility">
+  <button class="btn" (click)="toHome()">
+    <img class="picture" src="assets/stjepan/home.png" alt="home">
+  </button>
+  <button class="btn" (click)="cartClear()">
+    <img class="picture" src="assets/stjepan/cart_clear.png" alt="cart_clear">
+  </button>
+</div>
 <div class="cart-container">
   <table class="cart-table">
     <thead>
@@ -12,7 +19,10 @@
     </thead>
     <tbody>
       <tr class="cart-item" *ngFor="let item of cart.cartProducts">
-        <td>{{ item.cartProduct.title }}</td>
+        <td class="product-name">
+          <img src="{{ item.cartProduct.image }}" alt="No Picture">
+          <div>{{ item.cartProduct.title }}</div>
+        </td>
         <td>{{ "€" + item.cartProduct.price }}</td>
         <td>
           <button class="quantity" (click)="subQuantity(item.cartProduct)">

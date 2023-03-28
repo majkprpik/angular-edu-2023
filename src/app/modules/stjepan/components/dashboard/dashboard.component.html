@@ -1,5 +1,5 @@
 <div class="main">
   <app-sidebar class="sidebar"></app-sidebar>
-  <app-header class="header"></app-header>
-  <app-product class="products"></app-product>
+  <app-header class="header" (viewEvent)="productView($event)"></app-header>
+  <app-product class="products" [viewClass]="view"></app-product>
 </div>

@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-  prikaziGrid = true;
-  prikaziList = false;
+  view = '';
+
+  productView(view: string) {
+    this.view = view;
+  }
 }

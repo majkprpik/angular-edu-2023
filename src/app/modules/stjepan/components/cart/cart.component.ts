@@ -24,6 +24,17 @@ export class CartComponent {
 
   cart: Cart;
 
+  cartClear() {
+    this.cart.cartProducts.splice(0);
+    const index = this.cart.cartProducts.length;
+    this.cartService.$cart.value.cartProducts.splice(index, 1);
+      localStorage.setItem(
+        'cart',
+        JSON.stringify(this.cartService.$cart.value.cartProducts)
+      );
+      this.cartService.$cart.next(this.cart);
+  }
+
   toHome() {
     this.router.navigate(['stjepan', 'dashboard']);
   }
@@ -35,6 +46,12 @@ export class CartComponent {
     if (this.cart.cartProducts[index].quantity > 1) {
       this.cart.cartProducts[index].quantity--;
     }
+    
+    localStorage.setItem(
+      'cart',
+      JSON.stringify(this.cartService.$cart.value.cartProducts)
+    );
+    this.cartService.$cart.next(this.cart);
   }
 
   addQuantity(product: Product) {
@@ -44,6 +61,12 @@ export class CartComponent {
     if (this.cart.cartProducts[index].quantity >= 1) {
       this.cart.cartProducts[index].quantity++;
     }
+
+    localStorage.setItem(
+      'cart',
+      JSON.stringify(this.cartService.$cart.value.cartProducts)
+    );
+    this.cartService.$cart.next(this.cart);
   }
 
   totalItemPrice(quantity: number, itemPrice: number): number {

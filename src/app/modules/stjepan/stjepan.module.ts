@@ -2,6 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {MatSliderModule} from '@angular/material/slider';
 
 import { StjepanRoutingModule } from './stjepan-routing.module';
 import { StjepanComponent } from './stjepan.component';
@@ -18,6 +19,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { ProductsService } from './services/product.service';
 import { CartService } from './services/cart.service';
 import { SortPricePipe } from './pipes/sort-price.pipe';
+import { FilterPricePipe } from './pipes/filter-price.pipe';
 
 export function tokenGetter() {
   return localStorage.getItem('accesToken_stjepan');
@@ -33,10 +35,12 @@ export function tokenGetter() {
     ProductComponent,
     CartComponent,
     SortPricePipe,
+    FilterPricePipe,
   ],
   imports: [
     CommonModule,
     StjepanRoutingModule,
+    MatSliderModule,
     FormsModule,
     HttpClientModule,
     JwtModule.forRoot({
