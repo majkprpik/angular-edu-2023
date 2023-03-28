@@ -38,8 +38,10 @@ export class KartService {
     );
     if (productIndex > -1) {
       this.cart.productList.splice(productIndex, 1);
+      
     }
     this.$cart.next(this.cart);
+    this.cart.totalPrice -= product.price;
   }
 
   
