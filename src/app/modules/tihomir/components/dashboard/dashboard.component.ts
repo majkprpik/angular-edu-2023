@@ -1,3 +1,4 @@
+import { BehaviorSubject } from 'rxjs';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -7,6 +8,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
+
+
   constructor(private activatedRoute: ActivatedRoute) {
     this.activatedRoute.data.subscribe((response) => {
       console.log(response);
